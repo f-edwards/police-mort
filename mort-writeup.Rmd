@@ -9,22 +9,37 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Abstract
+*Objective.* To estimate mortality for police-involved deaths by race and geography in the United States.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+*Methods.* Using data from a crowd-sourced database, we estimate mortality rates for deaths invovling police by race and by census region. Multilevel Bayesian Poisson models adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+*Results.* 
 
-```{r cars}
-summary(cars)
-```
+<!-- We identified 1552 police homicides in the 16 states. Positive predictive value and sensitivity of the NVDRS “type of death” variable for police homicides were high (98% and 90%, respectively). Counts from Vital Statistics and Supplementary Homicide Reports were 58% and 48%, respectively, of our study total; gaps varied widely by state. The annual rate of police homicide (0.24/100 000) varied 5-fold by state and 8-fold by race/ethnicity. -->
 
-## Including Plots
+*Conclusions.* 
 
-You can also embed plots, for example:
+*Policy Implications.*
+
+
+# Introduction
+
+Intro about high-profile cases, need for clear estimates of mortality by group, likelihood of regional heterogeneity in risk, likelihood of msaXregionXrace interaction
+
+# Background
+
+Concise lit review with no more than 35 references
+
+# Data and Methods
+
+We 
+
+# Findings
+
+# Discussion
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
