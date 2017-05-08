@@ -50,6 +50,20 @@ regions = read.csv('regions.csv',
 demos = read.csv('demographics.csv', stringsAsFactors = FALSE) %>%
 		rename(fips = FIPS) 
 
+pop<-read.csv("nhgis0022_ds215_20155_2015_county.csv", colClasses = "character")
+
+pop$fips<-paste(pop$STATEA, pop$COUNTYA, sep="")
+
+pop$latino<-as.numeric(pop$ADK5E012)
+pop$white<-as.numeric(pop$ADK5E003)
+pop$black<-as.numeric(pop$ADK5E004) + as.numeric(pop$ADK5E014)
+pop$amind<-as.numeric(pop$ADK5E005) + as.numeric(pop$ADK5E015)
+pop$api<-as.numeric(pop$ADK5E006)+
+  as.numeric(pop$ADK5E007)+
+  as.numeric(pop$ADK5E016)+as.numeric(pop$ADK5E017)
+pop$tot.pop<-as.numeric(pop$ADK5E001)
+pop<-pop%>%dplyr::select(fips, tot.pop, latino, white, black, amind, api)
+
 # ... merge everything 
 tmp = left_join(fdat, cdc, c('state', 'county')) %>%
 	  inner_join(regions, 'state') %>%
