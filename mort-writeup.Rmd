@@ -14,32 +14,51 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *Methods.* Using data from a crowd-sourced database, we estimate mortality rates for deaths invovling police by race and by census region. Multilevel Bayesian Poisson models adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
 
-*Results.* 
+*Results.* Summarize mortality estimates. Summarize fit on observed. Summarize variation across places, races, metros. 
 
-<!-- We identified 1552 police homicides in the 16 states. Positive predictive value and sensitivity of the NVDRS “type of death” variable for police homicides were high (98% and 90%, respectively). Counts from Vital Statistics and Supplementary Homicide Reports were 58% and 48%, respectively, of our study total; gaps varied widely by state. The annual rate of police homicide (0.24/100 000) varied 5-fold by state and 8-fold by race/ethnicity. -->
+*Conclusions.* Abrupt statement
 
-*Conclusions.* 
-
-*Policy Implications.*
-
+*Policy Implications.* Efforts to address should take race, place seriously. Clear mort risk for afam, treat as pub health prob
 
 # Introduction
 
-Intro about high-profile cases, need for clear estimates of mortality by group, likelihood of regional heterogeneity in risk, likelihood of msaXregionXrace interaction
+Intro about high-profile cases, need for clear estimates of mortality by group, likelihood of regional heterogeneity in risk, likelihood of msaXregionXrace interaction. 
+
+Racial justice, soc det of health as key frames
+
+POLICING AS SOCIAL DET OF HEALTH. USE THEORETICAL SETUP FROM ALANG et AL. Focus on providing precise estimates of risk, magnitude of inequality across places. 
 
 # Background
 
+What we know about prevalence of police shootings, likely sources of place variation
+
 Concise lit review with no more than 35 references
+
+WHY WE HAVE SHITTY DATA
+
+
 
 # Data and Methods
 
-We 
+Data on police-involved deaths come from **Fatal Encounters**, is an effort to document episodes of fatal police-civilian interactions [CITATION]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in **Fatal Encounters** is broader than similar projects, such as **The Washington Post's** compilation of data on police shootings, and has a greater temporal coverage than **The Guardian's** dataset on police-involved deaths. In a recent report, the Bureau of Justice Statistics noted that the universe of cases included in **Fatal Encounters** provides the most comprehensive treatment of arrest-related deaths, and closely matches the scope of the BJS's own **Arrest Related Deaths** data series. BJS has reported that the inclusion of data from this and other sources provides more reliable estimates of officer-involved mortality than does current federal data collection, which relies on voluntary reporting from law enforcement agencies. 
+
+We supplement these data with county-level population estimates by race and ethnicity from the American Community Survey 5-year 2011-2015 data, which provide offsets for regression models.
+
+Because deaths in police custody are a relatively rare event ADD R TOTAL INCIDENCE RATE HERE, we construct regression models to pool power across data to provide predictions of mortality rates by race, by metropolitan status, and by region. These figures provide more reliable estimates of police mortality rates by adjusting for the rarity of this event in small population places. 
+
+We estimate multilevel Poisson regressions of police-involved deaths as a function of the race of the victim, metropolitan status, and region. We then estimate posterior predictive mortality rates for each subset of race by metropolitan status by region. These predictive intervals provide more realistic estimates of population mortality rates than do simple descriptive estimates from observed data systems, because they average over the instabilities that may occur as a result of idiosyncratic local or annual trends. 
 
 # Findings
 
+```{r pressure, echo=FALSE}
+
+#add posterior pred vs observed plot
+#add posterior pred table
+#add posterior pred plot
+
+```
+
 # Discussion
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+
 
