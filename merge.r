@@ -5,9 +5,6 @@ library(date)
 library(lubridate)
 library(data.table)
 
-setwd("~/sync/data-police-shootings/")
-
-
 fe<-fread("fatal-encounters-5-8-17.csv", header=TRUE)
 
 names(fe)<-c("id", "name", "age", "gender", "race", "image", "date", 

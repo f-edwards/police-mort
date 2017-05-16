@@ -10,8 +10,10 @@ library(tidyr)
 library(ggplot2)
 library(readr)
 library(date)
-setwd('C:/Users/Mike/Dropbox/police-mort') 
-source('merge.r')
+library(lme4)
+library(rstanarm)
+setwd('D:/sync/police-mort/') 
+source('merge.r', verbose = TRUE)
 
 # 2: configure data ...
 # ... attach fatal encounters data
@@ -137,7 +139,7 @@ ggplot(dat1, aes(x = fips, y = log(y.rate), color = y.race)) +
 	coord_flip() +
 	ylab('(log) Rate Killed')
 
-# ... average rate by urban/rual type
+# ... average rate by urban/rural type
 dat2 = tmp %>%
 	   group_by(ur.code) %>% 
 	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
@@ -170,7 +172,8 @@ ggplot(filter(dat3, rate %in% c('y.black.mean', 'y.white.mean')),
 	scale_color_brewer(palette = 'Set2') +
 	xlab('CDC Code') +
 	ylab('Average Rate Killed, per 100,000') +
-	geom_hline(yintercept = 0, lty = 'dashed')
+	geom_hline(yintercept = 0, lty = 'dashed')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # ... average rate by interaction 
 dat4 = tmp %>%
@@ -190,7 +193,7 @@ ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
 	scale_color_brewer(palette = 'Set2') +
 	xlab('CDC Code') +
 	ylab('Rate Killed, per 100,000') +
-	theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 7))
+	theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
 
 
 
@@ -269,10 +272,12 @@ ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
 #	ylab('B/W Rate') +
 #	xlab('CDC Type') #
 
-## 2: model
-#m1 = glm(b.w ~ ur.code + division, 
-#		 data = tmp,
-#	 	 family = Gamma(link = 'log'))
+# 2: model
+tmp1$n.obs<-1:nrow(tmp1)
+tmp1$d.black<-integer(tmp1$d.black)
+
+m1 = glmer(d.black ~ ur.code + (1|division) + (1|n.obs),
+	 data = tmp1, offset=I(log(black+1)), family="poisson")
 
 
 
