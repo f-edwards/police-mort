@@ -4,9 +4,18 @@ author: "Mike and Frank"
 date: "May 8, 2017"
 output: pdf_document
 ---
+```{r setup, echo=FALSE, asis=TRUE, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(readr)
+library(date)
+library(lme4)
+library(MASS)
+library(rstanarm)
+library(dplyr)
+library(tidyr)
+library(xtable)
+load("models.RData")
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Abstract
@@ -28,6 +37,10 @@ Racial justice, soc det of health as key frames
 
 POLICING AS SOCIAL DET OF HEALTH. USE THEORETICAL SETUP FROM ALANG et AL. Focus on providing precise estimates of risk, magnitude of inequality across places. 
 
+Provides first estimates of mortality risk by national region and by metro type. Provides better quantification of risk of mortality, provides insight into how race and geography interact.
+
+Not just looking at shootings, looking at all deaths involving police intervention. 
+
 # Background
 
 What we know about prevalence of police shootings, likely sources of place variation
@@ -36,9 +49,9 @@ Concise lit review with no more than 35 references
 
 WHY WE HAVE SHITTY DATA
 
-
-
 # Data and Methods
+
+add cite for wru package
 
 Data on police-involved deaths come from **Fatal Encounters**, is an effort to document episodes of fatal police-civilian interactions [CITATION]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in **Fatal Encounters** is broader than similar projects, such as **The Washington Post's** compilation of data on police shootings, and has a greater temporal coverage than **The Guardian's** dataset on police-involved deaths. In a recent report, the Bureau of Justice Statistics noted that the universe of cases included in **Fatal Encounters** provides the most comprehensive treatment of arrest-related deaths, and closely matches the scope of the BJS's own **Arrest Related Deaths** data series. BJS has reported that the inclusion of data from this and other sources provides more reliable estimates of officer-involved mortality than does current federal data collection, which relies on voluntary reporting from law enforcement agencies. 
 
@@ -48,13 +61,268 @@ Because deaths in police custody are a relatively rare event ADD R TOTAL INCIDEN
 
 We estimate multilevel Poisson regressions of police-involved deaths as a function of the race of the victim, metropolitan status, and region. We then estimate posterior predictive mortality rates for each subset of race by metropolitan status by region. These predictive intervals provide more realistic estimates of population mortality rates than do simple descriptive estimates from observed data systems, because they average over the instabilities that may occur as a result of idiosyncratic local or annual trends. 
 
+Models:
+
+EXPLAIN PARAMETERIZATION, EXPLAIN PRIOR FOR b_0
+
+$$log(E(y|X)) = \beta_0 + \beta_1x + \gamma + \varepsilon + log(offset)$$
+$$\beta_0 \sim Normal(log(\alpha) - log(offset), 10) $$
+$$ \beta_1 \sim Normal (0, 2.5) $$
+$$ \gamma, \varepsilon \sim MVN(0, \Sigma) $$
+$$ \Sigma \sim decov(1, 1, 1, 1) $$
+
 # Findings
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, cache=TRUE}
 
-#add posterior pred vs observed plot
-#add posterior pred table
-#add posterior pred plot
+################################
+########## Analysis ############
+################################
+
+# 1: EDA
+# just pulling fips's over 1000 of each
+tmp = tmp1 %>%
+	  filter(black >= 1000, white >= 1000)
+
+# keep most observations, but still
+sum(tmp$d.black)
+sum(tmp$d.white)
+
+# ... distrbution of rates 
+summary(tmp$y.black)
+summary(tmp$y.white)
+
+# ... distrbution of counts
+# overwhelmingly 1-2 per county
+summary(tmp$d.black)
+summary(tmp$d.white)
+
+plot(table(tmp$d.black))
+plot(table(tmp$d.white))
+
+# ... rate var by county
+dat1 = tmp %>%
+	   gather(y.race, y.rate, y.black: y.amind) %>%
+	   select(fips, y.race, y.rate, ur.code, division) %>%
+	   filter(y.race %in% c('y.black', 'y.white'))
+
+ggplot(dat1, aes(x = fips, y = log(y.rate), color = y.race)) +
+	geom_jitter(alpha = .35)  +
+	theme_bw() +
+	scale_color_brewer(palette = 'Set2') +
+	coord_flip() +
+	ylab('(log) Rate Killed')
+
+# ... average rate by urban/rural type
+dat2 = tmp %>%
+	   group_by(ur.code) %>% 
+	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
+	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
+	   mutate(y.bw = y.black.mean/y.white.mean) %>%
+	   gather(rate, value, y.black.mean:y.white.mean)
+
+ggplot(dat2, aes(x = ur.code, y = value, color = rate, group = rate)) +
+	geom_point() +
+	geom_line() +
+	theme_bw() +
+	scale_color_brewer(palette = 'Set2') +
+	xlab('CDC Code') +
+	ylab('Average Rate Killed, per 100,000')
+
+# ... average rate by division 
+dat3 = tmp %>%
+	   group_by(division) %>% 
+	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
+	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
+	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
+	   gather(rate, value, y.black.mean:y.white_minus_black)
+
+ggplot(filter(dat3, rate %in% c('y.black.mean', 'y.white.mean')),
+	aes(x = division, y = value, color = rate, group = rate)) +
+	geom_point(size = 4) +
+	geom_line(data = filter(dat3, rate %in% c('y.white_minus_black')), 
+			 aes(x = division, y = value), lwd = 1.5) +
+	theme_bw() +
+	scale_color_brewer(palette = 'Set2') +
+	xlab('CDC Code') +
+	ylab('Average Rate Killed, per 100,000') +
+	geom_hline(yintercept = 0, lty = 'dashed')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# ... average rate by interaction 
+dat4 = tmp %>%
+	   group_by(ur.code, division) %>%
+	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
+	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
+	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
+	   gather(rate, value, y.black.mean:y.white_minus_black)
+
+region_uc_plot<-ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
+	   aes(x = ur.code, y = value, group = rate, color = rate)) +
+	facet_wrap(~division) + 
+	geom_point(size = 2) +
+	geom_line() +
+	#coord_flip() +
+	theme_bw() +
+	scale_color_brewer(palette = 'Set2') +
+	xlab('CDC Code') +
+	ylab('Rate Killed, per 100,000') +
+	theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
+
+
+
+# z<-posterior_predict(blk.stan, newdata=tmp1)
+# 
+# ### plot mean ppd vs observed, looks alright
+# plot(tmp1$d.black, apply(z, 2, mean))
+# abline(0, 1)
+# 
+# prop_zero <- function(y) mean(y == 0)
+# prop_zero_test <- pp_check(blk.stan, plotfun = "stat", stat = "prop_zero")
+
+#### do ppd checks for each race/region/ur combo with 100k pop
+#### obtain pp intervals for each combo
+#### obtain diff/ratio of intervals for each combo
+ur.code<-unique(tmp2$ur.code)
+division<-unique(tmp2$division)
+ur.division<-expand.grid(division, ur.code); names(ur.division)<-c("division", "ur.code")
+n<-length(division)*length(ur.code)
+### set up newdata for ppd - use 100,000,000 for offset to get enough trials, then rescale to rate per 100,000
+newdata<-tmp2[1:n,]
+newdata$fips<-0; newdata$tot.pop<-newdata$black<-newdata$white<-newdata$latino<-100000000; 
+newdata$ur.code<-ur.division$ur.code; newdata$division<-ur.division$division
+
+# post.all<-posterior_predict(all.stan, newdata=newdata)/1000
+# post.all.int<-bind_cols(ur.division, 
+#                         as.data.frame(t(apply(post.all, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
+
+post.blk<-posterior_predict(blk.stan, newdata=newdata)/1000
+post.blk.int<-bind_cols(ur.division, 
+                        as.data.frame(t(apply(post.blk, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
+
+post.wht<-posterior_predict(wht.stan, newdata=newdata)/1000
+post.wht.int<-bind_cols(ur.division, 
+                        as.data.frame(t(apply(post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
+
+post.lat<-posterior_predict(lat.stan, newdata=newdata)/1000
+post.lat.int<-bind_cols(ur.division,
+                        as.data.frame(t(apply(post.lat, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
+
+# plot.dat<-bind_cols(ur.division, data.frame(value=apply(post.all, 2, median)))
+# plot.dat$rate<-"All"
+
+plot.dat<-bind_cols(ur.division, data.frame(value=apply(post.blk, 2, median)))
+plot.dat$rate<-"Black"
+
+plot.tmp<-bind_cols(ur.division, data.frame(value=apply(post.wht, 2, median)))
+plot.tmp$rate<-"White"
+
+plot.dat<-bind_rows(plot.dat, plot.tmp)
+
+plot.tmp<-bind_cols(ur.division, data.frame(value=apply(post.lat, 2, median)))
+plot.tmp$rate<-"Latino"
+
+plot.dat<-bind_rows(plot.dat, plot.tmp)
+
+plot.dat$ur.code<-factor(plot.dat$ur.code, levels=sort(as.character(unique(plot.dat$ur.code))))
+plot.dat$division<-factor(plot.dat$division, levels=sort(as.character(unique(plot.dat$division))))
+
+plot.dat<-plot.dat[order(plot.dat$division, plot.dat$ur.code), ]
+
+ggplot(plot.dat,
+       aes(x = ur.code, y = value, group = rate, color = rate)) +
+  facet_wrap(~division) + 
+  geom_point(size = 2) +
+  geom_line() +
+  #coord_flip() +
+  theme_bw() +
+  scale_color_brewer(palette = 'Set2') +
+  xlab('CDC Code') +
+  ylab('Rate Killed, per 100,000') + 
+  ylim(0, 15)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+########### get posterior rate ratios
+bw.post<-bind_cols(ur.division, 
+                   as.data.frame(t(apply(post.blk - post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
+bw.post$rate<-"Black - White"
+lw.post<-bind_cols(ur.division, 
+                   as.data.frame(t(apply(post.lat - post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
+lw.post$rate<-"Latino - White"
+
+plot.dat<-bind_rows(bw.post, lw.post)
+
+plot.dat$ur.code<-factor(plot.dat$ur.code, levels=sort(as.character(unique(plot.dat$ur.code))))
+plot.dat$division<-factor(plot.dat$division, levels=sort(as.character(unique(plot.dat$division))))
+
+plot.dat<-plot.dat[order(plot.dat$ur.code, plot.dat$division), ]
+names(plot.dat)[3:5]<-c("Lower", "Median", "Upper")
+
+ggplot(plot.dat,
+  aes(x = ur.code, y = Median, group = rate, color = rate)) +
+  facet_wrap(~division) + 
+  geom_point(size = 2) +
+  geom_line() +
+  #geom_errorbar(aes(ymin = Lower, ymax= Upper)) +
+  theme_bw() +
+  scale_color_brewer(palette = 'Set2') +
+  xlab('County Type') +
+  ylab('Rate difference') + 
+  geom_hline(yintercept=0, lty=2)+
+  #coord_cartesian(ylim=c(0, 30))+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+######################
+### Tables
+########################
+
+maketable<-function(x, label){
+  simpleCap <- function(x) {
+    s <- strsplit(x, " ")[[1]]
+    paste(toupper(substring(s, 1,1)), substring(s, 2),
+          sep="", collapse=" ")
+  }
+  tab<-x
+  names(tab)[3:5]<-c("Lower", "Median", "Upper")
+  tab$ur.code<-as.character(tab$ur.code); tab$division<-as.character(tab$division)
+  tab<-tab[order(tab$division, tab$ur.code), ]
+  tab$ur.code<-substr(tab$ur.code, 4, nchar(tab$ur.code))
+  for(i in 1:nrow(tab)){
+    tab$ur.code[i]<-simpleCap(tab$ur.code[i])
+    tab$ur.code[i]<-paste(" -", tab$ur.code[i])
+  }
+  tab[, 3:5]<-round(tab[, 3:5], 2)
+  tab<-tab%>%mutate(value=paste(Median, " (", Lower, ", ", Upper, ")", sep=""))%>%
+    select(-Median, -Lower, -Upper)
+  div<-unique(tab$division)
+  for(i in 1:length(div)){
+    index<-min(which(tab$division==div[i]))
+    if(index==1){
+      tab<-rbind(c(NA, div[i], NA), tab[index:nrow(tab),])
+      }
+    if(index!=1){
+      tab<-rbind(tab[1:(index-1),], c(NA, div[i], NA), tab[index:nrow(tab),])
+      }
+  }
+  tab<-tab%>%select(-division)
+  names(tab)<-c("County Type", label)
+  return(tab)
+}
+
+
+tab.out<-cbind(maketable(post.blk.int, "Rate-Black"),
+               maketable(post.lat.int, "Rate-Latino")[,2],
+               maketable(post.wht.int, "Rate-White")[,2])
+names(tab.out)<-c("County Name", "Black", "Latino", "White")
+```
+
+```{r, results="asis", message=FALSE}
+
+print(xtable(tab.out, 
+             caption="Estimates of mortality in police encounters by race/ethnicity, census region, and metro type"), 
+      include.rownames=FALSE,
+      size="\\fontsize{8pt}{10pt}\\selectfont", 
+      caption.placement="top")
 
 ```
 

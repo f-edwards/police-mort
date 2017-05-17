@@ -5,16 +5,19 @@
 
 ## Set-up
 # 1: load packages; setwd etc. 
-library(dplyr)
-library(tidyr)
+rm(list=ls())
+set.seed(1)
+
 library(ggplot2)
 library(readr)
 library(date)
 library(lme4)
+library(MASS)
 library(rstanarm)
-setwd('D:/sync/police-mort/') 
-source('merge.r', verbose = TRUE)
-
+library(dplyr)
+library(tidyr)
+library(xtable)
+fdat<-read.csv("fe-clean.csv", stringsAsFactors = FALSE)
 # 2: configure data ...
 # ... attach fatal encounters data
 #fdat = read.csv('fdat.csv',
@@ -53,9 +56,6 @@ regions = read.csv('regions.csv',
 		  select(state, Division)
 
 # ... demographics
-demos = read.csv('demographics.csv', stringsAsFactors = FALSE) %>%
-		rename(fips = FIPS) 
-
 pop<-read.csv("nhgis0022_ds215_20155_2015_county.csv", colClasses = "character")
 
 pop$fips<-paste(pop$STATEA, pop$COUNTYA, sep="")
@@ -98,114 +98,76 @@ tmp1 = left_join(fdat, cdc, 'fips') %>%
 	  		  y.white  = (d.white/white)	*100000,
 	  		  y.latino = (d.latino/latino)	*100000,
 	  		  y.api    = (d.api/api)		*100000,
-	  		  y.amind  = (d.amind/amind)	*100000
-	  	)
-
-################################
-########## Analysis ############
-################################
-
-# 1: EDA
-# just pulling fips's over 1000 of each
-tmp = tmp1 %>%
-	  filter(black >= 1000, white >= 1000)
-
-# keep most observations, but still
-sum(tmp$d.black)
-sum(tmp$d.white)
-
-# ... distrbution of rates 
-summary(tmp$y.black)
-summary(tmp$y.white)
-
-# ... distrbution of counts
-# overwhelmingly 1-2 per county
-summary(tmp$d.black)
-summary(tmp$d.white)
-
-plot(table(tmp$d.black))
-plot(table(tmp$d.white))
-
-# ... rate var by county
-dat1 = tmp %>%
-	   gather(y.race, y.rate, y.black: y.amind) %>%
-	   select(fips, y.race, y.rate, ur.code, division) %>%
-	   filter(y.race %in% c('y.black', 'y.white'))
-
-ggplot(dat1, aes(x = fips, y = log(y.rate), color = y.race)) +
-	geom_jitter(alpha = .35)  +
-	theme_bw() +
-	scale_color_brewer(palette = 'Set2') +
-	coord_flip() +
-	ylab('(log) Rate Killed')
-
-# ... average rate by urban/rural type
-dat2 = tmp %>%
-	   group_by(ur.code) %>% 
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.bw = y.black.mean/y.white.mean) %>%
-	   gather(rate, value, y.black.mean:y.white.mean)
-
-ggplot(dat2, aes(x = ur.code, y = value, color = rate, group = rate)) +
-	geom_point() +
-	geom_line() +
-	theme_bw() +
-	scale_color_brewer(palette = 'Set2') +
-	xlab('CDC Code') +
-	ylab('Average Rate Killed, per 100,000')
-
-# ... average rate by division 
-dat3 = tmp %>%
-	   group_by(division) %>% 
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
-	   gather(rate, value, y.black.mean:y.white_minus_black)
-
-ggplot(filter(dat3, rate %in% c('y.black.mean', 'y.white.mean')),
-	aes(x = division, y = value, color = rate, group = rate)) +
-	geom_point(size = 4) +
-	geom_line(data = filter(dat3, rate %in% c('y.white_minus_black')), 
-			 aes(x = division, y = value), lwd = 1.5) +
-	theme_bw() +
-	scale_color_brewer(palette = 'Set2') +
-	xlab('CDC Code') +
-	ylab('Average Rate Killed, per 100,000') +
-	geom_hline(yintercept = 0, lty = 'dashed')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-# ... average rate by interaction 
-dat4 = tmp %>%
-	   group_by(ur.code, division) %>%
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
-	   gather(rate, value, y.black.mean:y.white_minus_black)
-
-ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
-	   aes(x = ur.code, y = value, group = rate, color = rate)) +
-	facet_wrap(~division) + 
-	geom_point(size = 2) +
-	geom_line() +
-	#coord_flip() +
-	theme_bw() +
-	scale_color_brewer(palette = 'Set2') +
-	xlab('CDC Code') +
-	ylab('Rate Killed, per 100,000') +
-	theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
+	  		  y.amind  = (d.amind/amind)	*100000)%>%
+     mutate(d.total=d.black+d.api+d.white+d.latino+d.mid+d.amind+d.na)
 
 
 
 
+#######################################
+### models
+#######################################
+### drop na, only two cases
+### setting intercept priors from http://harvardpublichealthreview.org/190/
+### mort for black=0.94, white =0.37 from 2005
+### B_0 +... =log(mort)-log(offset)
+### high variance for weak information
+### for offset=100000, p(B_0)~N(log(mort)-log(offset), 10)
+### so for blk, p(B_0)~N(log(0.94)-log(100000), 10)
+### for white, p(B_0)~N(log(0.37)-log(100000), 10)
+### use white for all, use white for latino
+
+
+tmp2<-tmp1%>%select(-y.black,-y.white, -y.latino, -y.api,  -y.amind)%>%filter(!(is.na(tot.pop)))
+
+# all= glmer.nb(d.total ~  ur.code + (1|division),
+#            data = tmp1, offset=log(tot.pop), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
+#                                                                                 optCtrl=list(maxfun=2e5)))
+
+# all.stan = stan_glmer(d.black ~ ur.code + (1|division),
+#                       prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+#                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
+#                       prior_covariance = decov(1, 1, 1, 1), #default
+#                       data = tmp2, offset=log(tot.pop), family="neg_binomial_2", iter=2000, chains=4)
+
+
+# blk = glmer.nb(d.black ~  ur.code + (1|division) + (1|fips),
+#            data = tmp1, offset=I(log(black+1)), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
+#                                                                                    optCtrl=list(maxfun=2e5)))
+
+blk.stan = stan_glmer(d.black ~ ur.code + (1|division),
+                      prior_intercept=normal((log(0.94)-log(100000)), 10), #for prior intercept, based on krieger estimates
+                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
+                      prior_covariance = decov(1, 1, 1, 1), #default
+                     data = tmp2, offset=I(log(black+1)), family="neg_binomial_2", iter=2000, chains=4)
+
+# wht = glmer.nb(d.white ~  ur.code + (1|division) + (1|fips),
+#                data = tmp1, offset=log(white), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
+#                                                                                   optCtrl=list(maxfun=2e5)))
+
+wht.stan = stan_glmer(d.black ~ ur.code + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
+                      prior_covariance = decov(1, 1, 1, 1), #default
+                      data = tmp2, offset=log(white), family="neg_binomial_2", iter=2000, chains=4)
+
+# lat = glmer.nb(d.latino ~  ur.code + (1|division) + (1|fips),
+#                data = tmp1, offset=I(log(latino+1)), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
+#                                                                                    optCtrl=list(maxfun=2e5)))
+
+lat.stan = stan_glmer(d.latino ~ ur.code + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
+                      prior_covariance = decov(1, 1, 1, 1), #default
+                      data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
+
+save.image("models.RData")
 
 
 
 
-
-
-
-
+### for natl descriptives
+###Population estimates, July 1, 2015, (V2015)321,418,820
 
 
 ## ... populatuion counts 
@@ -273,12 +235,6 @@ ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
 #	xlab('CDC Type') #
 
 # 2: model
-tmp1$n.obs<-1:nrow(tmp1)
-tmp1$d.black<-integer(tmp1$d.black)
-
-m1 = glmer(d.black ~ ur.code + (1|division) + (1|n.obs),
-	 data = tmp1, offset=I(log(black+1)), family="poisson")
-
 
 
 #a = tmp1 %>%

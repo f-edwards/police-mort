@@ -4,6 +4,8 @@ library(ggplot2)
 library(date)
 library(lubridate)
 library(data.table)
+library(stringr)
+library(wru)
 
 fe<-fread("fatal-encounters-5-8-17.csv", header=TRUE)
 
@@ -131,4 +133,56 @@ fe[which(fe$year==2100), "year"]<-2001
 fdat<-fe%>%select(name, age, gender, race, city, state, county, year)
 fdat<-fdat%>%filter(year>2012)
 
-fdat<-left_join(fdat, crosswalk)%>%rename(fips=fipscounty)
+
+#### create county index, then join. a straight join was producing duplicates
+c.index<-left_join(fdat%>%select(county, state), crosswalk)%>%rename(fips=fipscounty)%>%distinct()
+fdat<-left_join(fdat, c.index)
+
+### manually remove duplicated case
+fdat<-fdat%>%filter(!(name=="Robert McAfee Jr"))
+
+### prep for surname matching
+names.tmp<-fdat%>%mutate(county=substrRight(fips,3))
+#### extract surnames
+names.tmp<-names.tmp%>%extract(name, c("first.name", "surname"), "([^ ]+) (.*)")
+### remove jr, II, III, Sr. numerics are all for john does
+names.tmp$surname<-ifelse(grepl("jr.", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
+names.tmp$surname<-ifelse(grepl("jr", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
+names.tmp$surname<-ifelse(grepl("sr.", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
+names.tmp$surname<-ifelse(grepl("II", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
+names.tmp$surname<-ifelse(grepl("III", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
+names.tmp$surname<-ifelse(grepl("IV", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
+
+#### put missing in for missing names
+
+### remove trailing whitespace
+names.tmp$surname<-trimws(names.tmp$surname, which = c("both"))
+#### pull only final word
+tmp<-names.tmp%>%mutate(surname=word(surname, -1))
+
+missing<-c("\"\"Kenny\"\"", "1", "2", "police")
+
+tmp$surname<-ifelse(tmp$surname%in%missing, NA, names.tmp$surname)
+tmp$sex<-ifelse(tmp$gender=="Male", 0, ifelse(tmp$gender=="Female", 1, NA))
+
+name_out<-predict_race(voter.file=tmp%>%filter(race=="Race unspecified"), census.geo="county", 
+                       census.key="b12b9359decff8398d2ab5cddabdcb867c682401")
+
+### vis for accuracy
+### performance is weak for af am, asian am, strong for latino, white, as we might expect
+### set a cut off for assignment at 75 percent, will leave unknown otherwise
+name_tmp1<-name_out%>%filter(race=="Race unspecified")
+name_tmp1$race<-ifelse(name_tmp1$pred.whi>0.75, "European-American/White", name_tmp1$race)
+name_tmp1$race<-ifelse(name_tmp1$pred.bla>0.75, "African-American/Black", name_tmp1$race)
+name_tmp1$race<-ifelse(name_tmp1$pred.his>0.75, "Hispanic/Latino", name_tmp1$race)
+name_tmp1$race<-ifelse(name_tmp1$pred.asi>0.75, "Asian/Pacific Islander", name_tmp1$race)
+
+name_tmp1<-name_tmp1%>%select(-county, -sex, -pred.whi, -pred.bla, -pred.his, -pred.asi, -pred.oth, -first.name, -surname)
+### use this data frame to sub in for missing race in original file
+
+tmp<-bind_rows(fdat%>%filter(!(race=="Race unspecified"))%>%
+                 select(-name), 
+               name_tmp1)
+
+write.csv(tmp, "fe-clean.csv", row.names = FALSE)
+write.csv(fdat, "fe-noimp.csv", row.names=FALSE)
