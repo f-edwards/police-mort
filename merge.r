@@ -104,12 +104,27 @@ fe$county<-gsub("mccracken", "mc cracken", fe$county)
 fe$county<-gsub("mcleod", "mc leod", fe$county)
 fe$county<-gsub("acadiana", "acadia", fe$county)
 fe$county<-gsub("chicago", "cook", fe$county)
+fe$county<-gsub("doã±a ana", "dona ana", fe$county)
+fe$county<-gsub("leflore", "le flore", fe$county)
 
 fe$county<-ifelse(fe$city=="Sioux City", "woodbury", fe$county)
 fe$county<-ifelse(fe$city=="San Antonio", "bexar", fe$county)
 fe$county<-ifelse(fe$city=="Hermon", "penobscot", fe$county)
 fe$county<-ifelse(fe$city=="Ponca City", "kay", fe$county)
 fe$county<-ifelse((fe$city=="Danbury")&(fe$state=="CT"), "fairfield", fe$county)
+
+fe$county<-ifelse((fe$county=="bristol")&(fe$state=="VA"), "washington", fe$county)
+fe$county<-ifelse((fe$county=="mclean")&(fe$state=="IL"), "mc lean", fe$county)
+fe$county<-ifelse((fe$county=="stafford")&(fe$state=="NH"), "strafford", fe$county)
+fe$county<-ifelse((fe$city=="Nashville")&(fe$state=="GA"), "berrien", fe$county)
+fe$county<-ifelse((fe$county=="norfolk")&(fe$state=="VA"), "norfolk city", fe$county)
+fe$county<-ifelse((fe$city=="Alton")&(fe$state=="IL"), "madison", fe$county)
+fe$county<-ifelse((fe$city=="Bloomington")&(fe$state=="IL"), "mc lean", fe$county)
+fe$county<-ifelse((fe$city=="Richmond")&(fe$state=="IL"), "mc henry", fe$county)
+fe$county<-ifelse((fe$city=="El Cajon")&(fe$state=="CA"), "san diego", fe$county)
+fe$county<-ifelse((fe$city=="Hammond")&(fe$state=="IN"), "lake", fe$county)
+
+fe$county<-ifelse((fe$city=="Madison")&(fe$state=="WI"), "dane", fe$county)
 
 
 ################################## MATCH COUNTIES WITH FIPS CROSSWALK
@@ -127,7 +142,7 @@ substrRight <- function(x, n){
 }
 
 
-fe$year<-as.numeric(substrRight(as.character(fe$date), 4))
+fe$year<-as.numeric(paste("20", substrRight(as.character(fe$date), 2), sep=""))
 fe[which(fe$year==2100), "year"]<-2001
 
 fdat<-fe%>%select(name, age, gender, race, city, state, county, year)
@@ -166,7 +181,7 @@ tmp$surname<-ifelse(tmp$surname%in%missing, NA, names.tmp$surname)
 tmp$sex<-ifelse(tmp$gender=="Male", 0, ifelse(tmp$gender=="Female", 1, NA))
 
 name_out<-predict_race(voter.file=tmp%>%filter(race=="Race unspecified"), census.geo="county", 
-                       census.key="b12b9359decff8398d2ab5cddabdcb867c682401")
+                       census.key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045")
 
 ### vis for accuracy
 ### performance is weak for af am, asian am, strong for latino, white, as we might expect

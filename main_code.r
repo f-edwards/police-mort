@@ -68,15 +68,28 @@ pop$api<-as.numeric(pop$ADK5E006)+
   as.numeric(pop$ADK5E007)+
   as.numeric(pop$ADK5E016)+as.numeric(pop$ADK5E017)
 pop$tot.pop<-as.numeric(pop$ADK5E001)
-pop<-pop%>%dplyr::select(fips, tot.pop, latino, white, black, amind, api) %>%
-				   mutate(fips = as.numeric(fips))
+pop<-pop%>%
+  rename(fips.st=STATEA)%>%
+  dplyr::select(fips, tot.pop, latino, white, black, amind, api, fips.st) %>%
+				   mutate(fips = as.numeric(fips), fips.st=as.numeric(fips.st))%>%
+  filter(fips.st!=72)
 
-#... get death rates per county
-# note: some missing ur codes
-# see: tmp1 %>% filter(is.na(ur.code)) %>% select(race) %>% table()
-tmp1 = left_join(fdat, cdc, 'fips') %>%
-	   inner_join(regions, 'state') %>%
-	   left_join(pop, 'fips') %>% 
+cw<-read.csv("fips-st-crosswalk.csv", stringsAsFactors = FALSE)%>%
+  select(state, fips)%>%rename(fips.st=fips)
+
+pop<-left_join(pop, cw)%>%
+  select(-fips.st)
+
+fdat$fips<-ifelse((fdat$county=="shannon county")&(fdat$state=="SD"), 46102, fdat$fips)
+fdat$fips<-ifelse((fdat$city=="Chevak")&(fdat$state=="AK"), 2158, fdat$fips)
+
+### got all of them matched
+#z<-which(!(fdat$fips%in%pop$fips))
+
+### rewrite for inclusion of all US counties - current setup miscalculates low pop based on zeroes in the data
+tmp1 = left_join(pop, cdc, c('fips')) %>%
+	   full_join(fdat, c('fips', 'state')) %>%
+	   left_join(regions, 'state') %>% 
 	   filter(!is.na(ur.code)) %>%
 	   rename(division = Division) %>%
 	   group_by(fips, race) %>%
@@ -94,14 +107,7 @@ tmp1 = left_join(fdat, cdc, 'fips') %>%
 	  		  d.api    = `Asian/Pacific Islander`,
 	  		  d.mid    = `Middle Eastern`,
 	  		  d.na     = `Race unspecified`) %>%
-	   mutate(y.black  = (d.black/black)	*100000,
-	  		  y.white  = (d.white/white)	*100000,
-	  		  y.latino = (d.latino/latino)	*100000,
-	  		  y.api    = (d.api/api)		*100000,
-	  		  y.amind  = (d.amind/amind)	*100000)%>%
-     mutate(d.total=d.black+d.api+d.white+d.latino+d.mid+d.amind+d.na)
-
-
+     mutate(d.total=d.black+d.api+d.white+d.latino+d.mid+d.amind+d.na)%>%select(-`<NA>`)
 
 
 #######################################
@@ -118,7 +124,7 @@ tmp1 = left_join(fdat, cdc, 'fips') %>%
 ### use white for all, use white for latino
 
 
-tmp2<-tmp1%>%select(-y.black,-y.white, -y.latino, -y.api,  -y.amind)%>%filter(!(is.na(tot.pop)))
+tmp2<-tmp1
 
 # all= glmer.nb(d.total ~  ur.code + (1|division),
 #            data = tmp1, offset=log(tot.pop), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
@@ -162,7 +168,6 @@ lat.stan = stan_glmer(d.latino ~ ur.code + (1|division),
                       data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
 
 save.image("models.RData")
-
 
 
 

@@ -1,7 +1,7 @@
 ---
-title: "Police Violence Mortality Estimates"
-author: "Mike and Frank"
-date: "May 8, 2017"
+title: "Race, place, and deaths involving police"
+author: "Frank and Mike"
+date: "May 17, 2017"
 output: pdf_document
 ---
 ```{r setup, echo=FALSE, asis=TRUE, message=FALSE, warning=FALSE}
@@ -21,7 +21,7 @@ load("models.RData")
 # Abstract
 *Objective.* To estimate mortality for police-involved deaths by race and geography in the United States.
 
-*Methods.* Using data from a crowd-sourced database, we estimate mortality rates for deaths invovling police by race and by census region. Multilevel Bayesian Poisson models adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
+*Methods.* We estimate mortality rates for deaths invovling police by race and by census region using data on all police-involved deaths between 2013 and 2017. We estimate multilevel Bayesian Poisson models that adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
 
 *Results.* Summarize mortality estimates. Summarize fit on observed. Summarize variation across places, races, metros. 
 
@@ -31,15 +31,10 @@ load("models.RData")
 
 # Introduction
 
-Intro about high-profile cases, need for clear estimates of mortality by group, likelihood of regional heterogeneity in risk, likelihood of msaXregionXrace interaction. 
+Violent and fatal interactions between law enforcement and people of color are a persistent feature of American social life [CITATIONS]. In spite of the well-documented shortcomings of federal efforts to systematically document deaths involving police [CITATIONS], newspapers and journalists have undertaken a series of systematic efforts to provide comprehensive data on fatalities resulting from interactions between police and the public [CITATIONS]. This analysis exploits these new data to provide estimates of mortality risk by race and geography. 
 
-Racial justice, soc det of health as key frames
-
-POLICING AS SOCIAL DET OF HEALTH. USE THEORETICAL SETUP FROM ALANG et AL. Focus on providing precise estimates of risk, magnitude of inequality across places. 
-
-Provides first estimates of mortality risk by national region and by metro type. Provides better quantification of risk of mortality, provides insight into how race and geography interact.
-
-Not just looking at shootings, looking at all deaths involving police intervention. 
+Race, place, and policing are important social determinants of health [CITATIONS]. Prior research has clearly established that African Americans are at higher risk of death in interactions with law enforcement [] and has demonstrated clear links between race, place and health outcomes []. We contribute to this literature by illustrating how the risk of death in encounters with law enforcement systematically varies across places by race. In doing so, we illustrate how geography and race interact to produce distinctly higher risks for mortality in encounters with law enforcement for people of color.
+Using data from the *Fatal Encounters* database of deaths resulting from law enforcement action, we estimate mortality risks for Black, Latino, and white populations by census division and by metro type. 
 
 # Background
 
@@ -51,15 +46,13 @@ WHY WE HAVE SHITTY DATA
 
 # Data and Methods
 
-add cite for wru package
+Data on police-involved deaths come from *Fatal Encounters*, is an effort to document episodes of fatal police-civilian interactions [CITATION]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in *Fatal Encounters* is broader than similar projects, such as *The Washington Post's* compilation of data on police shootings, has a greater temporal coverage than *The Guardian's* dataset on police-involved deaths, and has a greater geographic coverage than CDC MORT SYSTEM. In a recent report, the Bureau of Justice Statistics noted that the universe of cases included in *Fatal Encounters* provides the most comprehensive treatment of police-involved deaths, and closely matches the scope of the BJS's own *Arrest Related Deaths* data series. BJS has reported that the inclusion of data from this and other sources provides more reliable estimates of officer-involved mortality than does current federal data collection, which relies on voluntary reporting from law enforcement agencies. We calculate county-level mortality rates by race and ethnicity for the period between January 1, 2013 and May 8, 2017. We rely on data from the American Community Survey 5-year 2009 - 2014 population estimates for rate denominators of population by race, ethnicity and county [RUGGLES]. For geographic classification, we rely on the U.S. Census Bureau's 2010 state division classification (see Table X), and use the National Center for Health Statistics' 6 category urban-rural county classification scheme for all US counties.
 
-Data on police-involved deaths come from **Fatal Encounters**, is an effort to document episodes of fatal police-civilian interactions [CITATION]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in **Fatal Encounters** is broader than similar projects, such as **The Washington Post's** compilation of data on police shootings, and has a greater temporal coverage than **The Guardian's** dataset on police-involved deaths. In a recent report, the Bureau of Justice Statistics noted that the universe of cases included in **Fatal Encounters** provides the most comprehensive treatment of arrest-related deaths, and closely matches the scope of the BJS's own **Arrest Related Deaths** data series. BJS has reported that the inclusion of data from this and other sources provides more reliable estimates of officer-involved mortality than does current federal data collection, which relies on voluntary reporting from law enforcement agencies. 
+Because deaths in police custody are a relatively rare event ADD R TOTAL INCIDENCE RATE HERE, we construct regression models to pool power across data to provide predictions of mortality rates by race, by metropolitan status, and by region. These figures provide more reliable estimates of police mortality rates by adjusting for the rarity of this event in small population places. Race data are not completely reported in *Fatal Encounters*, because they are often excluded from news reports or public records. We use victim names and county of residence to predict victim race [@imai_improving_2016], only assigning race in cases with a 75 percent or higher posterior probability of membership, and leaving those cases with less than a 75 percent posterior probability of membership in any category unidentified (X percent of cases).
 
-We supplement these data with county-level population estimates by race and ethnicity from the American Community Survey 5-year 2011-2015 data, which provide offsets for regression models.
+We estimate multilevel Poisson regressions of police-involved deaths as a function of the race of the victim, metropolitan status, and region. We then estimate posterior predictive mortality rates for each subset of race by metropolitan status by region. While frequentist inferences may be appropriate for counties with large populations, they greatly distort estimates from places with small populations, where any incident can dramatically effect estimates of per capita rates. Bayesian predictive intervals provide more realistic estimates of population mortality rates, because they average over the instabilities that may occur as a result of idiosyncratic local or annual trends through large numbers of simulations. 
 
-Because deaths in police custody are a relatively rare event ADD R TOTAL INCIDENCE RATE HERE, we construct regression models to pool power across data to provide predictions of mortality rates by race, by metropolitan status, and by region. These figures provide more reliable estimates of police mortality rates by adjusting for the rarity of this event in small population places. 
-
-We estimate multilevel Poisson regressions of police-involved deaths as a function of the race of the victim, metropolitan status, and region. We then estimate posterior predictive mortality rates for each subset of race by metropolitan status by region. These predictive intervals provide more realistic estimates of population mortality rates than do simple descriptive estimates from observed data systems, because they average over the instabilities that may occur as a result of idiosyncratic local or annual trends. 
+Why Bayes and regression? Tons of zeroes - these aren't actual indicators of zero risk, just zero incidence in the window for which we have data. This approach lets us estimate plausible levels of population risk for those counties that have had exceedingly high rates due to small denominators and for counties with zeroes. Risk is unlikely to be true zero. 
 
 Models:
 
@@ -73,7 +66,9 @@ $$ \Sigma \sim decov(1, 1, 1, 1) $$
 
 # Findings
 
-```{r, echo=FALSE, message=FALSE, cache=TRUE}
+Raw estimates
+
+```{r, echo=FALSE, message=FALSE}
 
 ################################
 ########## Analysis ############
@@ -81,45 +76,45 @@ $$ \Sigma \sim decov(1, 1, 1, 1) $$
 
 # 1: EDA
 # just pulling fips's over 1000 of each
-tmp = tmp1 %>%
-	  filter(black >= 1000, white >= 1000)
-
-# keep most observations, but still
-sum(tmp$d.black)
-sum(tmp$d.white)
-
-# ... distrbution of rates 
-summary(tmp$y.black)
-summary(tmp$y.white)
-
-# ... distrbution of counts
-# overwhelmingly 1-2 per county
-summary(tmp$d.black)
-summary(tmp$d.white)
-
-plot(table(tmp$d.black))
-plot(table(tmp$d.white))
-
-# ... rate var by county
-dat1 = tmp %>%
-	   gather(y.race, y.rate, y.black: y.amind) %>%
-	   select(fips, y.race, y.rate, ur.code, division) %>%
-	   filter(y.race %in% c('y.black', 'y.white'))
-
-ggplot(dat1, aes(x = fips, y = log(y.rate), color = y.race)) +
-	geom_jitter(alpha = .35)  +
-	theme_bw() +
-	scale_color_brewer(palette = 'Set2') +
-	coord_flip() +
-	ylab('(log) Rate Killed')
+# tmp = tmp1 %>%
+# 	  filter(black >= 1000, white >= 1000)
+# 
+# # keep most observations, but still
+# sum(tmp$d.black)
+# sum(tmp$d.white)
+# 
+# # ... distrbution of rates 
+# summary(tmp$y.black)
+# summary(tmp$y.white)
+# 
+# # ... distrbution of counts
+# # overwhelmingly 1-2 per county
+# summary(tmp$d.black)
+# summary(tmp$d.white)
+# 
+# plot(table(tmp$d.black))
+# plot(table(tmp$d.white))
+# 
+# # ... rate var by county
+# dat1 = tmp %>%
+# 	   gather(y.race, y.rate, y.black: y.amind) %>%
+# 	   select(fips, y.race, y.rate, ur.code, division) %>%
+# 	   filter(y.race %in% c('y.black', 'y.white'))
+# 
+# ggplot(dat1, aes(x = fips, y = log(y.rate), color = y.race)) +
+# 	geom_jitter(alpha = .35)  +
+# 	theme_bw() +
+# 	scale_color_brewer(palette = 'Set2') +
+# 	coord_flip() +
+# 	ylab('(log) Rate Killed')
 
 # ... average rate by urban/rural type
-dat2 = tmp %>%
+dat2 = tmp1 %>%
 	   group_by(ur.code) %>% 
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.bw = y.black.mean/y.white.mean) %>%
-	   gather(rate, value, y.black.mean:y.white.mean)
+	   summarise(y.black.mean  = sum(d.black)/sum(black)*100000,
+	             y.latino.mean = sum(d.latino)/sum(latino)*100000,
+	  			     y.white.mean  = sum(d.white)/sum(white)*100000) %>%
+	   gather(rate, value, y.black.mean:y.white.mean )
 
 ggplot(dat2, aes(x = ur.code, y = value, color = rate, group = rate)) +
 	geom_point() +
@@ -127,37 +122,41 @@ ggplot(dat2, aes(x = ur.code, y = value, color = rate, group = rate)) +
 	theme_bw() +
 	scale_color_brewer(palette = 'Set2') +
 	xlab('CDC Code') +
-	ylab('Average Rate Killed, per 100,000')
+	ylab('Average Rate Killed, per 100,000')+
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))+
+  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
+
 
 # ... average rate by division 
-dat3 = tmp %>%
+dat3 = tmp1 %>%
 	   group_by(division) %>% 
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
-	   gather(rate, value, y.black.mean:y.white_minus_black)
+	   summarise(y.black.mean  = sum(d.black)/sum(black)*100000,
+	             y.latino.mean = sum(d.latino)/sum(latino)*100000,
+	  			     y.white.mean  = sum(d.white)/sum(white)*100000) %>%
+	   gather(rate, value, y.black.mean:y.white.mean)
 
-ggplot(filter(dat3, rate %in% c('y.black.mean', 'y.white.mean')),
+ggplot(filter(dat3),
 	aes(x = division, y = value, color = rate, group = rate)) +
 	geom_point(size = 4) +
-	geom_line(data = filter(dat3, rate %in% c('y.white_minus_black')), 
-			 aes(x = division, y = value), lwd = 1.5) +
 	theme_bw() +
 	scale_color_brewer(palette = 'Set2') +
+  geom_line()+
 	xlab('CDC Code') +
 	ylab('Average Rate Killed, per 100,000') +
-	geom_hline(yintercept = 0, lty = 'dashed')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))+
+  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity and region")
+```
 
+```{r, r, echo=FALSE, fig.height=9, fig.width=7}
 # ... average rate by interaction 
-dat4 = tmp %>%
+dat4 = tmp1 %>%
 	   group_by(ur.code, division) %>%
-	   summarise(y.black.mean  = mean(y.black,  na.rm = TRUE),
-	  			 y.white.mean  = mean(y.white,  na.rm = TRUE)) %>%
-	   mutate(y.white_minus_black = y.white.mean - y.black.mean) %>%
-	   gather(rate, value, y.black.mean:y.white_minus_black)
+	   summarise(y.black.mean  = sum(d.black)/sum(black)*100000,
+	             y.latino.mean = sum(d.latino)/sum(latino)*100000,
+	  			     y.white.mean  = sum(d.white)/sum(white)*100000) %>%
+	   gather(rate, value, y.black.mean:y.white.mean)
 
-region_uc_plot<-ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean')),
+ggplot(filter(dat4),
 	   aes(x = ur.code, y = value, group = rate, color = rate)) +
 	facet_wrap(~division) + 
 	geom_point(size = 2) +
@@ -165,12 +164,19 @@ region_uc_plot<-ggplot(filter(dat4, rate %in% c('y.black.mean', 'y.white.mean'))
 	#coord_flip() +
 	theme_bw() +
 	scale_color_brewer(palette = 'Set2') +
+  coord_cartesian(ylim=c(0, 20))+
 	xlab('CDC Code') +
 	ylab('Rate Killed, per 100,000') +
-	theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
+	theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 9))+
+  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 
 
+```
+
+Bayesian estimates
+
+```{r, echo=FALSE, message=FALSE, fig.height=9, fig.width=7}
 # z<-posterior_predict(blk.stan, newdata=tmp1)
 # 
 # ### plot mean ppd vs observed, looks alright
@@ -240,7 +246,8 @@ ggplot(plot.dat,
   xlab('CDC Code') +
   ylab('Rate Killed, per 100,000') + 
   ylim(0, 15)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+  theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 10))+
+  ggtitle("Posterior average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 ########### get posterior rate ratios
 bw.post<-bind_cols(ur.division, 
@@ -270,7 +277,8 @@ ggplot(plot.dat,
   ylab('Rate difference') + 
   geom_hline(yintercept=0, lty=2)+
   #coord_cartesian(ylim=c(0, 30))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+  theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 10))+
+  ggtitle("Posterior difference in average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 ######################
 ### Tables
@@ -316,17 +324,16 @@ tab.out<-cbind(maketable(post.blk.int, "Rate-Black"),
 names(tab.out)<-c("County Name", "Black", "Latino", "White")
 ```
 
-```{r, results="asis", message=FALSE}
+Here is a ridiculous table with posterior estimates of mortality by race, region and metro type.
+
+```{r, results="asis", message=FALSE, echo=FALSE}
 
 print(xtable(tab.out, 
-             caption="Estimates of mortality in police encounters by race/ethnicity, census region, and metro type"), 
+             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals"), 
       include.rownames=FALSE,
-      size="\\fontsize{8pt}{10pt}\\selectfont", 
-      caption.placement="top")
+      size="\\fontsize{9pt}{10pt}\\selectfont", 
+      caption.placement="top",
+      comment=FALSE
+      )
 
 ```
-
-# Discussion
-
-
-
