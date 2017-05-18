@@ -21,13 +21,13 @@ load("models.RData")
 # Abstract
 *Objective.* To estimate mortality for police-involved deaths by race and geography in the United States.
 
-*Methods.* We estimate mortality rates for deaths invovling police by race and by census region using data on all police-involved deaths between 2013 and 2017. We estimate multilevel Bayesian Poisson models that adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
+*Methods.* We estimate mortality rates for deaths involving police by race and by census region using data on all police-involved deaths between 2013 and 2017. We estimate multilevel Bayesian Poisson models that adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
 
 *Results.* Summarize mortality estimates. Summarize fit on observed. Summarize variation across places, races, metros. 
 
 *Conclusions.* Abrupt statement
 
-*Policy Implications.* Efforts to address should take race, place seriously. Clear mort risk for afam, treat as pub health prob
+*Policy Implications.* Efforts to address should take race, place seriously. Clear mort risk for PoC, treat as pub health problem
 
 # Introduction
 
@@ -66,7 +66,27 @@ $$ \Sigma \sim decov(1, 1, 1, 1) $$
 
 # Findings
 
-Raw estimates
+East North Central: WI, MI, IL, IN, OH
+
+East South Central: KY, TN, AL, MS
+
+Middle Atlantic: NY, PA, NJ
+
+Mountain: MT, ID, WY, NV, UT, CO, AZ, NM
+
+New England: ME, VT, NH, MA, CT, RI
+
+Pacific: AK, HI, WA, OR, CA
+
+South Atlantic: DE, MD, WV, VA, NC, SC, GA, FL
+
+West North Central: ND, SD, NE, KS, MN, IA, MO
+
+West South Central: OK, TX, AR, LA
+
+Big takeaway: the Bayesian predictive estimates smooth out the extremes in estimates from small population counties. They also provide more reasonably estimates for the counties with zero observed estimates. For reasonable estimates of population risk, these posterior estimates are superior to the frequentist alternative. 
+
+African Americans at much higher risk of mortality than are whites, risk is generally highest in medium metros, Pacific states. Latino risk also generally higher than white risk, very sensitive to division, highest in non-large metro counties, highest in non-core. 
 
 ```{r, echo=FALSE, message=FALSE}
 
@@ -137,7 +157,7 @@ dat3 = tmp1 %>%
 
 ggplot(filter(dat3),
 	aes(x = division, y = value, color = rate, group = rate)) +
-	geom_point(size = 4) +
+	geom_point() +
 	theme_bw() +
 	scale_color_brewer(palette = 'Set2') +
   geom_line()+
