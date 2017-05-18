@@ -17,6 +17,7 @@ library(rstanarm)
 library(dplyr)
 library(tidyr)
 library(xtable)
+setwd("D:/sync/police-mort")
 fdat<-read.csv("fe-clean.csv", stringsAsFactors = FALSE)
 # 2: configure data ...
 # ... attach fatal encounters data
