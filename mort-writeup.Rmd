@@ -5,11 +5,11 @@ date: "May 17, 2017"
 output: pdf_document
 ---
 ```{r setup, echo=FALSE, asis=TRUE, message=FALSE, warning=FALSE}
+library(MASS)
+
 library(ggplot2)
 library(readr)
 library(date)
-library(lme4)
-library(MASS)
 library(rstanarm)
 library(dplyr)
 library(tidyr)
