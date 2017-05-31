@@ -5,7 +5,10 @@ library(date)
 library(lubridate)
 library(data.table)
 library(stringr)
+library(tidyr)
 library(wru)
+
+setwd("C:/sync/police-mort/")
 
 fe<-fread("fatal-encounters-5-8-17.csv", header=TRUE)
 
@@ -146,7 +149,6 @@ fe$year<-as.numeric(paste("20", substrRight(as.character(fe$date), 2), sep=""))
 fe[which(fe$year==2100), "year"]<-2001
 
 fdat<-fe%>%select(name, age, gender, race, city, state, county, year)
-fdat<-fdat%>%filter(year>2012)
 
 
 #### create county index, then join. a straight join was producing duplicates
@@ -159,7 +161,8 @@ fdat<-fdat%>%filter(!(name=="Robert McAfee Jr"))
 ### prep for surname matching
 names.tmp<-fdat%>%mutate(county=substrRight(fips,3))
 #### extract surnames
-names.tmp<-names.tmp%>%extract(name, c("first.name", "surname"), "([^ ]+) (.*)")
+names.tmp<-names.tmp%>%
+  extract(name, c("first.name", "surname"), "([^ ]+) (.*)")
 ### remove jr, II, III, Sr. numerics are all for john does
 names.tmp$surname<-ifelse(grepl("jr.", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
 names.tmp$surname<-ifelse(grepl("jr", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
@@ -197,7 +200,38 @@ name_tmp1<-name_tmp1%>%select(-county, -sex, -pred.whi, -pred.bla, -pred.his, -p
 
 tmp<-bind_rows(fdat%>%filter(!(race=="Race unspecified"))%>%
                  select(-name), 
-               name_tmp1)
+               name_tmp1)%>%
+  filter(year>2012)
 
 write.csv(tmp, "fe-clean.csv", row.names = FALSE)
 write.csv(fdat, "fe-noimp.csv", row.names=FALSE)
+
+######################## make a file with complete case states
+### complete states per FE
+### http://www.fatalencounters.org/people-search/#namesearch
+
+complete_states<-c("AL", "AK", "AZ", "AR", "CA", "CO",
+                   "CT", "DE", "DC", "FL", "GA", "HI",
+                   "IA", "ID", "IL", "KS", "KY", "LA",
+                   "ME", "MA", "MN", "MS", "MO", "MT",
+                   "NE", "NV", "NH", "NM", "NY", "NC", 
+                   "ND", "OH", "OK", "OR", "RI", "SC",
+                   "SD", "TX", "UT", "VT", "WA", "WY")
+
+tmp<-bind_rows(fdat%>%filter(!(race=="Race unspecified"))%>%
+                 select(-name), 
+               name_tmp1)%>%
+  filter((state%in%complete_states)|(year>2012))%>%
+  filter(year!=2017)
+
+### do a ts plot for complete states to see if it looks right
+ggplot(tmp%>%
+         filter(state%in%complete_states)%>% 
+         group_by(state, year)%>%
+         summarise(deaths=n()), 
+       aes(x=year, y=deaths^(1/4))) + 
+  geom_line() +
+  facet_wrap(~state)
+
+write.csv(tmp, "fe-complete-states.csv", row.names=FALSE)
+  

@@ -1,6 +1,6 @@
 ---
 title: "Race, place, and deaths involving police"
-author: "Frank and Mike"
+author: "Frank Edwards, Mike Esposito and Hedy Lee"
 date: "May 17, 2017"
 output: pdf_document
 ---
@@ -23,7 +23,7 @@ load("models.RData")
 
 *Methods.* We estimate mortality rates for deaths involving police by race and by census region using data on all police-involved deaths between 2013 and 2017. We estimate multilevel Bayesian Poisson models that adjust for unobserved geographic characteristics and allow for more predictive precision for rare events, such as law enforcement deaths.
 
-*Results.* Summarize mortality estimates. Summarize fit on observed. Summarize variation across places, races, metros. 
+*Results.* Summarize mortality estimates. Summarize fit on observed. Summarize variation across places, races, metros.
 
 *Conclusions.* Abrupt statement
 
@@ -31,24 +31,40 @@ load("models.RData")
 
 # Introduction
 
-Violent and fatal interactions between law enforcement and people of color are a persistent feature of American social life [CITATIONS]. In spite of the well-documented shortcomings of federal efforts to systematically document deaths involving police [CITATIONS], newspapers and journalists have undertaken a series of systematic efforts to provide comprehensive data on fatalities resulting from interactions between police and the public [CITATIONS]. This analysis exploits these new data to provide estimates of mortality risk by race and geography. 
+Violent and fatal interactions between law enforcement and people of color are a persistent feature of American social life [@james_warfare_2007; @alang_police_2017]. In response to the shortcomings of federal efforts to systematically document deaths involving police [@krieger_police_2015], newspapers and journalists have undertaken a series of systematic efforts to provide comprehensive data on fatalities resulting from interactions between police and the public [@burghart_fatal_2015]. This analysis utilizes these new data to provide estimates of mortality risk from interactions with police by race and place. 
 
-Race, place, and policing are important social determinants of health [CITATIONS]. Prior research has clearly established that African Americans are at higher risk of death in interactions with law enforcement [] and has demonstrated clear links between race, place and health outcomes []. We contribute to this literature by illustrating how the risk of death in encounters with law enforcement systematically varies across places by race. In doing so, we illustrate how geography and race interact to produce distinctly higher risks for mortality in encounters with law enforcement for people of color.
-Using data from the *Fatal Encounters* database of deaths resulting from law enforcement action, we estimate mortality risks for Black, Latino, and white populations by census division and by metro type. 
+Race, place, and policing are important social determinants of health [@cooper_editorial_2016; @crosby_assessing_2016; @furtado_research_2016]. Prior research has clearly established that African Americans are at higher risk of death in interactions with law enforcement [@krieger_trends_2015; @wildeman_mortality_2016] and has demonstrated clear links between race, place and health outcomes [@dwyer-lindgren_inequalities_2017]. The legal, cultural, and institutional environments structuring relationships between police and communities of color are tightly coupled with geography. In this paper, we show how geography and race interact to produce variable risks for mortality in encounters with law enforcement for people of color.
 
 # Background
 
-What we know about prevalence of police shootings, likely sources of place variation
+Prior research suggests that MORTALITY = X.
+
+In multivariate analyses, researchers have found structural inequality as potential causes.
+
+Why place should matter - politics/institutions, culture/racism, structural ineq/demog.
+
+
+
+
+
+BJS estimates 1900 for may31-june 2016 - read those reports in more detail. talk abt cops+media+ME/C data as gold standard
+
+
+WHY WE HAVE SHITTY DATA. Sources and limitations
+
+We have lacked reliable national official data on deaths resulting from police action, in part because reporting to the federal government is voluntary, and police agencies have strong disincentives to report officer-involved deaths. DICRA makes reporting deaths in custody/arrest condition of DoJ funding (2014). New design, get prelim reports, survey departments after initial list, survey med examiners. 
+
 
 Concise lit review with no more than 35 references
 
-WHY WE HAVE SHITTY DATA
 
 # Data and Methods
 
-Data on police-involved deaths come from *Fatal Encounters*, is an effort to document episodes of fatal police-civilian interactions [CITATION]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in *Fatal Encounters* is broader than similar projects, such as *The Washington Post's* compilation of data on police shootings, has a greater temporal coverage than *The Guardian's* dataset on police-involved deaths, and has a greater geographic coverage than CDC MORT SYSTEM. In a recent report, the Bureau of Justice Statistics noted that the universe of cases included in *Fatal Encounters* provides the most comprehensive treatment of police-involved deaths, and closely matches the scope of the BJS's own *Arrest Related Deaths* data series. BJS has reported that the inclusion of data from this and other sources provides more reliable estimates of officer-involved mortality than does current federal data collection, which relies on voluntary reporting from law enforcement agencies. We calculate county-level mortality rates by race and ethnicity for the period between January 1, 2013 and May 8, 2017. We rely on data from the American Community Survey 5-year 2009 - 2014 population estimates for rate denominators of population by race, ethnicity and county [RUGGLES]. For geographic classification, we rely on the U.S. Census Bureau's 2010 state division classification (see Table X), and use the National Center for Health Statistics' 6 category urban-rural county classification scheme for all US counties.
+The U.S. Bureau of Justice Statistics (BJS) collects data on officer-involved fatalities through the Arrest-Related Deaths Program, but submissions from law enforcement agencies are voluntary and widely acknowledged to provide extreme undercounts of deaths involving police. *Public health scholars have used ME data, ER data, but limited coverage*. Journalists, activists and researchers have stepped in to fill this information gap by constructing a series of public datasets that count police-involved deaths using a combination of public records and media accounts. In response to the limits of official data, BJS has undertaken a redesign of the Arrest-Related Deaths Program that more closely matches the methodology of these public data collection projects. In a pilot report, BJS researchers identified *Fatal Encounters* as closely matching the 
 
-Because deaths in police custody are a relatively rare event ADD R TOTAL INCIDENCE RATE HERE, we construct regression models to pool power across data to provide predictions of mortality rates by race, by metropolitan status, and by region. These figures provide more reliable estimates of police mortality rates by adjusting for the rarity of this event in small population places. Race data are not completely reported in *Fatal Encounters*, because they are often excluded from news reports or public records. We use victim names and county of residence to predict victim race [@imai_improving_2016], only assigning race in cases with a 75 percent or higher posterior probability of membership, and leaving those cases with less than a 75 percent posterior probability of membership in any category unidentified (X percent of cases).
+Data on police-involved deaths come from *Fatal Encounters*, a project that seeks to document all episodes of fatal police-civilian interactions in the United States [@burghart_fatal_2015]. The project relies on contributions of professional and volunteer researchers, compiled from media reports and public records. The universe of cases in *Fatal Encounters* is broader than similar projects, such as *The Washington Post's* compilation of data on police shootings, has a greater temporal coverage than *The Guardian's* dataset on police-involved deaths, and has a greater geographic coverage than CDC MORT SYSTEM. We calculate county-level mortality rates by race and ethnicity for the period between January 1, 2013 and May 8, 2017. We rely on data from the American Community Survey 5-year 2009 - 2014 population estimates for rate denominators of population by race, ethnicity and county [RUGGLES]. For geographic classification, we rely on the U.S. Census Bureau's 2010 state division classification (see Table X), and use the National Center for Health Statistics' 6 category urban-rural county classification scheme for all US counties.
+
+Because deaths in police custody are a relatively rare event ADD TOTAL INCIDENCE RATE HERE, we construct regression models to pool power across data to provide predictions of mortality rates by race, by metropolitan status, and by region. These figures provide more reliable estimates of police mortality rates by adjusting for the rarity of this event in small population places. Race data are not completely reported in *Fatal Encounters*, because they are often excluded from news reports or public records. We use victim names and county of residence to predict victim race [@imai_improving_2016], only assigning race in cases with a 75 percent or higher posterior probability of membership, and leaving those cases with less than a 75 percent posterior probability of membership in any category unidentified (X percent of cases).
 
 We estimate multilevel Poisson regressions of police-involved deaths as a function of the race of the victim, metropolitan status, and region. We then estimate posterior predictive mortality rates for each subset of race by metropolitan status by region. While frequentist inferences may be appropriate for counties with large populations, they greatly distort estimates from places with small populations, where any incident can dramatically effect estimates of per capita rates. Bayesian predictive intervals provide more realistic estimates of population mortality rates, because they average over the instabilities that may occur as a result of idiosyncratic local or annual trends through large numbers of simulations. 
 
@@ -56,7 +72,7 @@ Why Bayes and regression? Tons of zeroes - these aren't actual indicators of zer
 
 Models:
 
-EXPLAIN PARAMETERIZATION, EXPLAIN PRIOR FOR b_0
+alpha (intercept prior) calculated from Krieger et al. 2015
 
 $$log(E(y|X)) = \beta_0 + \beta_1x + \gamma + \varepsilon + log(offset)$$
 $$\beta_0 \sim Normal(log(\alpha) - log(offset), 10) $$
@@ -65,6 +81,9 @@ $$ \gamma, \varepsilon \sim MVN(0, \Sigma) $$
 $$ \Sigma \sim decov(1, 1, 1, 1) $$
 
 # Findings
+
+Table on cause of death by region
+
 
 East North Central: WI, MI, IL, IN, OH
 
@@ -84,9 +103,11 @@ West North Central: ND, SD, NE, KS, MN, IA, MO
 
 West South Central: OK, TX, AR, LA
 
-Big takeaway: the Bayesian predictive estimates smooth out the extremes in estimates from small population counties. They also provide more reasonably estimates for the counties with zero observed estimates. For reasonable estimates of population risk, these posterior estimates are superior to the frequentist alternative. 
+Big takeaway: the posterior predictive estimates smooth out the extremes in estimates from small population counties. They also provide more reasonably estimates for the counties with zero observed estimates. For reasonable estimates of population risk, these posterior estimates are superior to the frequentist alternative. 
 
-African Americans at much higher risk of mortality than are whites, risk is generally highest in medium metros, Pacific states. Latino risk also generally higher than white risk, very sensitive to division, highest in non-large metro counties, highest in non-core. 
+African Americans at much higher risk of mortality than are whites, risk is generally highest in medium metros, Pacific states. Latino risk also generally higher than white risk, sensitive to division, highest in non-large metro counties, highest in non-core. 
+
+Place matters. Clear regional and metro differences. Pacific states have exceptionally high inequalities. Suggests that local culture, institutions, politics, and systems of structural inequality shape risk.  
 
 ```{r, echo=FALSE, message=FALSE}
 
@@ -144,7 +165,7 @@ ggplot(dat2, aes(x = ur.code, y = value, color = rate, group = rate)) +
 	xlab('CDC Code') +
 	ylab('Average Rate Killed, per 100,000')+
   theme(axis.text.x = element_text(angle = 75, hjust = 1))+
-  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
+  ggtitle("Observed mean mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 
 # ... average rate by division 
@@ -164,7 +185,7 @@ ggplot(filter(dat3),
 	xlab('CDC Code') +
 	ylab('Average Rate Killed, per 100,000') +
   theme(axis.text.x = element_text(angle = 75, hjust = 1))+
-  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity and region")
+  ggtitle("Observed mean mortality from interactions with law\nenforcement by race/ethnicity and region")
 ```
 
 ```{r, r, echo=FALSE, fig.height=9, fig.width=7}
@@ -188,7 +209,7 @@ ggplot(filter(dat4),
 	xlab('CDC Code') +
 	ylab('Rate Killed, per 100,000') +
 	theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 9))+
-  ggtitle("Average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
+  ggtitle("Observed mean mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 
 
@@ -267,7 +288,7 @@ ggplot(plot.dat,
   ylab('Rate Killed, per 100,000') + 
   ylim(0, 15)+
   theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 10))+
-  ggtitle("Posterior average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
+  ggtitle("Posterior mean mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 ########### get posterior rate ratios
 bw.post<-bind_cols(ur.division, 
@@ -298,7 +319,7 @@ ggplot(plot.dat,
   geom_hline(yintercept=0, lty=2)+
   #coord_cartesian(ylim=c(0, 30))+
   theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 10))+
-  ggtitle("Posterior difference in average rate of mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
+  ggtitle("Posterior difference in mean mortality from interactions with law\nenforcement by race/ethnicity, and metro type")
 
 ######################
 ### Tables
@@ -348,10 +369,10 @@ Here is a ridiculous table with posterior estimates of mortality by race, region
 
 ```{r, results="asis", message=FALSE, echo=FALSE}
 
-print(xtable(tab.out, 
-             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals"), 
+print(xtable(tab.out,
+             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals"),
       include.rownames=FALSE,
-      size="\\fontsize{9pt}{10pt}\\selectfont", 
+      size="\\fontsize{9pt}{10pt}\\selectfont",
       caption.placement="top",
       comment=FALSE
       )
