@@ -29,7 +29,7 @@ maketable<-function(x, label){
     tab$ur.code[i]<-simpleCap(tab$ur.code[i])
     tab$ur.code[i]<-paste(" -", tab$ur.code[i])
   }
-  tab[, 3:5]<-round(tab[, 3:5], 2)
+  tab[, 3:5]<-round(tab[, 3:5], 1)
   tab<-tab%>%mutate(value=paste(Median, " (", Lower, ", ", Upper, ")", sep=""))%>%
     select(-Median, -Lower, -Upper)
   div<-unique(tab$division)
@@ -77,17 +77,18 @@ post.wht.int = post.wht.int %>% mutate(race = 'White')
 post.lat<-posterior_predict(lat.stan, newdata=newdata)/1000
 post.lat.int<-bind_cols(ur.division,
                         as.data.frame(t(apply(post.lat, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
-post.lat.int = post.lat.int %>% mutate(race = 'Latino')
+post.lat.int = post.lat.int %>% mutate(race = 'Latinx')
 
 
-tab.out<-cbind(maketable(post.blk.int, "Rate-Black"),
-               maketable(post.lat.int, "Rate-Latino")[,2],
-               maketable(post.wht.int, "Rate-White")[,2])
-names(tab.out)<-c("County Name", "Black", "Latino", "White")
+tab.out<-cbind(maketable(post.blk.int, "Rate-Black")[, c(1,3)],
+               maketable(post.lat.int, "Rate-Latinx")[,3],
+               maketable(post.wht.int, "Rate-White")[,3])
+names(tab.out)<-c("County Name", "Black", "Latinx", "White")
 
 
 print(xtable(tab.out,
-             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals"),
+             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals",
+             digits=1),
       include.rownames=FALSE,
       caption.placement="top",
       type="html",
@@ -108,6 +109,9 @@ tabUR<-rbind(tabUR, c("Total", apply(tabUR[, 2:ncol(tabUR)], 2, sum)))
 names(tabUR)<-c("Division", "Large Central Metro", "Large Fringe Metro",
                 "Medium Metro", "Small Metro", "Micropolitan", "Noncore", "Total")
 
-tab.out<-xtable(tabUR, caption = "Police related fatalities in the U.S. by metro type and Census divsiion, 1/1/2013 - 5/8/2017")
+tab.out<-xtable(tabUR, 
+                digits=1,
+                caption = "Police related fatalities in the U.S. by metro type and Census divsiion, 1/1/2013 - 5/8/2017")
 print(tab.out, type="html", 
-      file="raw-counts.html")
+      file="raw-counts.html",
+      include.rownames=FALSE)
