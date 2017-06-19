@@ -14,6 +14,7 @@ library(rstanarm)
 library(dplyr)
 library(tidyr)
 library(xtable)
+library(pander)
 load("models.RData")
 
 ```
@@ -28,6 +29,15 @@ load("models.RData")
 *Conclusions.* Abrupt statement
 
 *Policy Implications.* Efforts to address should take race, place seriously. Clear mort risk for PoC, treat as pub health problem
+
+
+OUTLINE - 
+
+SINGLE FIGURE WITH RAW/SMOOTH
+
+TABLE WITH MODELED ESTIMATES - TABLE WITH RAW ESTIMATES AS APPENDIX
+
+FIGURE
 
 # Introduction
 
@@ -83,6 +93,13 @@ $$ \Sigma \sim decov(1, 1, 1, 1) $$
 # Findings
 
 Table on cause of death by region
+
+TABLE1 - COUNTS OF EVENTS BY UR, BY REGION
+FIG1 - RAW/SMOOTHED Pacific / East North Central
+FIG2 - HEATMAP
+FIG3 - DISPARITIES
+
+APPX1 - MODELED / RAW RATE ESTIMATES
 
 
 East North Central: WI, MI, IL, IN, OH
@@ -376,5 +393,26 @@ print(xtable(tab.out,
       caption.placement="top",
       comment=FALSE
       )
+
+```
+
+
+```{r Table 1, results="asis"}
+tabUR<-tmp2%>%group_by(ur.code, division)%>%
+  summarise(total=sum(d.total))%>%
+  spread(ur.code, total)
+
+tabUR$Total<-apply(tabUR[, 2:ncol(tabUR)], 1, sum)
+tabUR<-rbind(tabUR, c("Total", apply(tabUR[, 2:ncol(tabUR)], 2, sum)))
+
+names(tabUR)<-c("Division", "Large Central Metro", "Large Fringe Metro",
+                "Medium Metro", "Small Metro", "Micropolitan", "Noncore", "Total")
+
+tab.out<-xtable(tabUR, caption = "Police related fatalities in the U.S. by metro type and Census divsiion, 1/1/2013 - 5/8/2017")
+print(tab.out, type="html")
+
+
+#### also make an appx table for 
+
 
 ```
