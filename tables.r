@@ -1,5 +1,4 @@
 library(MASS)
-
 library(ggplot2)
 library(readr)
 library(date)
@@ -61,20 +60,20 @@ newdata<-tmp2[1:n,]
 newdata$fips<-0; newdata$tot.pop<-newdata$black<-newdata$white<-newdata$latino<-100000000; 
 newdata$ur.code<-ur.division$ur.code; newdata$division<-ur.division$division
 
-post.blk<-posterior_predict(blk.stan, newdata=newdata)/1000
+post.blk<-posterior_predict(blk.stan, newdata=newdata)/1000/(1588/365)
 post.blk.int<-bind_cols(ur.division, 
                         as.data.frame(t(apply(post.blk, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 post.blk.int = post.blk.int %>% mutate(race = 'Black')
 
 # .. whites 
-post.wht<-posterior_predict(wht.stan, newdata=newdata)/1000
+post.wht<-posterior_predict(wht.stan, newdata=newdata)/1000/(1588/365)
 post.wht.int<-bind_cols(ur.division, 
                         as.data.frame(t(apply(post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 
 post.wht.int = post.wht.int %>% mutate(race = 'White')
 
 # ... latinx 
-post.lat<-posterior_predict(lat.stan, newdata=newdata)/1000
+post.lat<-posterior_predict(lat.stan, newdata=newdata)/1000/(1588/365)
 post.lat.int<-bind_cols(ur.division,
                         as.data.frame(t(apply(post.lat, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 post.lat.int = post.lat.int %>% mutate(race = 'Latinx')
@@ -87,7 +86,7 @@ names(tab.out)<-c("County Name", "Black", "Latinx", "White")
 
 
 print(xtable(tab.out,
-             caption="Posterior police related mortality estimates by race/ethnicity, census region, and metro type, 95 percent credible intervals",
+             caption="Posterior estimates of annual police related mortality per 100,000 by race/ethnicity, census region, and metro type, 95 percent credible intervals",
              digits=1),
       include.rownames=FALSE,
       caption.placement="top",
@@ -104,6 +103,7 @@ tabUR<-tmp2%>%group_by(ur.code, division)%>%
   spread(ur.code, total)
 
 tabUR$Total<-apply(tabUR[, 2:ncol(tabUR)], 1, sum)
+
 tabUR<-rbind(tabUR, c("Total", apply(tabUR[, 2:ncol(tabUR)], 2, sum)))
 
 names(tabUR)<-c("Division", "Large Central Metro", "Large Fringe Metro",
@@ -114,4 +114,27 @@ tab.out<-xtable(tabUR,
                 caption = "Police related fatalities in the U.S. by metro type and Census divsiion, 1/1/2013 - 5/8/2017")
 print(tab.out, type="html", 
       file="raw-counts.html",
+      include.rownames=FALSE)
+
+tabrate<-tmp2%>%group_by(ur.code, division)%>%
+  summarise(total=sum(d.total)/sum(tot.pop)*100000/(1588/365))%>%
+  spread(ur.code, total)
+
+tabrateUR<-tmp2%>%group_by(ur.code)%>%
+  summarise(total=sum(d.total)/sum(tot.pop)*100000/(1588/365))
+
+tabrateDIV<-tmp2%>%group_by(division)%>%
+  summarise(total=sum(d.total)/sum(tot.pop)*100000/(1588/365))
+
+tabrate<-cbind(tabrate, tabrateDIV[,2])
+tabrate<-rbind(tabrate, c("total",t(tabrateUR[,2]), sum(tmp2$d.total)/sum(tmp2$tot.pop)*100000/(1588/365)))
+for(i in 2:ncol(tabrate)){
+  tabrate[,i]<-as.numeric(tabrate[,i])
+}
+
+tab.out<-xtable(tabrate, 
+       digits=2,
+       caption = "rates")
+print(tab.out, type="html", 
+      file="rates.html",
       include.rownames=FALSE)
