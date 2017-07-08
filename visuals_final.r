@@ -1,7 +1,7 @@
-#########################
-# Fatal Encounters Data
+##########################
+# Fatal Encounters Project
 # visuals, .R
-#########################
+##########################
 
 ## Set-up
 # 1: load packages; setwd etc. 
@@ -65,7 +65,7 @@ p.dat1 = post.estimates %>%
 		 mutate(type = 'estimated', 
 		 		ur.code  = as.character(ur.code), 
 		 		division = as.character(division)) %>%
-		 select(ur.code, division, rate, race, type)
+		 select(ur.code, division, rate, race, type) 
 
 # 5: get observed, average rates by race + county type + division
 p.dat2 = tmp2 %>%
@@ -79,10 +79,11 @@ p.dat2 = tmp2 %>%
 		 			   ifelse(rate == 'y.latino.mean', 'Latino', 'nah'))),
 		 	  	type = 'observed') %>%
 	   	select(ur.code, division, value, race, type) %>%
-	   	rename(rate = value) 
+	   	rename(rate = value)
 
-# 6: bind together estimated and observed rates
-p.dat = bind_rows(p.dat1, p.dat2)
+# 6: bind together estimated and observed rates and scale 
+p.dat = bind_rows(p.dat1, p.dat2) %>%
+		mutate_at(vars(rate), funs(./(1588/366)))
 
 # 7: plot 
 # ... set up plotting space for tiff image
@@ -105,10 +106,10 @@ ggplot(data = p.dat, aes(x = ur.code, y = rate)) +
   	scale_fill_brewer(palette  = 'Dark2') +
   	scale_color_brewer(palette = 'Paired') +
   	ylab('Rate') +
-  	xlab('Urban/Rural Category') + 
+  	xlab('Metro-Type') + 
   	theme_bw() +
   	scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
-  	coord_flip() 
+  	coord_flip()
  dev.off()
 
 ## Figure 2: rate ratio plot
@@ -132,6 +133,10 @@ plot.dat$division<-factor(plot.dat$division,
 plot.dat<-plot.dat[order(plot.dat$ur.code, plot.dat$division), ]
 names(plot.dat)[3:6]<-c("lwr", "Median", "upr", 'comparison')
 
+# scale
+plot.dat = plot.dat %>%
+		  mutate_at(vars(lwr:upr), funs(./(1588/366)))
+
 # 3: add indicator for whether interval includes 0
 plot.dat$CI_includes_0 = ifelse(between(0, plot.dat$lwr, 
 										   plot.dat$upr) == TRUE, 'yes', 'no')
@@ -153,6 +158,7 @@ ggplot(plot.dat,
   theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 9)) +
   geom_line()
 dev.off()
+
 
 
 
