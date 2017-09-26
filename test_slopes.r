@@ -18,3 +18,5 @@ lat.stan = stan_glmer(d.latino ~ ur.code + (1|division),
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
+
+save.image("slopes.RData")

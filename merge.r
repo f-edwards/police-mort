@@ -148,8 +148,12 @@ substrRight <- function(x, n){
 fe$year<-as.numeric(paste("20", substrRight(as.character(fe$date), 2), sep=""))
 fe[which(fe$year==2100), "year"]<-2001
 
-fdat<-fe%>%select(name, age, gender, race, city, state, county, year)
+fdat<-fe%>%
+  dplyr::select(name, age, gender, race, address, zip, city, state, county, year, cause)
 
+fdat$cause<-ifelse(fdat$cause == "Asph", "Asphyxiated/Restrained", 
+             ifelse(fdat$cause == "Asphyxiated/restrained", "Asphyxiated/Restrained",
+                    fdat$cause))
 
 #### create county index, then join. a straight join was producing duplicates
 c.index<-left_join(fdat%>%select(county, state), crosswalk)%>%rename(fips=fipscounty)%>%distinct()
@@ -203,8 +207,8 @@ tmp<-bind_rows(fdat%>%filter(!(race=="Race unspecified"))%>%
                name_tmp1)%>%
   filter(year>2012)
 
-write.csv(tmp, "fe-clean.csv", row.names = FALSE)
-write.csv(fdat, "fe-noimp.csv", row.names=FALSE)
+write.csv(tmp, "fe-clean-cause.csv", row.names = FALSE)
+write.csv(fdat, "fe-noimp-cause.csv", row.names=FALSE)
 
 ######################## make a file with complete case states
 ### complete states per FE
