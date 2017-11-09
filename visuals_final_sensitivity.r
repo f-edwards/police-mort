@@ -43,18 +43,21 @@ for(i in 1:3){
     blk.stan<-blk.stan.0
     wht.stan<-wht.stan.0
     lat.stan<-lat.stan.0
+    tot.stan<-tot.stan.0
   }
   
   if(i==2){
     blk.stan<-blk.stan.1
     wht.stan<-wht.stan.1
     lat.stan<-lat.stan.1
+    tot.stan<-tot.stan.1
   }
   
   if(i==3){
     blk.stan<-blk.stan.2
     wht.stan<-wht.stan.2
     lat.stan<-lat.stan.2
+    tot.stan<-tot.stan.2
   }
   
   # 2: estimate predictive posterior for each group 

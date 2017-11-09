@@ -21,9 +21,31 @@ library(gridExtra)
 library(data.table)
 
 select = dplyr::select
-setwd("~/HedyLee/NoBackup/esposm2ah")
-load("models.RData")
+load("models_sensitivity.RData")
 
+for(i in 1:3){
+  
+  ### set each run
+  if(i==1){
+    blk.stan<-blk.stan.0
+    wht.stan<-wht.stan.0
+    lat.stan<-lat.stan.0
+    tot.stan<-tot.stan.0
+  }
+  
+  if(i==2){
+    blk.stan<-blk.stan.1
+    wht.stan<-wht.stan.1
+    lat.stan<-lat.stan.1
+    tot.stan<-tot.stan.1
+  }
+  
+  if(i==3){
+    blk.stan<-blk.stan.2
+    wht.stan<-wht.stan.2
+    lat.stan<-lat.stan.2
+    tot.stan<-tot.stan.2
+  }
 
 ## Figure 1: violin plots of observed vs. estimated region variation
 # 1: set up scenarios for prediction 
@@ -206,7 +228,7 @@ library(RColorBrewer)
 my.cols = brewer.pal(8, "Set2")
 my.cols
 
-ggplot(data = a, aes(x = ur.code, y = rate)) +
+fig1<-ggplot(data = a, aes(x = ur.code, y = rate)) +
 	geom_boxplot(aes(x = ur.code, y = rate), alpha = 1, 
 					 outlier.colour = NULL, fill = my.cols[8]) +
 	geom_jitter(aes(y = rate, group = type, color = division), 
@@ -223,7 +245,8 @@ ggplot(data = a, aes(x = ur.code, y = rate)) +
   	theme_bw() +
   	#scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
   	theme(axis.text.x = element_text(angle=60, hjust=1)) +
-    theme(legend.position="bottom")
+    theme(legend.position="bottom")+
+  ggsave(paste("fig1_", i, ".png", sep=""))
 
 
 ## Figure 2:
@@ -279,4 +302,8 @@ ggplot(plot.dat2,
   #geom_line() +
   scale_size_discrete(range = c(5,2)) + 
   coord_flip() +
-  scale_x_discrete(limits = rev(levels(as.factor(plot.dat2$ur.code)))) 
+  scale_x_discrete(limits = rev(levels(as.factor(plot.dat2$ur.code))))+
+  ggsave(paste("fig2_", i, ".png", sep=""))
+
+
+}
