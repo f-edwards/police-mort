@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(MASS)\nlibrary(ggplot2)\nlibrary(readr)\nlibrary(rstanarm)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(xtable)\nload(\"models.RData\")\n\n#### compare estimated mortality rates by race, modeled and observed\n\n### observed\n\nprint(\"Total observed rate\")\nsum(tmp2$d.total)/sum(tmp2$tot.pop) * 100000 * (365/1588)\n\nprint(\"Black observed rate\")\nsum(tmp2$d.black)/sum(tmp2$black) * 100000 * (365/1588)\n\nprint(\"latino observed rate\")\nsum(tmp2$d.latino)/sum(tmp2$latino) * 100000 * (365/1588)\n\nprint(\"white observed rate\")\nsum(tmp2$d.white)/sum(tmp2$white) * 100000 * (365/1588)\n\n\npost.blk<-posterior_predict(blk.stan, newdata=tmp2)\npost.wht<-posterior_predict(wht.stan, newdata=tmp2)\npost.lat<-posterior_predict(lat.stan, newdata=tmp2)\npost.tot<-posterior_predict(tot.stan, newdata=tmp2)\n\npost.blk.medians<-as.vector(apply(post.blk, 2, median))\nplot(tmp2$d.black, post.blk.medians) #looks good to me\n\n### posterior predictions on counts using observed data - \n### normalized into posterior risk rates\n\nprint(\"Black lower, median, upper\")\n\npost.blk.nat<-as.vector(apply(post.blk,1,sum))\npost.blk.quantiles<-quantile(post.blk.nat, c(0.025, 0.5, .975))\n\nsum(post.blk.quantiles[1])/sum(tmp2$black)* 100000 * (365/1588)\nsum(post.blk.quantiles[2])/sum(tmp2$black)* 100000 * (365/1588)\nsum(post.blk.quantiles[3])/sum(tmp2$black)* 100000 * (365/1588)\n\n\nprint(\"Latino lower, median, upper\")\n\npost.lat.nat<-as.vector(apply(post.lat,1,sum))\npost.lat.quantiles<-quantile(post.lat.nat, c(0.025, 0.5, .975))\n\nsum(post.lat.quantiles[1])/sum(tmp2$latino)* 100000 * (365/1588)\nsum(post.lat.quantiles[2])/sum(tmp2$latino)* 100000 * (365/1588)\nsum(post.lat.quantiles[3])/sum(tmp2$latino)* 100000 * (365/1588)\n\nprint(\"white lower, median, upper\")\npost.wht.nat<-as.vector(apply(post.wht,1,sum))\npost.wht.quantiles<-quantile(post.wht.nat, c(0.025, 0.5, .975))\n\nsum(post.wht.quantiles[1])/sum(tmp2$white)* 100000 * (365/1588)\nsum(post.wht.quantiles[2])/sum(tmp2$white)* 100000 * (365/1588)\nsum(post.wht.quantiles[3])/sum(tmp2$white)* 100000 * (365/1588)\n\nprint(\"total lower, median, upper\")\npost.tot.nat<-as.vector(apply(post.tot,1,sum))\npost.tot.quantiles<-quantile(post.tot.nat, c(0.025, 0.5, .975))\n\nsum(post.tot.quantiles[1])/sum(tmp2$tot.pop)* 100000 * (365/1588)\nsum(post.tot.quantiles[2])/sum(tmp2$tot.pop)* 100000 * (365/1588)\nsum(post.tot.quantiles[3])/sum(tmp2$tot.pop)* 100000 * (365/1588)\n\n",
+    "created" : 1506438073348.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "136334482",
+    "id" : "E07E6B0E",
+    "lastKnownWriteTime" : 1506444311,
+    "last_content_update" : 1506444311092,
+    "path" : "C:/Users/fre9/Box Sync/police-mort/more_descriptives.r",
+    "project_path" : "more_descriptives.r",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
