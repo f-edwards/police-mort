@@ -21,31 +21,13 @@ library(gridExtra)
 library(data.table)
 
 select = dplyr::select
-load("models_sensitivity.RData")
+load("models.RData")
 
-for(i in 1:3){
-  
-  ### set each run
-  if(i==1){
-    blk.stan<-blk.stan.0
-    wht.stan<-wht.stan.0
-    lat.stan<-lat.stan.0
-    tot.stan<-tot.stan.0
-  }
-  
-  if(i==2){
-    blk.stan<-blk.stan.1
-    wht.stan<-wht.stan.1
-    lat.stan<-lat.stan.1
-    tot.stan<-tot.stan.1
-  }
-  
-  if(i==3){
-    blk.stan<-blk.stan.2
-    wht.stan<-wht.stan.2
-    lat.stan<-lat.stan.2
-    tot.stan<-tot.stan.2
-  }
+blk.stan<-blk.stan.0
+wht.stan<-wht.stan.0
+lat.stan<-lat.stan.0
+tot.stan<-tot.stan.0
+tmp2<-tmp2%>%as.data.frame()
 
 ## Figure 1: violin plots of observed vs. estimated region variation
 # 1: set up scenarios for prediction 
@@ -63,14 +45,45 @@ newdata$ur.code<-ur.division$ur.code; newdata$division<-ur.division$division
 
 # 2: estimate predictive posterior for each group 
 # ... {blk: black; wht: white; lat: latinx}
+# make a long file for ur.division
+
+post.tot = posterior_predict(tot.stan, newdata = newdata)/1000
+
 post.blk = posterior_predict(blk.stan, newdata = newdata)/1000
+
+post.blk.sims<-cbind(ur.division, t(post.blk))
+
+post.blk.sims<-gather(post.blk.sims, 
+                      key=sim, 
+                      value=sim.rate, 
+                      -ur.code, -division)
+
 post.wht = posterior_predict(wht.stan, newdata = newdata)/1000
+
+post.wht.sims<-cbind(ur.division, t(post.wht))
+
+post.wht.sims<-gather(post.wht.sims, 
+                      key=sim, 
+                      value=sim.rate, 
+                      -ur.code, -division)
+
 post.lat = posterior_predict(lat.stan, newdata = newdata)/1000
+
+post.lat.sims<-cbind(ur.division, t(post.lat))
+
+post.lat.sims<-gather(post.lat.sims, 
+                      key=sim, 
+                      value=sim.rate, 
+                      -ur.code, -division)
 
 # 3: calculate mean and 95% uncertainty intervals for each group 
 post.blk.int = bind_cols(ur.division, as.data.frame(
 	t(apply(post.blk, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 post.blk.int = post.blk.int %>% mutate(race = 'Black')
+
+post.tot.int = bind_cols(ur.division, as.data.frame(
+  t(apply(post.tot, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
+post.tot.int = post.tot.int %>% mutate(race = 'Total')
 
 post.wht.int = bind_cols(ur.division, as.data.frame(
 	t(apply(post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
@@ -108,8 +121,8 @@ p.dat2 = tmp2 %>%
 ## 6: bind together estimated and observed rates and scale 
 #p.dat = bind_rows(p.dat1, p.dat2) %>%
 #		mutate_at(vars(rate), funs(./(1588/366))) #%>% 
-##		mutate(ur.code = ifelse(ur.code == '1: large central metro', '1: L. Central', 
-##			         	 ifelse(ur.code == '2: large fringe metro',  '2: L. Fringe',
+##		mutate(ur.code = ifelse(ur.code == '1: large central metro', '1: Large Central', 
+##			         	 ifelse(ur.code == '2: large fringe metro',  '2: Large Fringe',
 ##			         	 ifelse(ur.code == '3: medium metro',  '3: Medium',
 ##			         	 ifelse(ur.code == '4: small metro',   '4: Small', 
 ##			         	 ifelse(ur.code == '5: micropolitan',  '5: Micro', '6: Noncore')))))) %>%
@@ -118,9 +131,9 @@ p.dat2 = tmp2 %>%
 ##				  	     ifelse(race    == 'Latino', 'Latinx', 'HEY'))))#
 
 ## 7: plot 
-## ... set up plotting space for tiff image
+## ... set up plotting space for tifff image
 #dev.off()
-#tiff("fig1_hq.tif", units="in", width=12, height = 7.5, res = 300)#
+#tifff("fig1_hq.tiff", units="in", width=12, height = 7.5, res = 300)#
 
 #ggplot(data = p.dat, aes(x = ur.code, y = rate)) +
 #	geom_boxplot(aes(x = ur.code, y = rate, fill = type), 
@@ -177,7 +190,7 @@ p.dat2 = tmp2 %>%
 
 ## 4: plot it out 
 #dev.off()
-#tiff("fig2_hq.tif", units="in", width=12, height=8.5, res=300)#
+#tifff("fig2_hq.tiff", units="in", width=12, height=8.5, res=300)#
 
 #ggplot(plot.dat,
 #  aes(x = ur.code, y = Median, group = comparison, color = comparison, 
@@ -208,7 +221,7 @@ p.dat2 = tmp2 %>%
 
 # 1: bind to
 p.dat = bind_rows(p.dat1, p.dat2) %>%
-		mutate_at(vars(rate), funs(./(1588/366))) 
+		mutate_at(vars(rate), funs(./(1588/365))) 
 
 
 # estimated: 
@@ -246,18 +259,18 @@ fig1<-ggplot(data = a, aes(x = ur.code, y = rate)) +
   	#scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
   	theme(axis.text.x = element_text(angle=60, hjust=1)) +
     theme(legend.position="bottom")+
-  ggsave(paste("fig1_", i, ".png", sep=""))
+  ggsave("fig1.tiff")
 
 
 ## Figure 2:
 # 1: calculate posterior rate ratios for (blk v wht) v. (lat v wht)
 bw.post = bind_cols(ur.division, as.data.frame(t(apply(
-	post.blk-post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
-bw.post$rate = "black/white"
+	post.blk/post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
+bw.post$rate = "Black/White"
 
 lw.post = bind_cols(ur.division, as.data.frame(t(apply(
 	post.lat/post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
-lw.post$rate = "latino/white"
+lw.post$rate = "Hispanic/White"
 
 # 2: get data ready for plotting 
 plot.dat = bind_rows(bw.post, lw.post)
@@ -276,7 +289,7 @@ names(plot.dat)[3:6]<-c("lwr", "Median", "upr", 'comparison')
 
 # 3: add indicator for whether interval includes 1
 plot.dat$CI_includes_1 = ifelse(between(1, plot.dat$lwr, 
-										   plot.dat$upr) == TRUE, 'yes', 'no')
+										   plot.dat$upr) == TRUE, 'Yes', 'No')
 
 plot.dat2 = 
 	plot.dat %>% 
@@ -285,25 +298,235 @@ plot.dat2 =
 			         ifelse(ur.code == '3: medium metro',  '3: Medium',
 			         ifelse(ur.code == '4: small metro',   '4: Small', 
 			         ifelse(ur.code == '5: micropolitan',  '5: Micro', '6: Noncore')))))) %>%
-	mutate(ci_includes_1 = ifelse(CI_includes_1 == 'no', 1.05, 1))
+	mutate(ci_includes_1 = ifelse(CI_includes_1 == 'no', 1.05, 1))%>%
+  rename(`Interval\nIncludes 1`=CI_includes_1)%>%
+  rename(Comparison=comparison)
 
 # 4: plot it out 
 
 ggplot(plot.dat2,
-  aes(x = ur.code, y = Median, group = comparison, color = comparison)) +
+  aes(x = ur.code, y = Median, group = Comparison, color = Comparison)) +
   facet_wrap(~division) + 
-  geom_point(aes(size = CI_includes_1), alpha = .75) + 
+  geom_point(aes(size = `Interval\nIncludes 1`), alpha = .75) + 
   scale_color_brewer(palette = 'Set2') +
   theme_bw() +
-  xlab('Metro-Type') +
-  ylab('Rate Ratio') + 
+  ylab("Mortality rate ratio") + 
+  xlab(" ")+
   geom_hline(yintercept = 1, lty = 2) +
   #theme(axis.text.x = element_text(angle = 75, hjust = 1, size = 9)) +
   #geom_line() +
   scale_size_discrete(range = c(5,2)) + 
   coord_flip() +
   scale_x_discrete(limits = rev(levels(as.factor(plot.dat2$ur.code))))+
-  ggsave(paste("fig2_", i, ".png", sep=""))
+  theme(legend.position="bottom")+
+  ggsave("fig2.tiff", width=6.5, height=6.5, units="in")
+
+###############################################################
+## Figure 3: difference between observed, median estimated
+# 1: calculate expected deaths from posterior, count observed deaths/pop
+# 2: lump divisions, UR using expected counts
+###############################################################
+#### make observed deaths, pop DF
+post.observed.blk<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.black),
+            observed.pop=sum(black))%>%
+  ungroup()
+
+post.observed.lat<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.latino),
+            observed.pop=sum(latino))%>%
+  ungroup()
+
+post.observed.wht<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.white),
+            observed.pop=sum(white))%>%
+  ungroup()
+
+#### pull full posterior sim results, convert into expected deaths to aggregate to ur, div
+blk.ur.post.mort<-post.observed.blk%>%
+  left_join(post.blk.sims)%>%
+  ungroup()%>%
+  select(-division)%>%
+  group_by(ur.code, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Black")
+
+lat.ur.post.mort<-post.observed.lat%>%
+  left_join(post.lat.sims)%>%
+  ungroup()%>%
+  select(-division)%>%
+  group_by(ur.code, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Hispanic")
+
+wht.ur.post.mort<-post.observed.wht%>%
+  left_join(post.wht.sims)%>%
+  ungroup()%>%
+  select(-division)%>%
+  group_by(ur.code, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="White")
+
+ur.post<-bind_rows(blk.ur.post.mort, 
+                  lat.ur.post.mort,
+                  wht.ur.post.mort)
+
+ur.post<-ur.post%>%
+  ungroup()%>%
+  mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(1588/365))) %>%
+  mutate(ur.code = ifelse(ur.code == '1: large central metro', '1: Large Central',
+                          ifelse(ur.code == '2: large fringe metro',  '2: Large Fringe',
+                                 ifelse(ur.code == '3: medium metro',  '3: Medium',
+                                        ifelse(ur.code == '4: small metro',   '4: Small',
+                                               ifelse(ur.code == '5: micropolitan',  '5: Micro', '6: Noncore'))))))
+
+blk.div.post.mort<-post.observed.blk%>%
+  left_join(post.blk.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(division, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Black")
+
+lat.div.post.mort<-post.observed.lat%>%
+  left_join(post.lat.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(division, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Hispanic")
+
+wht.div.post.mort<-post.observed.wht%>%
+  left_join(post.wht.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(division, sim)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="White")
+
+div.post<-bind_rows(blk.div.post.mort, 
+                   lat.div.post.mort,
+                   wht.div.post.mort)
+
+div.post <- div.post %>%
+  	mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(1588/365))) 
+
+#### plot it
+ggplot(ur.post, aes(sim.mort.rt, fill=Race))+
+  geom_density(alpha=0.6)+
+  geom_point(aes(x=obs.mort.rt, y=0, shape=Race), size=2)+
+  facet_wrap(~ur.code)+
+  xlab("Police-involved deaths per 100,000 per year")+
+  ylab("")+
+  coord_cartesian(xlim=c(0,2.5), ylim=c(0,10))+
+  theme(legend.position="bottom")+
+  ggsave("UR_Density.tiff",width=6.5, height=6.5, units="in")
+  
+ggplot(div.post, aes(sim.mort.rt, fill=Race))+
+  geom_density(alpha=0.6)+
+  geom_point(aes(x=obs.mort.rt, y=0, shape=Race), size=2)+
+  facet_wrap(~division)+
+  xlab("Police-involved deaths per 100,000 per year")+
+  ylab("")+
+  coord_cartesian(xlim=c(0,2.5), ylim=c(0,10))+
+  theme(legend.position="bottom")+
+  ggsave("Div_Density.tiff", width=6.5, height=6.5, units="in")
 
 
-}
+
+
+
+
+
+
+################# Quantile approach
+post.observed<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.total),
+            observed.pop=sum(tot.pop))%>%
+  left_join(post.tot.int)%>%
+  mutate(post.count.lower=`2.5%`*observed.pop/100000,
+         post.count.median=`50%`*observed.pop/100000,
+         post.count.upper=`97.5%`*observed.pop/100000)
+
+post.ur.tot<-post.observed%>%
+  group_by(ur.code)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000 / (1588/365),
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
+  mutate(race="Total")
+
+
+
+post.observed.blk<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.black),
+            observed.pop=sum(black))%>%
+  left_join(post.blk.int)%>%
+  mutate(post.count.lower=`2.5%`*observed.pop/100000,
+         post.count.median=`50%`*observed.pop/100000,
+         post.count.upper=`97.5%`*observed.pop/100000)
+
+post.ur.blk<-post.observed.blk%>%
+  group_by(ur.code)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
+  mutate(race="Black")
+
+post.div.blk<-post.observed.blk%>%
+  group_by(division)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000,
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000,
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000)%>%
+  mutate(race="Black")
+
+post.observed.wht<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.white),
+            observed.pop=sum(white))%>%
+  left_join(post.wht.int)%>%
+  mutate(post.count.lower=`2.5%`*observed.pop/100000,
+         post.count.median=`50%`*observed.pop/100000,
+         post.count.upper=`97.5%`*observed.pop/100000)
+
+post.ur.wht<-post.observed.wht%>%
+  group_by(ur.code)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
+  mutate(race="White")
+
+post.div.wht<-post.observed.wht%>%
+  group_by(ur.code)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000,
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000,
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000)%>%
+  mutate(race="White")
+
+post.observed.lat<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(observed.deaths=sum(d.latino),
+            observed.pop=sum(latino))%>%
+  left_join(post.lat.int)%>%
+  mutate(post.count.lower=`2.5%`*observed.pop/100000,
+         post.count.median=`50%`*observed.pop/100000,
+         post.count.upper=`97.5%`*observed.pop/100000)
+
+post.ur.lat<-post.observed.lat%>%
+  group_by(ur.code)%>%
+  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
+            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
+  mutate(race="Latino")
+# 
+# post.ur<-bind_rows(post.ur.blk, post.ur.wht, post.ur.lat)

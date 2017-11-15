@@ -17,7 +17,7 @@ library(rstanarm)
 library(dplyr)
 library(tidyr)
 library(xtable)
-load("models_sensitivity.RData")
+load("models.RData")
 
 #### compare estimated mortality rates by race, modeled and observed
 
@@ -34,30 +34,12 @@ print(sum(tmp2$d.latino)/sum(tmp2$latino) * 100000 * (365/1588))
 print("white observed rate")
 print(sum(tmp2$d.white)/sum(tmp2$white) * 100000 * (365/1588))
 
-for(i in 1:3){
-  
-  print(i)
-  
-  if(i==1){
+
     blk.stan<-blk.stan.0
     wht.stan<-wht.stan.0
     lat.stan<-lat.stan.0
     tot.stan<-tot.stan.0
-  }
   
-  if(i==2){
-    blk.stan<-blk.stan.1
-    wht.stan<-wht.stan.1
-    lat.stan<-lat.stan.1
-    tot.stan<-tot.stan.1
-  }
-  
-  if(i==3){
-    blk.stan<-blk.stan.2
-    wht.stan<-wht.stan.2
-    lat.stan<-lat.stan.2
-    tot.stan<-tot.stan.2
-  }
   
   
   post.blk<-posterior_predict(blk.stan, newdata=tmp2)
@@ -105,6 +87,25 @@ for(i in 1:3){
   print(sum(post.tot.quantiles[1])/sum(tmp2$tot.pop)* 100000 * (365/1588))
   print(sum(post.tot.quantiles[2])/sum(tmp2$tot.pop)* 100000 * (365/1588))
   print(sum(post.tot.quantiles[3])/sum(tmp2$tot.pop)* 100000 * (365/1588))
+  
+  print("Total estimated deaths 2015 pop")
+  (sum(post.tot.quantiles[1])/sum(tmp2$tot.pop) * (365/1588))*sum(tmp2$tot.pop)
+  (sum(post.tot.quantiles[3])/sum(tmp2$tot.pop) * (365/1588))*sum(tmp2$tot.pop)
+  
+  print(" Black estimated deaths 2015 pop")
+  (sum(post.blk.quantiles[1])/sum(tmp2$black)* (365/1588))*sum(tmp2$black)
+  (sum(post.blk.quantiles[3])/sum(tmp2$black)* (365/1588))*sum(tmp2$black)
+  
+  print(" Latino  estimated deaths 2015 pop")
 
-}
+  (sum(post.lat.quantiles[1])/sum(tmp2$latino)*  (365/1588))*sum(tmp2$latino)
+  (sum(post.lat.quantiles[3])/sum(tmp2$latino)*  (365/1588))*sum(tmp2$latino)
+  
+  print("White estimated deaths 2015 pop")
+
+  (sum(post.wht.quantiles[1])/sum(tmp2$white)*  (365/1588))*sum(tmp2$white)
+  (sum(post.wht.quantiles[3])/sum(tmp2$white)*  (365/1588))*sum(tmp2$white)
+  
+  
+
 ```

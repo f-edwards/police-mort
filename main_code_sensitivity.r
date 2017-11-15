@@ -133,92 +133,30 @@ tmp2<-tmp1
 ### VERY UNIFORMATIVE PRIOR
 #########################################
 
-tot.stan.0 = stan_glmer(d.total ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+tot.stan.0 = stan_glmer(d.total ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(tot.pop+1)), family="neg_binomial_2", iter=2000, chains=4)
 
 
 
-blk.stan.0 = stan_glmer(d.black ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.94)-log(100000)), 10), #for prior intercept, based on krieger estimates
+blk.stan.0 = stan_glmer(d.black ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.94)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                      data = tmp2, offset=I(log(black+1)), family="neg_binomial_2", iter=2000, chains=4)
 
-wht.stan.0 = stan_glmer(d.white ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+wht.stan.0 = stan_glmer(d.white ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=log(white), family="neg_binomial_2", iter=2000, chains=4)
 
-lat.stan.0 = stan_glmer(d.latino ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+lat.stan.0 = stan_glmer(d.latino ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
 
-save.image("models_sensitivity.RData")
-
-#########################################
-### KINDA UNIFORMATIVE PRIOR
-#########################################
-tot.stan.1 = stan_glmer(d.total ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 5), #for prior intercept, based on krieger estimates
-                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                      prior_covariance = decov(1, 1, 1, 1), #default
-                      data = tmp2, offset=I(log(tot.pop+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-
-
-blk.stan.1 = stan_glmer(d.black ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.94)-log(100000)), 5), #for prior intercept, based on krieger estimates
-                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                      prior_covariance = decov(1, 1, 1, 1), #default
-                      data = tmp2, offset=I(log(black+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-wht.stan.1 = stan_glmer(d.white ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 5), #for prior intercept, based on krieger estimates
-                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                      prior_covariance = decov(1, 1, 1, 1), #default
-                      data = tmp2, offset=log(white), family="neg_binomial_2", iter=2000, chains=4)
-
-lat.stan.1 = stan_glmer(d.latino ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 5), #for prior intercept, based on krieger estimates
-                      prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                      prior_covariance = decov(1, 1, 1, 1), #default
-                      data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-save.image("models_sensitivity.RData")
-
-#########################################
-### SOMEWHAT IFORMATIVE PRIOR
-#########################################
-tot.stan.2 = stan_glmer(d.total ~ ur.code + (1|division),
-                        prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
-                        prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                        prior_covariance = decov(1, 1, 1, 1), #default
-                        data = tmp2, offset=I(log(tot.pop+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-
-
-blk.stan.2 = stan_glmer(d.black ~ ur.code + (1|division),
-                        prior_intercept=normal((log(0.94)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
-                        prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                        prior_covariance = decov(1, 1, 1, 1), #default
-                        data = tmp2, offset=I(log(black+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-wht.stan.2 = stan_glmer(d.white ~ ur.code + (1|division),
-                        prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
-                        prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                        prior_covariance = decov(1, 1, 1, 1), #default
-                        data = tmp2, offset=log(white), family="neg_binomial_2", iter=2000, chains=4)
-
-lat.stan.2 = stan_glmer(d.latino ~ ur.code + (1|division),
-                        prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
-                        prior = normal(0, 2.5), #weakly informative, no difference from big urban
-                        prior_covariance = decov(1, 1, 1, 1), #default
-                        data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
-
-save.image("models_sensitivity.RData")
+save.image("models.RData")

@@ -129,226 +129,34 @@ tmp1 = left_join(pop, cdc, c('fips')) %>%
 
 tmp2<-tmp1
 
-# all= glmer.nb(d.total ~  ur.code + (1|division),
-#            data = tmp1, offset=log(tot.pop), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
-#                                                                                 optCtrl=list(maxfun=2e5)))
+#########################################
+### Relatively diffuse prior
+#########################################
 
-# all.stan = stan_glmer(d.black ~ ur.code + (1|division),
-#                       prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
-#                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
-#                       prior_covariance = decov(1, 1, 1, 1), #default
-#                       data = tmp2, offset=log(tot.pop), family="neg_binomial_2", iter=2000, chains=4)
-
-
-# blk = glmer.nb(d.black ~  ur.code + (1|division) + (1|fips),
-#            data = tmp1, offset=I(log(black+1)), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
-#                                                                                    optCtrl=list(maxfun=2e5)))
-
-tot.stan = stan_glmer(d.total ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+tot.stan.0 = stan_glmer(d.total ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(tot.pop+1)), family="neg_binomial_2", iter=2000, chains=4)
 
 
 
-blk.stan = stan_glmer(d.black ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.94)-log(100000)), 10), #for prior intercept, based on krieger estimates
+blk.stan.0 = stan_glmer(d.black ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.94)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                      data = tmp2, offset=I(log(black+1)), family="neg_binomial_2", iter=2000, chains=4)
 
-# wht = glmer.nb(d.white ~  ur.code + (1|division) + (1|fips),
-#                data = tmp1, offset=log(white), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
-#                                                                                   optCtrl=list(maxfun=2e5)))
-
-wht.stan = stan_glmer(d.white ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+wht.stan.0 = stan_glmer(d.white ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=log(white), family="neg_binomial_2", iter=2000, chains=4)
 
-# lat = glmer.nb(d.latino ~  ur.code + (1|division) + (1|fips),
-#                data = tmp1, offset=I(log(latino+1)), verbose=TRUE, control=glmerControl(optimizer="bobyqa",
-#                                                                                    optCtrl=list(maxfun=2e5)))
-
-lat.stan = stan_glmer(d.latino ~ ur.code + (1|division),
-                      prior_intercept=normal((log(0.37)-log(100000)), 10), #for prior intercept, based on krieger estimates
+lat.stan.0 = stan_glmer(d.latino ~ (1|ur.code) + (1|division),
+                      prior_intercept=normal((log(0.37)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(latino+1)), family="neg_binomial_2", iter=2000, chains=4)
 
 save.image("models.RData")
-
-
-
-### for natl descriptives
-###Population estimates, July 1, 2015, (V2015)321,418,820
-
-
-## ... populatuion counts 
-#tmp2 = left_join(fdat, cdc, 'fips') %>%
-#	   inner_join(regions, 'state') %>%
-#	   left_join(pop, 'fips') %>% 
-#	   rename(division = Division) %>%
-#	   select(fips, ur.code, division, white, black, amind, api, latino) %>%
-#	   distinct(.keep_all = TRUE) %>%
-#	   group_by(ur.code, division) %>%
-#	   mutate(cd_pop.black  = sum(black),
-#	   		  cd_pop.white  = sum(white),
-#	   		  cd_pop.latino = sum(latino),
-#	   		  cd_pop.api    = sum(api), 
-#	   		  cd_pop.amind  = sum(amind)) %>%
-#	   distinct(.keep_all = TRUE) %>%
-#	   select(ur.code, division, 9:13) %>%
-#	   arrange(ur.code, division) #
-
-## ... merge 
-#tmp = inner_join(tmp1, tmp2, c('ur.code', 'division')) %>%
-#	  spread(race, n) %>%
-#	  arrange(ur.code, division) %>%
-#	  rename(count.black  = `African-American/Black`,
-#	  		 count.white  = `European-American/White`,
-#	  		 count.latino = `Hispanic/Latino`,
-#	  		 count.amind  = `Native American/Alaskan`,
-#	  		 count.api    = `Asian/Pacific Islander`,
-#	  		 count.mid    = `Middle Eastern`,
-#	  		 count.na     = `Race unspecified`) %>%
-#	  mutate(y.black  = (count.black/cd_pop.black)*100000,
-#	  		 y.white  = (count.white/cd_pop.white)*100000,
-#	  		 y.latino = (count.latino/cd_pop.latino)*100000,
-#	  		 y.api    = (count.api/cd_pop.api)*100000,
-#	  		 y.amind  = (count.amind/cd_pop.amind)*100000) %>%
-#	  mutate(b.w = y.black/y.white) #
-
-#dat = tmp %>%
-#	  select(ur.code, division, count.black, count.white, y.black, y.white, )#
-
-### Analysis
-## 1: plot rates 
-#plotDat = tmp %>%
-#		  gather(race, rate, y.black:y.amind) %>%
-#		  mutate(rate = ifelse(is.na(rate), 0, rate))#
-
-#ggplot(plotDat, aes(y = rate, x = ur.code, group = race, 
-#					color = race)) +
-#	geom_point(alpha = .6, size = 4) +
-#	facet_wrap(~division) + 
-#	theme_bw() + 
-#	coord_flip() +
-#	ylab('Rate, per 100,000') +
-#	xlab('CDC Type') +
-#	scale_color_brewer(palette = 'Set2')#
-
-## 2: plot black rate/white rate
-#ggplot(tmp, aes(y = b.w, x = ur.code, group = division, color = division, 
-#				size = log(cd_pop.black))) +
-#	geom_point(alpha = .6, size = 4) + 
-#	theme_bw() + 
-#	#coord_flip() +
-#	#geom_smooth(se = FALSE) +
-#	ylab('B/W Rate') +
-#	xlab('CDC Type') #
-
-# 2: model
-
-
-#a = tmp1 %>%
-#	select(ur.code, race, count) %>% 
-#	distinct(.keep_all = TRUE)#
-#
-#
-
-## need the population of each ur.type#
-
-#a = tmp1 %>%
-#	ungroup() %>%
-#	group_by(ur.code) %>%
-#	mutate(ur.black = sum(black))#
-
-## ... gather county population numbers
-#tmp2 = tmp1 %>%
-#	   gather(c.race, c.pop, c(white, black, latino, amind, api)) %>%
-#	   gather(c.pop, value, c.pop) %>%
-#	   mutate(i.race = ifelse(race == 'African-American/Black',  'black',
-#	   				   ifelse(race == 'Asian/Pacific Islander',  'api',
-#	   				   ifelse(race == 'European-American/White', 'white',
-#	   				   ifelse(race == 'Native American/Alaskan', 'amind',
-#	   				   ifelse(race == 'Hispanic/Latino',         'latino', 'other')))))) %>%
-#	   ungroup() %>%
-#	   select(ur.code, i.race, count, c.race, c.pop, value, division)#
-#
-#
-
-##checks
-#filter(tmp1, fips == 1003)#
-
-#able(filter(fdat, fips == 1073)$race) #
-#
-
-#tmp2 = tmp1 %>% 
-#	   group_by(Division) %>%
-#	   summarise(black.d_pop  = sum(black,  na.rm = TRUE),
-#	   			 white.d_pop  = sum(white,  na.rm = TRUE),
-#	   			 latino.d_pop = sum(latino, na.rm = TRUE),
-#	   			 amind.d_pop  = sum(amind,  na.rm = TRUE), 
-#	   			 api.d_pop    = sum(api,    na.rm = TRUE))#
-
-#tmp = left_join(tmp1, tmp2, 'Division') #
-#
-#
-
-## ... get counts by county
-#hold = tmp %>% 
-#	   group_by(ur.code, race) %>%
-#	   select(ur.code, race) %>%
-#	   mutate(n = n())#
-
-#tmp.black = tmp %>%
-#			filter(race == 'African-American/Black') %>%
-#			select(race, county, ur.code, Division, black, black.d_pop) %>%
-#			mutate(n = n(),
-#				   countcount.off  = n/black,
-#				   divison.off = n/black.d_pop) %>%
-#			rename(pop = black,
-#				   black.d_pop = black_pop_division)#
-#
-
-#tmp.white = tmp %>%
-#			filter(race == 'European-American/White') %>%
-#			select(race, county, ur.code, Division, white, white.d_pop) %>%
-#			mutate(n = n(),
-#				   countcount.off  = n/white,
-#				   divison.off = n/white.d_pop) #
-
-#tmp.all = #
-#
-
-###########################
-###########################
-######### Analysis ########
-###########################
-############################
-
-### 1: EDA
-## 1a: cases by urban-rual
-#table(tmp$ur.code) %>% plot()#
-
-## 2a: ... by dividion 
-#table(tmp$Division) %>% plot()#
-
-## 3a: cases, by race, by urban-rual code x divison
-#pDat1 = tmp %>%
-#		select(race, ur.code, Division) %>%
-#		group_by(race, ur.code, Division) %>%
-#		summarise(n = n()) %>%
-#		mutate(ur.div = paste(ur.code, Division, sep = ',')) #
-
-#ggplot(pDat1, aes(x = ur.code, y = n, group = race, color = race)) +
-#	geom_jitter(size = 4, width = 0.5, alpha = .8) +
-#	theme_bw() +
-#	scale_color_brewer(palette = 'Set2') +
-#	facet_wrap(~ Division) +
-#	coord_flip()
-
-
