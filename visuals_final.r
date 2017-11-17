@@ -265,11 +265,11 @@ fig1<-ggplot(data = a, aes(x = ur.code, y = rate)) +
 ## Figure 2:
 # 1: calculate posterior rate ratios for (blk v wht) v. (lat v wht)
 bw.post = bind_cols(ur.division, as.data.frame(t(apply(
-	post.blk/post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
+	post.blk/post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 bw.post$rate = "Black/White"
 
 lw.post = bind_cols(ur.division, as.data.frame(t(apply(
-	post.lat/post.wht, 2, function(x)quantile(x, probs=c(0.05, 0.5, 0.95))))))
+	post.lat/post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
 lw.post$rate = "Hispanic/White"
 
 # 2: get data ready for plotting 

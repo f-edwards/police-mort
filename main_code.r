@@ -17,6 +17,7 @@ library(rstanarm)
 library(dplyr)
 library(tidyr)
 library(xtable)
+library(data.table)
 options(mc.cores = parallel::detectCores())
 
 fdat<-read.csv("fe-clean.csv", stringsAsFactors = FALSE)
@@ -32,7 +33,8 @@ fdat = fdat %>%
 	   	      year.death = year) %>%
 	   dplyr::select(-year) %>%
 	   mutate(race = ifelse(race == 'African-American/black', 
-	  							    'African-American/Black', race))
+	  							    'African-American/Black', race))%>%
+  filter(age>=18) # drop children for adult-only analysis
 
 # ... attach CDC urban-rual scheme
 cdc = read_fwf(file = 'NCHSURCodes2013.txt', 
@@ -82,6 +84,41 @@ cw<-read.csv("fips-st-crosswalk.csv", stringsAsFactors = FALSE)%>%
 pop<-left_join(pop, cw)%>%
   dplyr::select(-fips.st)
 
+pop2<-fread("nhgis0028_ds216_20155_2015_county.csv")
+pop2<-pop2%>%
+  mutate(fips=as.numeric(paste(STATEA, COUNTYA, sep="")))%>%
+  mutate(black.adult=ADT5E007+ADT5E008+ADT5E009+
+           ADT5E010+ADT5E011+ADT5E012+ADT5E013+
+           ADT5E014+ADT5E015+ADT5E016+
+           ADT5E022+ADT5E023+ADT5E024+
+           ADT5E025+ADT5E026+ADT5E027+
+           ADT5E028+ADT5E029+ADT5E030+ADT5E031,
+         white.adult=ADUBE007+ADUBE008+ADUBE009+
+           ADUBE010+ADUBE011+ADUBE012+ADUBE013+
+           ADUBE014+ADUBE015+ADUBE016+
+           ADUBE022+ADUBE023+ADUBE024+
+           ADUBE025+ADUBE026+ADUBE027+
+           ADUBE028+ADUBE029+ADUBE030+ADUBE031,
+         latino.adult=ADUCE007+ADUCE008+ADUCE009+
+           ADUCE010+ADUCE011+ADUCE012+ADUCE013+
+           ADUCE014+ADUCE015+ADUCE016+
+           ADUCE022+ADUCE023+ADUCE024+
+           ADUCE025+ADUCE026+ADUCE027+
+           ADUCE028+ADUCE029+ADUCE030+ADUCE031,
+         child.pop=ADYIE001)%>%
+  select(fips, black.adult, white.adult, latino.adult, child.pop)
+
+#### change pop measures to adults
+
+pop<-pop%>%
+  left_join(pop2)%>%
+  mutate(tot.pop=tot.pop-child.pop,
+         latino=latino.adult,
+         white=white.adult,
+         black=black.adult)%>%
+  select(fips, tot.pop, latino, white, black, state)
+
+
 fdat$fips<-ifelse((fdat$county=="shannon county")&(fdat$state=="SD"), 46102, fdat$fips)
 fdat$fips<-ifelse((fdat$city=="Chevak")&(fdat$state=="AK"), 2158, fdat$fips)
 
@@ -89,14 +126,14 @@ fdat$fips<-ifelse((fdat$city=="Chevak")&(fdat$state=="AK"), 2158, fdat$fips)
 #z<-which(!(fdat$fips%in%pop$fips))
 
 ### rewrite for inclusion of all US counties - current setup miscalculates low pop based on zeroes in the data
-tmp1 = left_join(pop, cdc, c('fips')) %>%
+tmp2 = left_join(pop, cdc, c('fips')) %>%
 	   full_join(fdat, c('fips', 'state')) %>%
 	   left_join(regions, 'state') %>% 
 	   filter(!is.na(ur.code)) %>%
 	   rename(division = Division) %>%
 	   group_by(fips, race) %>%
 	   mutate(d.count = n()) %>%
-	   dplyr::select(fips, ur.code, division, race, d.count, tot.pop, latino, white, black, amind, api) %>%
+	   dplyr::select(fips, ur.code, division, race, d.count, tot.pop, latino, white, black) %>%
 	   arrange(fips, race) %>%
 	   ungroup() %>%
 	   distinct() %>%
@@ -127,7 +164,6 @@ tmp1 = left_join(pop, cdc, c('fips')) %>%
 ### use white for all, use white for latino
 
 
-tmp2<-tmp1
 
 #########################################
 ### Relatively diffuse prior

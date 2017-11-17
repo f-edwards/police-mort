@@ -1,0 +1,449 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0029_ds216_20155_2015_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2011-2015
+Geographic level: County (by State)
+Dataset:          2015 American Community Survey: 5-Year Data [2011-2015, Tracts & Larger Areas]
+   NHGIS code:    2011_2015_ACS5b
+   NHGIS ID:      ds216
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+Data type(s):     (E) Estimates
+                  (M) Margins of error
+ 
+Tables:
+ 
+1. Sex by Age (Black or African American Alone)
+   Universe:    Black or African American alone
+   Source code: B01001B
+   NHGIS code:  ADT5
+ 
+2. Sex by Age (White Alone, Not Hispanic or Latino)
+   Universe:    White alone, not Hispanic or Latino population
+   Source code: B01001H
+   NHGIS code:  ADUB
+ 
+3. Sex by Age (Hispanic or Latino)
+   Universe:    Hispanic or Latino population
+   Source code: B01001I
+   NHGIS code:  ADUC
+ 
+4. Sex by Age by Nativity and Citizenship Status
+   Universe:    Total population
+   Source code: B05003
+   NHGIS code:  ADUR
+ 
+5. Population Under 18 Years by Age
+   Universe:    Population under 18 years
+   Source code: B09001
+   NHGIS code:  ADYI
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTY:      County Name
+        COUNTYA:     County Code
+        COUSUBA:     County Subdivision Code
+        PLACEA:      Place Code
+        TRACTA:      Census Tract Code
+        CONCITA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Area/Alaska Native Area (Reservation or Statistical Entity Only) Code
+        TRUSTA:      American Indian Area (Off-Reservation Trust Land Only)/Hawaiian Home Land Code
+        AITSCEA:     Tribal Subdivision/Remainder Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        CBSAA:       Metropolitan Statistical Area/Micropolitan Statistical Area Code
+        CSAA:        Combined Statistical Area Code
+        METDIVA:     Metropolitan Division Code
+        NECTAA:      New England City and Town Area Code
+        CNECTAA:     Combined New England City and Town Area Code
+        NECTADIVA:   New England City and Town Area Division Code
+        UAA:         Urban Area Code
+        CDCURRA:     Congressional District (2013-2017, 113th-114th Congress) Code
+        SLDUA:       State Legislative District (Upper Chamber) Code
+        SLDLA:       State Legislative District (Lower Chamber) Code
+        ZCTA5A:      5-Digit ZIP Code Tabulation Area Code
+        SUBMCDA:     Subminor Civil Division Code
+        SDELMA:      School District (Elementary)/Remainder Code
+        SDSECA:      School District (Secondary)/Remainder Code
+        SDUNIA:      School District (Unified)/Remainder Code
+        PUMA5A:      Public Use Microdata Sample Area (PUMA) Code
+        BTTRA:       Tribal Census Tract Code
+ 
+Data Type (E):
+    Estimates
+ 
+        NAME_E:      Area Name
+ 
+    Table 1:     Sex by Age (Black or African American Alone)
+    Universe:    Black or African American alone
+    Source code: B01001B
+    NHGIS code:  ADT5
+        ADT5E001:    Total
+        ADT5E002:    Male
+        ADT5E003:    Male: Under 5 years
+        ADT5E004:    Male: 5 to 9 years
+        ADT5E005:    Male: 10 to 14 years
+        ADT5E006:    Male: 15 to 17 years
+        ADT5E007:    Male: 18 and 19 years
+        ADT5E008:    Male: 20 to 24 years
+        ADT5E009:    Male: 25 to 29 years
+        ADT5E010:    Male: 30 to 34 years
+        ADT5E011:    Male: 35 to 44 years
+        ADT5E012:    Male: 45 to 54 years
+        ADT5E013:    Male: 55 to 64 years
+        ADT5E014:    Male: 65 to 74 years
+        ADT5E015:    Male: 75 to 84 years
+        ADT5E016:    Male: 85 years and over
+        ADT5E017:    Female
+        ADT5E018:    Female: Under 5 years
+        ADT5E019:    Female: 5 to 9 years
+        ADT5E020:    Female: 10 to 14 years
+        ADT5E021:    Female: 15 to 17 years
+        ADT5E022:    Female: 18 and 19 years
+        ADT5E023:    Female: 20 to 24 years
+        ADT5E024:    Female: 25 to 29 years
+        ADT5E025:    Female: 30 to 34 years
+        ADT5E026:    Female: 35 to 44 years
+        ADT5E027:    Female: 45 to 54 years
+        ADT5E028:    Female: 55 to 64 years
+        ADT5E029:    Female: 65 to 74 years
+        ADT5E030:    Female: 75 to 84 years
+        ADT5E031:    Female: 85 years and over
+ 
+    Table 2:     Sex by Age (White Alone, Not Hispanic or Latino)
+    Universe:    White alone, not Hispanic or Latino population
+    Source code: B01001H
+    NHGIS code:  ADUB
+        ADUBE001:    Total
+        ADUBE002:    Male
+        ADUBE003:    Male: Under 5 years
+        ADUBE004:    Male: 5 to 9 years
+        ADUBE005:    Male: 10 to 14 years
+        ADUBE006:    Male: 15 to 17 years
+        ADUBE007:    Male: 18 and 19 years
+        ADUBE008:    Male: 20 to 24 years
+        ADUBE009:    Male: 25 to 29 years
+        ADUBE010:    Male: 30 to 34 years
+        ADUBE011:    Male: 35 to 44 years
+        ADUBE012:    Male: 45 to 54 years
+        ADUBE013:    Male: 55 to 64 years
+        ADUBE014:    Male: 65 to 74 years
+        ADUBE015:    Male: 75 to 84 years
+        ADUBE016:    Male: 85 years and over
+        ADUBE017:    Female
+        ADUBE018:    Female: Under 5 years
+        ADUBE019:    Female: 5 to 9 years
+        ADUBE020:    Female: 10 to 14 years
+        ADUBE021:    Female: 15 to 17 years
+        ADUBE022:    Female: 18 and 19 years
+        ADUBE023:    Female: 20 to 24 years
+        ADUBE024:    Female: 25 to 29 years
+        ADUBE025:    Female: 30 to 34 years
+        ADUBE026:    Female: 35 to 44 years
+        ADUBE027:    Female: 45 to 54 years
+        ADUBE028:    Female: 55 to 64 years
+        ADUBE029:    Female: 65 to 74 years
+        ADUBE030:    Female: 75 to 84 years
+        ADUBE031:    Female: 85 years and over
+ 
+    Table 3:     Sex by Age (Hispanic or Latino)
+    Universe:    Hispanic or Latino population
+    Source code: B01001I
+    NHGIS code:  ADUC
+        ADUCE001:    Total
+        ADUCE002:    Male
+        ADUCE003:    Male: Under 5 years
+        ADUCE004:    Male: 5 to 9 years
+        ADUCE005:    Male: 10 to 14 years
+        ADUCE006:    Male: 15 to 17 years
+        ADUCE007:    Male: 18 and 19 years
+        ADUCE008:    Male: 20 to 24 years
+        ADUCE009:    Male: 25 to 29 years
+        ADUCE010:    Male: 30 to 34 years
+        ADUCE011:    Male: 35 to 44 years
+        ADUCE012:    Male: 45 to 54 years
+        ADUCE013:    Male: 55 to 64 years
+        ADUCE014:    Male: 65 to 74 years
+        ADUCE015:    Male: 75 to 84 years
+        ADUCE016:    Male: 85 years and over
+        ADUCE017:    Female
+        ADUCE018:    Female: Under 5 years
+        ADUCE019:    Female: 5 to 9 years
+        ADUCE020:    Female: 10 to 14 years
+        ADUCE021:    Female: 15 to 17 years
+        ADUCE022:    Female: 18 and 19 years
+        ADUCE023:    Female: 20 to 24 years
+        ADUCE024:    Female: 25 to 29 years
+        ADUCE025:    Female: 30 to 34 years
+        ADUCE026:    Female: 35 to 44 years
+        ADUCE027:    Female: 45 to 54 years
+        ADUCE028:    Female: 55 to 64 years
+        ADUCE029:    Female: 65 to 74 years
+        ADUCE030:    Female: 75 to 84 years
+        ADUCE031:    Female: 85 years and over
+ 
+    Table 4:     Sex by Age by Nativity and Citizenship Status
+    Universe:    Total population
+    Source code: B05003
+    NHGIS code:  ADUR
+        ADURE001:    Total
+        ADURE002:    Male
+        ADURE003:    Male: Under 18 years
+        ADURE004:    Male: Under 18 years: Native
+        ADURE005:    Male: Under 18 years: Foreign born
+        ADURE006:    Male: Under 18 years: Foreign born: Naturalized U.S. citizen
+        ADURE007:    Male: Under 18 years: Foreign born: Not a U.S. citizen
+        ADURE008:    Male: 18 years and over
+        ADURE009:    Male: 18 years and over: Native
+        ADURE010:    Male: 18 years and over: Foreign born
+        ADURE011:    Male: 18 years and over: Foreign born: Naturalized U.S. citizen
+        ADURE012:    Male: 18 years and over: Foreign born: Not a U.S. citizen
+        ADURE013:    Female
+        ADURE014:    Female: Under 18 years
+        ADURE015:    Female: Under 18 years: Native
+        ADURE016:    Female: Under 18 years: Foreign born
+        ADURE017:    Female: Under 18 years: Foreign born: Naturalized U.S. citizen
+        ADURE018:    Female: Under 18 years: Foreign born: Not a U.S. citizen
+        ADURE019:    Female: 18 years and over
+        ADURE020:    Female: 18 years and over: Native
+        ADURE021:    Female: 18 years and over: Foreign born
+        ADURE022:    Female: 18 years and over: Foreign born: Naturalized U.S. citizen
+        ADURE023:    Female: 18 years and over: Foreign born: Not a U.S. citizen
+ 
+    Table 5:     Population Under 18 Years by Age
+    Universe:    Population under 18 years
+    Source code: B09001
+    NHGIS code:  ADYI
+        ADYIE001:    Total
+        ADYIE002:    In households
+        ADYIE003:    In households: Under 3 years
+        ADYIE004:    In households: 3 and 4 years
+        ADYIE005:    In households: 5 years
+        ADYIE006:    In households: 6 to 8 years
+        ADYIE007:    In households: 9 to 11 years
+        ADYIE008:    In households: 12 to 14 years
+        ADYIE009:    In households: 15 to 17 years
+        ADYIE010:    In group quarters
+ 
+Data Type (M):
+    Margins of error
+ 
+        NAME_M:      Area Name
+ 
+    Table 1:     Sex by Age (Black or African American Alone)
+    Universe:    Black or African American alone
+    Source code: B01001B
+    NHGIS code:  ADT5
+        ADT5M001:    Total
+        ADT5M002:    Male
+        ADT5M003:    Male: Under 5 years
+        ADT5M004:    Male: 5 to 9 years
+        ADT5M005:    Male: 10 to 14 years
+        ADT5M006:    Male: 15 to 17 years
+        ADT5M007:    Male: 18 and 19 years
+        ADT5M008:    Male: 20 to 24 years
+        ADT5M009:    Male: 25 to 29 years
+        ADT5M010:    Male: 30 to 34 years
+        ADT5M011:    Male: 35 to 44 years
+        ADT5M012:    Male: 45 to 54 years
+        ADT5M013:    Male: 55 to 64 years
+        ADT5M014:    Male: 65 to 74 years
+        ADT5M015:    Male: 75 to 84 years
+        ADT5M016:    Male: 85 years and over
+        ADT5M017:    Female
+        ADT5M018:    Female: Under 5 years
+        ADT5M019:    Female: 5 to 9 years
+        ADT5M020:    Female: 10 to 14 years
+        ADT5M021:    Female: 15 to 17 years
+        ADT5M022:    Female: 18 and 19 years
+        ADT5M023:    Female: 20 to 24 years
+        ADT5M024:    Female: 25 to 29 years
+        ADT5M025:    Female: 30 to 34 years
+        ADT5M026:    Female: 35 to 44 years
+        ADT5M027:    Female: 45 to 54 years
+        ADT5M028:    Female: 55 to 64 years
+        ADT5M029:    Female: 65 to 74 years
+        ADT5M030:    Female: 75 to 84 years
+        ADT5M031:    Female: 85 years and over
+ 
+    Table 2:     Sex by Age (White Alone, Not Hispanic or Latino)
+    Universe:    White alone, not Hispanic or Latino population
+    Source code: B01001H
+    NHGIS code:  ADUB
+        ADUBM001:    Total
+        ADUBM002:    Male
+        ADUBM003:    Male: Under 5 years
+        ADUBM004:    Male: 5 to 9 years
+        ADUBM005:    Male: 10 to 14 years
+        ADUBM006:    Male: 15 to 17 years
+        ADUBM007:    Male: 18 and 19 years
+        ADUBM008:    Male: 20 to 24 years
+        ADUBM009:    Male: 25 to 29 years
+        ADUBM010:    Male: 30 to 34 years
+        ADUBM011:    Male: 35 to 44 years
+        ADUBM012:    Male: 45 to 54 years
+        ADUBM013:    Male: 55 to 64 years
+        ADUBM014:    Male: 65 to 74 years
+        ADUBM015:    Male: 75 to 84 years
+        ADUBM016:    Male: 85 years and over
+        ADUBM017:    Female
+        ADUBM018:    Female: Under 5 years
+        ADUBM019:    Female: 5 to 9 years
+        ADUBM020:    Female: 10 to 14 years
+        ADUBM021:    Female: 15 to 17 years
+        ADUBM022:    Female: 18 and 19 years
+        ADUBM023:    Female: 20 to 24 years
+        ADUBM024:    Female: 25 to 29 years
+        ADUBM025:    Female: 30 to 34 years
+        ADUBM026:    Female: 35 to 44 years
+        ADUBM027:    Female: 45 to 54 years
+        ADUBM028:    Female: 55 to 64 years
+        ADUBM029:    Female: 65 to 74 years
+        ADUBM030:    Female: 75 to 84 years
+        ADUBM031:    Female: 85 years and over
+ 
+    Table 3:     Sex by Age (Hispanic or Latino)
+    Universe:    Hispanic or Latino population
+    Source code: B01001I
+    NHGIS code:  ADUC
+        ADUCM001:    Total
+        ADUCM002:    Male
+        ADUCM003:    Male: Under 5 years
+        ADUCM004:    Male: 5 to 9 years
+        ADUCM005:    Male: 10 to 14 years
+        ADUCM006:    Male: 15 to 17 years
+        ADUCM007:    Male: 18 and 19 years
+        ADUCM008:    Male: 20 to 24 years
+        ADUCM009:    Male: 25 to 29 years
+        ADUCM010:    Male: 30 to 34 years
+        ADUCM011:    Male: 35 to 44 years
+        ADUCM012:    Male: 45 to 54 years
+        ADUCM013:    Male: 55 to 64 years
+        ADUCM014:    Male: 65 to 74 years
+        ADUCM015:    Male: 75 to 84 years
+        ADUCM016:    Male: 85 years and over
+        ADUCM017:    Female
+        ADUCM018:    Female: Under 5 years
+        ADUCM019:    Female: 5 to 9 years
+        ADUCM020:    Female: 10 to 14 years
+        ADUCM021:    Female: 15 to 17 years
+        ADUCM022:    Female: 18 and 19 years
+        ADUCM023:    Female: 20 to 24 years
+        ADUCM024:    Female: 25 to 29 years
+        ADUCM025:    Female: 30 to 34 years
+        ADUCM026:    Female: 35 to 44 years
+        ADUCM027:    Female: 45 to 54 years
+        ADUCM028:    Female: 55 to 64 years
+        ADUCM029:    Female: 65 to 74 years
+        ADUCM030:    Female: 75 to 84 years
+        ADUCM031:    Female: 85 years and over
+ 
+    Table 4:     Sex by Age by Nativity and Citizenship Status
+    Universe:    Total population
+    Source code: B05003
+    NHGIS code:  ADUR
+        ADURM001:    Total
+        ADURM002:    Male
+        ADURM003:    Male: Under 18 years
+        ADURM004:    Male: Under 18 years: Native
+        ADURM005:    Male: Under 18 years: Foreign born
+        ADURM006:    Male: Under 18 years: Foreign born: Naturalized U.S. citizen
+        ADURM007:    Male: Under 18 years: Foreign born: Not a U.S. citizen
+        ADURM008:    Male: 18 years and over
+        ADURM009:    Male: 18 years and over: Native
+        ADURM010:    Male: 18 years and over: Foreign born
+        ADURM011:    Male: 18 years and over: Foreign born: Naturalized U.S. citizen
+        ADURM012:    Male: 18 years and over: Foreign born: Not a U.S. citizen
+        ADURM013:    Female
+        ADURM014:    Female: Under 18 years
+        ADURM015:    Female: Under 18 years: Native
+        ADURM016:    Female: Under 18 years: Foreign born
+        ADURM017:    Female: Under 18 years: Foreign born: Naturalized U.S. citizen
+        ADURM018:    Female: Under 18 years: Foreign born: Not a U.S. citizen
+        ADURM019:    Female: 18 years and over
+        ADURM020:    Female: 18 years and over: Native
+        ADURM021:    Female: 18 years and over: Foreign born
+        ADURM022:    Female: 18 years and over: Foreign born: Naturalized U.S. citizen
+        ADURM023:    Female: 18 years and over: Foreign born: Not a U.S. citizen
+ 
+    Table 5:     Population Under 18 Years by Age
+    Universe:    Population under 18 years
+    Source code: B09001
+    NHGIS code:  ADYI
+        ADYIM001:    Total
+        ADYIM002:    In households
+        ADYIM003:    In households: Under 3 years
+        ADYIM004:    In households: 3 and 4 years
+        ADYIM005:    In households: 5 years
+        ADYIM006:    In households: 6 to 8 years
+        ADYIM007:    In households: 9 to 11 years
+        ADYIM008:    In households: 12 to 14 years
+        ADYIM009:    In households: 15 to 17 years
+        ADYIM010:    In group quarters
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing NHGIS data (either tabular or GIS)
+  must cite it appropriately. The citation should include the following:
+
+    Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+    IPUMS National Historical Geographic Information System: Version 12.0 [Database]. 
+    Minneapolis: University of Minnesota. 2017. 
+    http://doi.org/10.18128/D050.V12.0
+
+* Publications and research reports employing school attendance areas data
+  (either tabular or GIS) must cite it appropriately. The citation should
+  include the following:
+
+    The College of William and Mary and the Minnesota Population Center.
+    School Attendance Boundary Information System (SABINS): Version 1.0.
+    Minneapolis, MN: University of Minnesota 2011.
+
+* For policy briefs or articles in the popular press, we recommend that you cite the use of NHGIS data as follows:
+
+    IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+* If possible, citations involving school attendance areas should also include
+  the URL for the SABINS site:
+
+    http://www.sabinsdata.org/.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+Printed matter should be sent to:
+
+    NHGIS
+    Minnesota Population Center
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455
+
+Send electronic material to: nhgis@umn.edu

@@ -1,0 +1,111 @@
+---
+title: "Descriptives"
+author: "Frank"
+date: "November 9, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars, echo=FALSE}
+library(MASS)
+library(ggplot2)
+library(readr)
+library(rstanarm)
+library(dplyr)
+library(tidyr)
+library(xtable)
+load("models_men.RData")
+
+#### compare estimated mortality rates by race, modeled and observed
+
+### observed
+print("Total observed rate")
+print(sum(tmp2$d.total)/sum(tmp2$tot.pop) * 100000 * (365/1588))
+
+print("Black observed rate")
+print(sum(tmp2$d.black)/sum(tmp2$black) * 100000 * (365/1588))
+
+print("latino observed rate")
+print(sum(tmp2$d.latino)/sum(tmp2$latino) * 100000 * (365/1588))
+
+print("white observed rate")
+print(sum(tmp2$d.white)/sum(tmp2$white) * 100000 * (365/1588))
+
+
+    blk.stan<-blk.stan.0
+    wht.stan<-wht.stan.0
+    lat.stan<-lat.stan.0
+    tot.stan<-tot.stan.0
+  
+  
+  
+  post.blk<-posterior_predict(blk.stan, newdata=tmp2)
+  post.wht<-posterior_predict(wht.stan, newdata=tmp2)
+  post.lat<-posterior_predict(lat.stan, newdata=tmp2)
+  post.tot<-posterior_predict(tot.stan, newdata=tmp2)
+  
+  post.blk.medians<-as.vector(apply(post.blk, 2, median))
+  plot(tmp2$d.black, post.blk.medians) #looks good to me
+  
+  ### posterior predictions on counts using observed data - 
+  ### normalized into posterior risk rates
+  
+  print("Black lower, median, upper")
+  
+  post.blk.nat<-as.vector(apply(post.blk,1,sum))
+  post.blk.quantiles<-quantile(post.blk.nat, c(0.025, 0.5, .975))
+  
+  print(sum(post.blk.quantiles[1])/sum(tmp2$black)* 100000 * (365/1588))
+  print(sum(post.blk.quantiles[2])/sum(tmp2$black)* 100000 * (365/1588))
+  print(sum(post.blk.quantiles[3])/sum(tmp2$black)* 100000 * (365/1588))
+  
+  
+  print("Latino lower, median, upper")
+  
+  post.lat.nat<-as.vector(apply(post.lat,1,sum))
+  post.lat.quantiles<-quantile(post.lat.nat, c(0.025, 0.5, .975))
+  
+  print(sum(post.lat.quantiles[1])/sum(tmp2$latino)* 100000 * (365/1588))
+  print(sum(post.lat.quantiles[2])/sum(tmp2$latino)* 100000 * (365/1588))
+  print(sum(post.lat.quantiles[3])/sum(tmp2$latino)* 100000 * (365/1588))
+  
+  print("white lower, median, upper")
+  post.wht.nat<-as.vector(apply(post.wht,1,sum))
+  post.wht.quantiles<-quantile(post.wht.nat, c(0.025, 0.5, .975))
+  
+  print(sum(post.wht.quantiles[1])/sum(tmp2$white)* 100000 * (365/1588))
+  print(sum(post.wht.quantiles[2])/sum(tmp2$white)* 100000 * (365/1588))
+  print(sum(post.wht.quantiles[3])/sum(tmp2$white)* 100000 * (365/1588))
+  
+  print("total lower, median, upper")
+  post.tot.nat<-as.vector(apply(post.tot,1,sum))
+  post.tot.quantiles<-quantile(post.tot.nat, c(0.025, 0.5, .975))
+  
+  print(sum(post.tot.quantiles[1])/sum(tmp2$tot.pop)* 100000 * (365/1588))
+  print(sum(post.tot.quantiles[2])/sum(tmp2$tot.pop)* 100000 * (365/1588))
+  print(sum(post.tot.quantiles[3])/sum(tmp2$tot.pop)* 100000 * (365/1588))
+  
+  print("Total estimated deaths 2015 pop")
+  (sum(post.tot.quantiles[1])/sum(tmp2$tot.pop) * (365/1588))*sum(tmp2$tot.pop)
+  (sum(post.tot.quantiles[3])/sum(tmp2$tot.pop) * (365/1588))*sum(tmp2$tot.pop)
+  
+  print(" Black estimated deaths 2015 pop")
+  (sum(post.blk.quantiles[1])/sum(tmp2$black)* (365/1588))*sum(tmp2$black)
+  (sum(post.blk.quantiles[3])/sum(tmp2$black)* (365/1588))*sum(tmp2$black)
+  
+  print(" Latino  estimated deaths 2015 pop")
+
+  (sum(post.lat.quantiles[1])/sum(tmp2$latino)*  (365/1588))*sum(tmp2$latino)
+  (sum(post.lat.quantiles[3])/sum(tmp2$latino)*  (365/1588))*sum(tmp2$latino)
+  
+  print("White estimated deaths 2015 pop")
+
+  (sum(post.wht.quantiles[1])/sum(tmp2$white)*  (365/1588))*sum(tmp2$white)
+  (sum(post.wht.quantiles[3])/sum(tmp2$white)*  (365/1588))*sum(tmp2$white)
+  
+  
+
+```
