@@ -21,6 +21,8 @@ library(data.table)
 options(mc.cores = parallel::detectCores())
 
 fdat<-read.csv("fe-clean.csv", stringsAsFactors = FALSE)
+
+select=dplyr::select
 # 2: configure data ...
 # ... attach fatal encounters data
 #fdat = read.csv('fdat.csv',
@@ -34,7 +36,7 @@ fdat = fdat %>%
 	   dplyr::select(-year) %>%
 	   mutate(race = ifelse(race == 'African-American/black', 
 	  							    'African-American/Black', race))%>%
-  filter(age>=18, gender="Male") # drop children for adult-only analysis, women/trans for men only
+  filter(age>=18, gender=="Male") # drop children for adult-only analysis, women/trans for men only
 
 fdat$fips<-ifelse((fdat$county=="shannon county")&(fdat$state=="SD"), 46102, fdat$fips)
 fdat$fips<-ifelse((fdat$city=="Chevak")&(fdat$state=="AK"), 2158, fdat$fips)

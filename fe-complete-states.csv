@@ -1242,7 +1242,7 @@
 "44","Male","African-American/Black","","28677","Statesville","NC","iredell",2004,"Medical emergency",37097
 "32","Male","European-American/White","Cayo Costa State Park","33922","Cayo Costa","FL","lee",2004,"Gunshot",12071
 "36","Male","Hispanic/Latino","Yucca Hill Dr & Lovely Ln","78744","Austin","TX","travis",2004,"Tasered",48453
-"19","Male","Hispanic/Latino","El Camino Real Road and San Ysidro Road","88007","Las Cruces","NM","dona ana",2004,"Gunshot",35013
+"19","Male","Hispanic/Latino","El Camino Real Road and San Ysidro Road","88007","Las Cruces","NM","do„±a ana",2004,"Gunshot",NA
 "84","Male","European-American/White","1032 FM 1048","76570","Rosebud","TX","falls",2004,"Gunshot",48145
 "42","Male","European-American/White","2225 I-20 Frontage Rd","75052","Grand Prairie","TX","dallas",2004,"Gunshot",48113
 "20","Female","European-American/White","U.S. 71 and Brooken Hill Drive","72908","Fort Smith","AR","sebastian",2004,"Vehicle",5131
@@ -2760,7 +2760,7 @@
 "17","Male","European-American/White","Noland Road and Osage Avenue","64055","Independence","MO","jackson",2007,"Vehicle",29095
 "50","Male","African-American/Black","1326 Forest Ave.","50314","Des Moines","IA","polk",2007,"Beaten/Bludgeoned with instrument",19153
 "30","Male","Hispanic/Latino","Hooper Ave. and East 59th St.","90001","Los Angeles","CA","los angeles",2007,"Gunshot",6037
-"26","Female","Hispanic/Latino","East Amador Avenue and South Mesquite Street","88001","Las Cruces","NM","dona ana",2007,"Vehicle",35013
+"26","Female","Hispanic/Latino","East Amador Avenue and South Mesquite Street","88001","Las Cruces","NM","do„±a ana",2007,"Vehicle",NA
 "37","Male","Asian/Pacific Islander","15420 Livingston Ave","33559","Lutz","FL","hillsborough",2007,"Gunshot",12057
 "29","Male","Hispanic/Latino","778 Taylor Ave.","78115","Seguin","TX","guadalupe",2007,"Gunshot",48187
 "21","Male","African-American/Black","NW 65th St & NW Miami Ct","33150","Miami","FL","miami-dade",2007,"Gunshot",12086
@@ -8998,7 +8998,7 @@
 "26","Female","Hispanic/Latino","W Van Buren St & N 67th Ave","85043","Phoenix","AZ","maricopa",2014,"Vehicle",4013
 "49","Male","European-American/White","5700 block St Louis River Road","55810","Hermantown","MN","st. louis",2014,"Tasered",27137
 "34","Male","Hispanic/Latino","3200 block Modaus Road SW","35603","Decatur","AL","morgan",2014,"Drug overdose",1103
-"33","Male","Asian/Pacific Islander","190 Avenida de Mesilla","88005","Las Cruces","NM","dona ana",2014,"Gunshot",35013
+"33","Male","Asian/Pacific Islander","190 Avenida de Mesilla","88005","Las Cruces","NM","do„±a ana",2014,"Gunshot",NA
 "18","Male","European-American/White","666 Hillside Dr","30125","Cedartown","GA","polk",2014,"Gunshot",13233
 "52","Male","European-American/White","722 N Segrave St","32114","Daytona Beach","FL","volusia",2014,"Gunshot",12127
 "49","Female","European-American/White","4288 South Alita Terrace","34446","Homosassa","FL","citrus",2014,"Gunshot",12017
@@ -9133,7 +9133,7 @@
 "17","Male","African-American/Black","All American Highway and Cliffdale Road","28314","Fayetteville","NC","cumberland",2014,"Vehicle",37051
 "38","Male","European-American/White","Grafton Hall Rd","40272","Louisville","KY","jefferson",2014,"Gunshot",21111
 "37","Male","European-American/White","1625 Teass Terrace","24523","Bedford","VA","bedford",2014,"Gunshot",51019
-"29","Male","European-American/White","705 South Telshor Boulevard","88011","Las Cruces","NM","dona ana",2014,"Gunshot",35013
+"29","Male","European-American/White","705 South Telshor Boulevard","88011","Las Cruces","NM","do„±a ana",2014,"Gunshot",NA
 "24","Male","African-American/Black","Cornelius Harris Lane","32332","Gretna","FL","gadsden",2014,"Gunshot",12039
 "22","Male","Hispanic/Latino","N 24th St & E Roosevelt St","85006","Phoenix","AZ","maricopa",2014,"Gunshot",4013
 "33","Female","European-American/White","Telegraph Rd & Chasm Rd","12972","Au Sable","NY","clinton",2014,"Vehicle",36019
@@ -10083,7 +10083,7 @@
 "47","Male","Hispanic/Latino","12000 Rose Hedge Dr","90606","Whittier","CA","los angeles",2015,"Gunshot",6037
 "38","Male","Hispanic/Latino","3 May St","1610","Worcester","MA","worcester",2015,"Tasered",25027
 "37","Male","African-American/Black","4271 W. Brookstown Drive","70805","Baton Rouge","LA","e. baton rouge",2015,"Gunshot",22033
-"34","Male","Hispanic/Latino","755 N Valley Dr","88005","Las Cruces","NM","dona ana",2015,"Gunshot",35013
+"34","Male","Hispanic/Latino","755 N Valley Dr","88005","Las Cruces","NM","do„±a ana",2015,"Gunshot",NA
 "57","Male","Asian/Pacific Islander","Lombard St and Pierce St","94123","San Francisco","CA","san francisco",2015,"Medical emergency",6075
 "48","Male","European-American/White","930 Monument Peak Dr","89460","Gardnerville","NV","douglas",2015,"Gunshot",32005
 "25","Male","European-American/White","Mott Airport Rd & I-5","96067","Mt Shasta","CA","siskiyou",2015,"Gunshot",6093
@@ -17881,72 +17881,72 @@
 "24","Male","Race unspecified","Mud Road 1","99563","Chevak","AK",NA,2016,"Gunshot",2270
 "47","Male","Race unspecified","","99748","Kaltag","AK",NA,2002,"Gunshot",2290
 "52","Male","Hispanic/Latino","Comanche Rd NE & Morningside Dr NE","87110","Albuquerque","NM",NA,2014,"Vehicle",35001
-"40","Male","Hispanic/Latino","1709 53rd NW","87105","Albuquerque","NM",NA,2005,"Tasered",35001
-"29","Male","Hispanic/Latino","3011 Jane Place NE","87111","Albuquerque","NM",NA,2001,"Gunshot",35001
-"34","Male","European-American/White","8100 Wyoming Blvd NE","87113","Albuquerque","NM",NA,2001,"Gunshot",35001
 "49","Male","Hispanic/Latino","11000 block Los Arboles NE","87112","Albuquerque","NM",NA,2005,"Gunshot",35001
-"38","Male","Race unspecified","Tramway Blvd NE & Copper Ave NE","87123","Albuquerque","NM",NA,2014,"Gunshot",35001
 "31","Male","European-American/White","4400 block Osuna NE","87109","Albuquerque","NM",NA,2002,"Gunshot",35001
-"33","Male","Hispanic/Latino","5200 block Mariposa NW","87120","Albuquerque","NM",NA,2002,"Gunshot",35001
-"16","Male","Hispanic/Latino","101 Broadway Blvd NE","87102","Albuquerque","NM",NA,2002,"Gunshot",35001
-"24","Male","European-American/White","Isleta Blvd SW & Rio Bravo Blvd SW","87105","Albuquerque","NM",NA,2006,"Gunshot",35001
+"34","Male","European-American/White","8100 Wyoming Blvd NE","87113","Albuquerque","NM",NA,2001,"Gunshot",35001
+"40","Male","Hispanic/Latino","1709 53rd NW","87105","Albuquerque","NM",NA,2005,"Tasered",35001
 "58","Male","Hispanic/Latino","Gibson Blvd SE & San Pedro Dr SE","87108","Albuquerque","NM",NA,2002,"Vehicle",35001
 "53","Male","European-American/White","2400 Central Ave SE","87106","Albuquerque","NM",NA,2002,"Gunshot",35001
 "14","Male","Hispanic/Latino","6400 Golf Course Rd NW","87120","Albuquerque","NM",NA,2002,"Gunshot",35001
-"41","Male","Race unspecified","4016 Louisiana Blvd NE","87110","Albuquerque","NM",NA,2001,"Gunshot",35001
+"24","Male","European-American/White","Isleta Blvd SW & Rio Bravo Blvd SW","87105","Albuquerque","NM",NA,2006,"Gunshot",35001
 "28","Male","Hispanic/Latino","3rd St NW & Constitution Ave NW","87102","Albuquerque","NM",NA,2004,"Vehicle",35001
-"20","Male","European-American/White","Eubank Blvd NE & Montgomery Blvd NE","87111","Albuquerque","NM",NA,2007,"Gunshot",35001
+"29","Male","Hispanic/Latino","3011 Jane Place NE","87111","Albuquerque","NM",NA,2001,"Gunshot",35001
 "28","Male","Hispanic/Latino","Central Ave SE & Graceland Dr SE","87108","Albuquerque","NM",NA,2004,"Vehicle",35001
 "42","Male","Hispanic/Latino","Montgomery Blvd NE & San Mateo Blvd NE","87109","Albuquerque","NM",NA,2001,"Gunshot",35001
 "32","Male","Race unspecified","County Line Road","87047","Sandia Park","NM",NA,2001,"Gunshot",35001
 "21","Male","European-American/White","13000 Constitution NE","87112","Albuquerque","NM",NA,2013,"Gunshot",35001
-"31","Male","Hispanic/Latino","Central Avenue and 60th Street","87121","Albuquerque","NM",NA,2011,"Gunshot",35001
+"33","Male","Hispanic/Latino","5200 block Mariposa NW","87120","Albuquerque","NM",NA,2002,"Gunshot",35001
 "20","Male","Hispanic/Latino","6200 Indian School NE","87110","Albuquerque","NM",NA,2003,"Gunshot",35001
 "41","Male","Race unspecified","12901 Central Ave NE","87123","Albuquerque","NM",NA,2008,"Gunshot",35001
 "17","Male","Race unspecified","2nd St NW & Monta√±o Rd NW","87107","Albuquerque","NM",NA,2003,"Gunshot",35001
 "","Male","Race unspecified","","87111","Albuquerque","NM",NA,2004,"Gunshot",35001
 "","Male","Race unspecified","7850 Zuni Road S.E.","87108","Albuquerque","NM",NA,2004,"Gunshot",35001
-"38","Male","Hispanic/Latino","Montgomery Blvd NE & San Mateo Blvd NE","87109","Albuquerque","NM",NA,2010,"Gunshot",35001
+"41","Male","Race unspecified","4016 Louisiana Blvd NE","87110","Albuquerque","NM",NA,2001,"Gunshot",35001
 "21","Female","Race unspecified","9901 Trevino Loop NW","87114","Albuquerque","NM",NA,2005,"Gunshot",35001
-"20","Male","Race unspecified","Coors Boulevard and Arenal Road Southwest","87105","Albuquerque","NM",NA,2004,"Gunshot",35001
+"20","Male","European-American/White","Eubank Blvd NE & Montgomery Blvd NE","87111","Albuquerque","NM",NA,2007,"Gunshot",35001
 "74","Female","Hispanic/Latino","5208 Crestview Place S.W.","87105","Albuquerque","NM",NA,2006,"Vehicle",35001
 "21","Male","Hispanic/Latino","Estancia Dr NW & Miami Rd NW","87120","Albuquerque","NM",NA,2004,"Gunshot",35001
 "50","Female","European-American/White","4201 Osuna Rd., NE","87109","Albuquerque","NM",NA,2003,"Gunshot",35001
 "28","Male","Hispanic/Latino","","","Albuquerque","NM",NA,2007,"Gunshot",35001
-"31","Male","Race unspecified","3501 Coors Blvd","87121","Albuquerque","NM",NA,2009,"Gunshot",35001
+"31","Male","Hispanic/Latino","Central Avenue and 60th Street","87121","Albuquerque","NM",NA,2011,"Gunshot",35001
 "47","Male","Race unspecified","3600 block Copper NE","87113","Albuquerque","NM",NA,2000,"Gunshot",35001
 "37","Male","Race unspecified","Gold Ave SE & Mesa St SE","87106","Albuquerque","NM",NA,2013,"Gunshot",35001
 "31","Male","Hispanic/Latino","Western Skies Dr SE","87123","Albuquerque","NM",NA,2016,"Gunshot",35001
-"35","Male","African-American/Black","Rio Grande and Indian School NW","87110","Albuquerque","NM",NA,2007,"Gunshot",35001
+"38","Male","Race unspecified","Tramway Blvd NE & Copper Ave NE","87123","Albuquerque","NM",NA,2014,"Gunshot",35001
 "42","Male","Race unspecified","1608 Spence St. S.E.","87106","Albuquerque","NM",NA,2007,"Gunshot",35001
 "46","Male","Hispanic/Latino","301 San Mateo SE","87108","Albuquerque","NM",NA,2005,"Gunshot",35001
-"","Male","Race unspecified","Polaris St NW & Argus Ave NW","87120","Albuquerque","NM",NA,2004,"Gunshot",35001
-"55","Male","Race unspecified","Interstate 25","87022","Isleta Village Proper","NM",NA,2009,"Gunshot",35001
+"38","Male","Hispanic/Latino","Montgomery Blvd NE & San Mateo Blvd NE","87109","Albuquerque","NM",NA,2010,"Gunshot",35001
+"20","Male","Race unspecified","Coors Boulevard and Arenal Road Southwest","87105","Albuquerque","NM",NA,2004,"Gunshot",35001
 "56","Male","Hispanic/Latino","700 blockE. Laughlin Avenue","88401","Tucumcari","NM",NA,2010,"Gunshot",35001
 "31","Male","Race unspecified","500 block Vermont St NE","98108","Albuquerque","NM",NA,2003,"Tasered",35001
 "","Male","Race unspecified","Copper Ave NE & Wisconsin St NE","87108","Albuquerque","NM",NA,2006,"Gunshot",35001
 "32","Male","European-American/White","Lomas Blvd NE & Tennessee St NE","87108","Albuquerque","NM",NA,2016,"Gunshot",35001
 "41","Male","European-American/White","401 Lomas Blvd NW","87102","Albuquerque","NM",NA,2006,"Gunshot",35001
 "42","Male","Race unspecified","Avalon Road and 98th Street NW","87105","Albuquerque","NM",NA,2010,"Gunshot",35001
-"25","Male","European-American/White","2nd St NW & Roma Ave NW","87102","Albuquerque","NM",NA,2005,"Gunshot",35001
+"16","Male","Hispanic/Latino","101 Broadway Blvd NE","87102","Albuquerque","NM",NA,2002,"Gunshot",35001
 "57","Male","European-American/White","Central Avenue and Coors Boulevard","87121","Albuquerque","NM",NA,2012,"Vehicle",35001
-"40","Male","Hispanic/Latino","500 block El Ensueno NE","87107","Albuquerque","NM",NA,2008,"Gunshot",35001
+"35","Male","African-American/Black","Rio Grande and Indian School NW","87110","Albuquerque","NM",NA,2007,"Gunshot",35001
 "","Male","Race unspecified","4000 St. Joseph's Place, NW","87120","Albuquerque","NM",NA,2012,"Gunshot",35001
 "41","Male","Hispanic/Latino","3400 Crest SE","87106","Albuquerque","NM",NA,2010,"Gunshot",35001
-"31","Male","Race unspecified","8200 Marquette NE","87108","Albuquerque","NM",NA,2012,"Gunshot",35001
-"26","Male","European-American/White","2500 Coors NW","87120","Albuquerque","NM",NA,2010,"Gunshot",35001
-"45","Male","Hispanic/Latino","Milemarker 107 on Interstate 40","87020","Albuquerque","NM",NA,2012,"Gunshot",35001
+"","Male","Race unspecified","Polaris St NW & Argus Ave NW","87120","Albuquerque","NM",NA,2004,"Gunshot",35001
+"55","Male","Race unspecified","Interstate 25","87022","Isleta Village Proper","NM",NA,2009,"Gunshot",35001
+"40","Male","Hispanic/Latino","500 block El Ensueno NE","87107","Albuquerque","NM",NA,2008,"Gunshot",35001
 "20","Male","Hispanic/Latino","400 67th St SW","87121","Albuquerque","NM",NA,2012,"Gunshot",35001
 "53","Male","Race unspecified","7700 block Pennsylvania St NE","87109","Albuquerque","NM",NA,2003,"Gunshot",35001
 "27","Male","Hispanic/Latino","7600 Sunrose NW","87120","Albuquerque","NM",NA,2011,"Gunshot",35001
+"26","Male","European-American/White","2500 Coors NW","87120","Albuquerque","NM",NA,2010,"Gunshot",35001
+"31","Male","Race unspecified","3501 Coors Blvd","87121","Albuquerque","NM",NA,2009,"Gunshot",35001
+"25","Male","European-American/White","2nd St NW & Roma Ave NW","87102","Albuquerque","NM",NA,2005,"Gunshot",35001
+"42","Male","Asian/Pacific Islander","9100 block Sandy Spring Avenue SW","87121","Albuquerque","NM",NA,2009,"Gunshot",35001
 "41","Male","European-American/White","San Mateo Boulevard and Central Avenue","87108","Albuquerque","NM",NA,2012,"Gunshot",35001
+"45","Male","Hispanic/Latino","Milemarker 107 on Interstate 40","87020","Albuquerque","NM",NA,2012,"Gunshot",35001
+"18","Male","Hispanic/Latino","Interstate 40 & 6th Street Northwest","87102","Albuquerque","NM",NA,2008,"Vehicle",35001
+"31","Male","Race unspecified","8200 Marquette NE","87108","Albuquerque","NM",NA,2012,"Gunshot",35001
+"37","Male","Race unspecified","6500 Tierra Prieta NW","87120","Albuquerque","NM",NA,2010,"Gunshot",35001
+"28","Female","Race unspecified","Coors Blvd NW & Quail Rd NW","87120","Albuquerque","NM",NA,2010,"Vehicle",35001
+"","Male","Race unspecified","","87123","Car√±uel","NM",NA,2009,"Gunshot",35001
 "43","Male","European-American/White","5500 Carruthers NE","87111","Albuquerque","NM",NA,2010,"Gunshot",35001
 "21","Male","Race unspecified","Constitution Ave NE & La Veta Dr NE","87110","Albuquerque","NM",NA,2016,"Gunshot",35001
-"42","Male","Asian/Pacific Islander","9100 block Sandy Spring Avenue SW","87121","Albuquerque","NM",NA,2009,"Gunshot",35001
-"37","Male","Race unspecified","6500 Tierra Prieta NW","87120","Albuquerque","NM",NA,2010,"Gunshot",35001
-"18","Male","Hispanic/Latino","Interstate 40 & 6th Street Northwest","87102","Albuquerque","NM",NA,2008,"Vehicle",35001
-"","Male","Race unspecified","","87123","Car√±uel","NM",NA,2009,"Gunshot",35001
-"28","Female","Race unspecified","Coors Blvd NW & Quail Rd NW","87120","Albuquerque","NM",NA,2010,"Vehicle",35001
 "58","Male","Race unspecified","3900 block Goodrich Avenue","87110","Albuquerque","NM",NA,2016,"Gunshot",35001
 "26","Male","Hispanic/Latino","600 block East Tilden Street","88203","Roswell","NM",NA,2009,"Gunshot",35005
 "28","Male","Hispanic/Latino","N Atkinson Ave & E Country Club Rd","88201","Roswell","NM",NA,2011,"Vehicle",35005
@@ -17955,12 +17955,7 @@
 "20","Male","Hispanic/Latino","300 block Oliver Avenue","87740","Raton","NM",NA,2007,"Tasered",35007
 "24","Male","European-American/White","South Second Street and Galisteo Avenue","87740","Raton","NM",NA,2007,"Gunshot",35007
 "19","Male","Race unspecified","Gonzales Street","88001","Las Cruces","NM",NA,2012,"Gunshot",35013
-"41","Male","Race unspecified","1250 Plain St.","88001","Las Cruces","NM",NA,2005,"Gunshot",35013
-"34","Male","European-American/White","5080 Chiricahua Trail","88012","Las Cruces","NM",NA,2007,"Gunshot",35013
-"68","Male","Race unspecified","S. Main Street and El Paseo Road","88005","Las Cruces","NM",NA,2005,"Vehicle",35013
-"17","Male","European-American/White","12516 NM-478","88048","Mesquite","NM",NA,2010,"Gunshot",35013
 "25","Male","Hispanic/Latino","Alamo Street and Montana Avenue","88001","Las Cruces","NM",NA,2010,"Gunshot",35013
-"38","Male","Hispanic/Latino","5900 block Star View Drive","88012","Las Cruces","NM",NA,2006,"Gunshot",35013
 "26","Male","European-American/White","U.S. Interstate 10","88011","Las Cruces","NM",NA,2000,"Gunshot",35013
 "58","Male","Hispanic/Latino","700 block Mesilla Road","88081","Chaparral","NM",NA,2009,"Gunshot",35013
 "23","Male","Race unspecified","1101 E. Boutz Road","88001","Las Cruces","NM",NA,2010,"Gunshot",35013
@@ -17977,8 +17972,8 @@
 "29","Male","European-American/White","Carrizo Canyon Rd","88345","Ruidoso","NM",NA,2016,"Gunshot",35027
 "41","Male","European-American/White","127 NM-37","88316","Capitan","NM",NA,2015,"Gunshot",35027
 "60","Male","European-American/White","Highway 380","88316","Capitan","NM",NA,2011,"Gunshot",35027
-"37","Male","Race unspecified","","87312","Continental Divide","NM",NA,2000,"Gunshot",35031
 "32","Male","Hispanic/Latino","W Green Ave & S 8th St","87301","Gallup","NM",NA,2006,"Vehicle",35031
+"37","Male","Race unspecified","","87312","Continental Divide","NM",NA,2000,"Gunshot",35031
 "44","Male","European-American/White","","87732","Mora","NM",NA,2012,"Gunshot",35033
 "42","Male","Race unspecified","116 Riverfront Road","88352","Tularosa","NM",NA,2006,"Gunshot",35035
 "19","Male","Race unspecified","Old Mescalero Road and First Street","88352","Tularosa","NM",NA,2013,"Gunshot",35035
@@ -17995,11 +17990,11 @@
 "32","Male","Race unspecified","2200 block Greenlake Road","87124","Rio Rancho","NM",NA,2009,"Gunshot",35043
 "46","Male","Race unspecified","Interstate 25","87052","Kewa Pueblo","NM",NA,2002,"Gunshot",35043
 "36","Male","Race unspecified","NM-165","87043","Placitas","NM",NA,2013,"Gunshot",35043
-"32","Male","Race unspecified","N.M. 371","87401","Farmington","NM",NA,2000,"Vehicle",35045
-"33","Male","Race unspecified","517 Leighton Ave","87401","Farmington","NM",NA,2013,"Gunshot",35045
 "23","Female","Race unspecified","Indian Rte 36","87420","Shiprock","NM",NA,2013,"Vehicle",35045
-"","Male","European-American/White","U.S. 64","87420","Shiprock","NM",NA,2009,"Gunshot",35045
+"32","Male","Race unspecified","N.M. 371","87401","Farmington","NM",NA,2000,"Vehicle",35045
 "24","Male","European-American/White","Glade Road","87401","Farmington","NM",NA,2007,"Vehicle",35045
+"33","Male","Race unspecified","517 Leighton Ave","87401","Farmington","NM",NA,2013,"Gunshot",35045
+"","Male","European-American/White","U.S. 64","87420","Shiprock","NM",NA,2009,"Gunshot",35045
 "68","Male","Race unspecified","1005 Diamond St","87701","Las Vegas","NM",NA,2002,"Gunshot",35047
 "39","Male","European-American/White","","88439","Trementina","NM",NA,2010,"Gunshot",35047
 "37","Male","Hispanic/Latino","3555 North Rd","87701","Las Vegas","NM",NA,2010,"Vehicle",35047
@@ -18024,6 +18019,11 @@
 "24","Male","Hispanic/Latino","","87031","Los Lunas","NM",NA,2012,"Gunshot",35061
 "29","Male","European-American/White","601 N. 4th Street","87002","Belen","NM",NA,2010,"Gunshot",35061
 "34","Male","Hispanic/Latino","650 Bosque Farms Blvd","87068","Bosque Farms","NM",NA,2000,"Gunshot",35061
+"34","Male",NA,"5080 Chiricahua Trail","88012","Las Cruces","NM",NA,2007,"Gunshot",NA
+"41","Male",NA,"1250 Plain St.","88001","Las Cruces","NM",NA,2005,"Gunshot",NA
+"38","Male",NA,"5900 block Star View Drive","88012","Las Cruces","NM",NA,2006,"Gunshot",NA
+"68","Male",NA,"S. Main Street and El Paseo Road","88005","Las Cruces","NM",NA,2005,"Vehicle",NA
+"17","Male",NA,"12516 NM-478","88048","Mesquite","NM",NA,2010,"Gunshot",NA
 "22","Male","European-American/White","Northeast Conifer Boulevard and Northeast Conser Drive","97330","Corvallis","OR",NA,2008,"Vehicle",41003
 "50","Male","European-American/White","Harrison Boulevard and 15th Street","97330","Corvallis","OR",NA,2005,"Gunshot",41003
 "38","Male","European-American/White","Southeast 21st Avenue","97222","Milwaukie","OR",NA,2009,"Gunshot",41005

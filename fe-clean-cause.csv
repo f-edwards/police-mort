@@ -2528,7 +2528,7 @@
 "26","Female","Hispanic/Latino","W Van Buren St & N 67th Ave","85043","Phoenix","AZ","maricopa",2014,"Vehicle",4013
 "49","Male","European-American/White","5700 block St Louis River Road","55810","Hermantown","MN","st. louis",2014,"Tasered",27137
 "34","Male","Hispanic/Latino","3200 block Modaus Road SW","35603","Decatur","AL","morgan",2014,"Drug overdose",1103
-"33","Male","Asian/Pacific Islander","190 Avenida de Mesilla","88005","Las Cruces","NM","dona ana",2014,"Gunshot",35013
+"33","Male","Asian/Pacific Islander","190 Avenida de Mesilla","88005","Las Cruces","NM","doã±a ana",2014,"Gunshot",NA
 "18","Male","European-American/White","666 Hillside Dr","30125","Cedartown","GA","polk",2014,"Gunshot",13233
 "52","Male","European-American/White","722 N Segrave St","32114","Daytona Beach","FL","volusia",2014,"Gunshot",12127
 "49","Female","European-American/White","4288 South Alita Terrace","34446","Homosassa","FL","citrus",2014,"Gunshot",12017
@@ -2663,7 +2663,7 @@
 "17","Male","African-American/Black","All American Highway and Cliffdale Road","28314","Fayetteville","NC","cumberland",2014,"Vehicle",37051
 "38","Male","European-American/White","Grafton Hall Rd","40272","Louisville","KY","jefferson",2014,"Gunshot",21111
 "37","Male","European-American/White","1625 Teass Terrace","24523","Bedford","VA","bedford",2014,"Gunshot",51019
-"29","Male","European-American/White","705 South Telshor Boulevard","88011","Las Cruces","NM","dona ana",2014,"Gunshot",35013
+"29","Male","European-American/White","705 South Telshor Boulevard","88011","Las Cruces","NM","doã±a ana",2014,"Gunshot",NA
 "24","Male","African-American/Black","Cornelius Harris Lane","32332","Gretna","FL","gadsden",2014,"Gunshot",12039
 "22","Male","Hispanic/Latino","N 24th St & E Roosevelt St","85006","Phoenix","AZ","maricopa",2014,"Gunshot",4013
 "33","Female","European-American/White","Telegraph Rd & Chasm Rd","12972","Au Sable","NY","clinton",2014,"Vehicle",36019
@@ -3613,7 +3613,7 @@
 "47","Male","Hispanic/Latino","12000 Rose Hedge Dr","90606","Whittier","CA","los angeles",2015,"Gunshot",6037
 "38","Male","Hispanic/Latino","3 May St","1610","Worcester","MA","worcester",2015,"Tasered",25027
 "37","Male","African-American/Black","4271 W. Brookstown Drive","70805","Baton Rouge","LA","e. baton rouge",2015,"Gunshot",22033
-"34","Male","Hispanic/Latino","755 N Valley Dr","88005","Las Cruces","NM","dona ana",2015,"Gunshot",35013
+"34","Male","Hispanic/Latino","755 N Valley Dr","88005","Las Cruces","NM","doã±a ana",2015,"Gunshot",NA
 "57","Male","Asian/Pacific Islander","Lombard St and Pierce St","94123","San Francisco","CA","san francisco",2015,"Medical emergency",6075
 "48","Male","European-American/White","930 Monument Peak Dr","89460","Gardnerville","NV","douglas",2015,"Gunshot",32005
 "25","Male","European-American/White","Mott Airport Rd & I-5","96067","Mt Shasta","CA","siskiyou",2015,"Gunshot",6093
@@ -6810,10 +6810,10 @@
 "33","Male","European-American/White","Megan Way and East Jean Drive","99645","Palmer","AK",NA,2016,"Gunshot",2170
 "24","Male","Race unspecified","Mud Road 1","99563","Chevak","AK",NA,2016,"Gunshot",2270
 "52","Male","Hispanic/Latino","Comanche Rd NE & Morningside Dr NE","87110","Albuquerque","NM",NA,2014,"Vehicle",35001
-"38","Male","Race unspecified","Tramway Blvd NE & Copper Ave NE","87123","Albuquerque","NM",NA,2014,"Gunshot",35001
 "21","Male","European-American/White","13000 Constitution NE","87112","Albuquerque","NM",NA,2013,"Gunshot",35001
 "37","Male","Race unspecified","Gold Ave SE & Mesa St SE","87106","Albuquerque","NM",NA,2013,"Gunshot",35001
 "31","Male","Hispanic/Latino","Western Skies Dr SE","87123","Albuquerque","NM",NA,2016,"Gunshot",35001
+"38","Male","Race unspecified","Tramway Blvd NE & Copper Ave NE","87123","Albuquerque","NM",NA,2014,"Gunshot",35001
 "32","Male","European-American/White","Lomas Blvd NE & Tennessee St NE","87108","Albuquerque","NM",NA,2016,"Gunshot",35001
 "21","Male","Race unspecified","Constitution Ave NE & La Veta Dr NE","87110","Albuquerque","NM",NA,2016,"Gunshot",35001
 "58","Male","Race unspecified","3900 block Goodrich Avenue","87110","Albuquerque","NM",NA,2016,"Gunshot",35001
@@ -6829,9 +6829,9 @@
 "33","Female","Race unspecified","20731 US-550","87053","San Ysidro","NM",NA,2014,"Vehicle",35043
 "41","Male","Hispanic/Latino","19th St NE & Sun Ct SE","87124","Rio Rancho","NM",NA,2016,"Gunshot",35043
 "36","Male","Race unspecified","NM-165","87043","Placitas","NM",NA,2013,"Gunshot",35043
-"33","Male","Race unspecified","517 Leighton Ave","87401","Farmington","NM",NA,2013,"Gunshot",35045
 "23","Female","Race unspecified","Indian Rte 36","87420","Shiprock","NM",NA,2013,"Vehicle",35045
 "","Male","European-American/White","CR 7297","87413","Bloomfield","NM",NA,2017,"Gunshot",35045
+"33","Male","Race unspecified","517 Leighton Ave","87401","Farmington","NM",NA,2013,"Gunshot",35045
 "31","Male","Hispanic/Latino","3007 Cerrillos Road","87507","Santa Fe","NM",NA,2016,"Gunshot",35049
 "","Male","Race unspecified","Chaparral Drive","87508","Santa Fe","NM",NA,2017,"Gunshot",35049
 "","Male","Race unspecified","11 College Avenue","87508","Santa Fe","NM",NA,2016,"Gunshot",35049

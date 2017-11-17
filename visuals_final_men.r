@@ -427,7 +427,7 @@ ggplot(ur.post, aes(sim.mort.rt, fill=Race))+
   facet_wrap(~ur.code)+
   xlab("Police-involved deaths per 100,000 per year")+
   ylab("")+
-  coord_cartesian(xlim=c(0,7), ylim=c(0,3.5))+
+  coord_cartesian(xlim=c(0,7))+
   theme(legend.position="bottom")+
   ggsave("UR_Density_men.tiff",width=6.5, height=6.5, units="in")
   
@@ -437,7 +437,7 @@ ggplot(div.post, aes(sim.mort.rt, fill=Race))+
   facet_wrap(~division)+
   xlab("Police-involved deaths per 100,000 per year")+
   ylab("")+
-  coord_cartesian(xlim=c(0,7), ylim=c(0,3.5))+
+  coord_cartesian(xlim=c(0,7))+
   theme(legend.position="bottom")+
   ggsave("Div_Density_men.tiff", width=6.5, height=6.5, units="in")
 
