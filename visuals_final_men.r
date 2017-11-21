@@ -449,84 +449,38 @@ ggplot(div.post, aes(sim.mort.rt, fill=Race))+
 
 
 ################# Quantile approach
-post.observed<-tmp2%>%
-  group_by(ur.code, division)%>%
-  summarise(observed.deaths=sum(d.total),
-            observed.pop=sum(tot.pop))%>%
-  left_join(post.tot.int)%>%
-  mutate(post.count.lower=`2.5%`*observed.pop/100000,
-         post.count.median=`50%`*observed.pop/100000,
-         post.count.upper=`97.5%`*observed.pop/100000)
+### for paper stats
 
-post.ur.tot<-post.observed%>%
-  group_by(ur.code)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000 / (1588/365),
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
-  mutate(race="Total")
-
-
-
-post.observed.blk<-tmp2%>%
-  group_by(ur.code, division)%>%
-  summarise(observed.deaths=sum(d.black),
-            observed.pop=sum(black))%>%
-  left_join(post.blk.int)%>%
-  mutate(post.count.lower=`2.5%`*observed.pop/100000,
-         post.count.median=`50%`*observed.pop/100000,
-         post.count.upper=`97.5%`*observed.pop/100000)
-
-post.ur.blk<-post.observed.blk%>%
-  group_by(ur.code)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
-  mutate(race="Black")
-
-post.div.blk<-post.observed.blk%>%
+div.post%>%
+  filter(Race=="Black")%>%
   group_by(division)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000,
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000,
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000)%>%
-  mutate(race="Black")
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))
+div.post%>%
+  filter(Race=="Hispanic")%>%
+  group_by(division)%>%
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))
 
-post.observed.wht<-tmp2%>%
-  group_by(ur.code, division)%>%
-  summarise(observed.deaths=sum(d.white),
-            observed.pop=sum(white))%>%
-  left_join(post.wht.int)%>%
-  mutate(post.count.lower=`2.5%`*observed.pop/100000,
-         post.count.median=`50%`*observed.pop/100000,
-         post.count.upper=`97.5%`*observed.pop/100000)
+div.post%>%
+  filter(Race=="White")%>%
+  group_by(division)%>%
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))
 
-post.ur.wht<-post.observed.wht%>%
+ur.post%>%
+  filter(Race=="Black")%>%
   group_by(ur.code)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
-  mutate(race="White")
-
-post.div.wht<-post.observed.wht%>%
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))
+ur.post%>%
+  filter(Race=="Hispanic")%>%
   group_by(ur.code)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000,
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000,
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000)%>%
-  mutate(race="White")
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))
 
-post.observed.lat<-tmp2%>%
-  group_by(ur.code, division)%>%
-  summarise(observed.deaths=sum(d.latino),
-            observed.pop=sum(latino))%>%
-  left_join(post.lat.int)%>%
-  mutate(post.count.lower=`2.5%`*observed.pop/100000,
-         post.count.median=`50%`*observed.pop/100000,
-         post.count.upper=`97.5%`*observed.pop/100000)
-
-post.ur.lat<-post.observed.lat%>%
+ur.post%>%
+  filter(Race=="White")%>%
   group_by(ur.code)%>%
-  summarise(observed.rate=sum(observed.deaths)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.lower=sum(post.count.lower)/sum(observed.pop)*100000/ (1588/365),
-            post.rate.upper=sum(post.count.upper)/sum(observed.pop)*100000/ (1588/365))%>%
-  mutate(race="Latino")
-# 
-# post.ur<-bind_rows(post.ur.blk, post.ur.wht, post.ur.lat)
+  summarise(lower=quantile(sim.mort.rt, 0.025), 
+            upper=quantile(sim.mort.rt, 0.975))

@@ -21,6 +21,25 @@ load("models_men.RData")
 
 #### compare estimated mortality rates by race, modeled and observed
 
+z<-tmp2%>%
+  group_by(division, ur.code)%>%
+  summarise(tot.deaths=sum(d.total),
+            death.rt=sum(d.total)/sum(tot.pop) * 100000* (365/1588))%>%
+  ungroup()
+
+z1<-tmp2%>%
+  group_by(division)%>%
+  summarise(tot.deaths=sum(d.total),
+            death.rt=sum(d.total)/sum(tot.pop) * 100000* (365/1588))%>%
+  ungroup()
+
+z2<-tmp2%>%
+  group_by(ur.code)%>%
+  summarise(tot.deaths=sum(d.total),
+            death.rt=sum(d.total)/sum(tot.pop) * 100000* (365/1588))%>%
+  ungroup()
+
+
 ### observed
 print("Total observed rate")
 print(sum(tmp2$d.total)/sum(tmp2$tot.pop) * 100000 * (365/1588))
