@@ -270,7 +270,7 @@ bw.post$rate = "Black/White"
 
 lw.post = bind_cols(ur.division, as.data.frame(t(apply(
 	post.lat/post.wht, 2, function(x)quantile(x, probs=c(0.025, 0.5, 0.975))))))
-lw.post$rate = "Hispanic/White"
+lw.post$rate = "Latinx/White"
 
 # 2: get data ready for plotting 
 plot.dat = bind_rows(bw.post, lw.post)
@@ -420,6 +420,9 @@ div.post<-bind_rows(blk.div.post.mort,
 div.post <- div.post %>%
   	mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(1588/365))) 
 
+ur.post$Race<-ifelse(ur.post$Race=="Hispanic", "Latinx", ur.post$Race)
+div.post$Race<-ifelse(div.post$Race=="Hispanic", "Latinx", div.post$Race)
+
 #### plot it
 ggplot(ur.post, aes(sim.mort.rt, fill=Race))+
   geom_density(alpha=0.6)+
@@ -445,9 +448,30 @@ ggplot(div.post, aes(sim.mort.rt, fill=Race))+
 
 
 
+#### for appendix table 3
 
+apTab3<-post.estimates%>%
+  mutate(lwr=lwr*(365/1588),
+         estimate=estimate*(365/1588),
+         upr=upr*(365/1588))
 
+apTabReformat<-apTab3%>%
+  mutate(estimate=paste(
+    round(estimate, 1), 
+    " (",
+    round(lwr, 1),
+    ", ",
+    round(upr, 1),
+    ")",
+    sep=""
+  ))%>%
+  select(- lwr, -upr)%>%
+  spread(race, estimate)%>%
+  mutate(division=as.character(division),
+         ur.code=as.character(ur.code))%>%
+  arrange(division, ur.code)
 
+write.csv(apTabReformat, "appTab3.csv", row.names=FALSE)
 ################# Quantile approach
 ### for paper stats
 
