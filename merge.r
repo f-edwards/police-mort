@@ -6,7 +6,6 @@ library(lubridate)
 library(stringr)
 library(wru)
 library(jsonlite)
-library(tigris)
 
 #fe<-read_csv("./data/fatal-encounters-5-8-17.csv")
 fe_new<-read_csv("./data/fatal-encounters-2-12-18.csv")
@@ -30,6 +29,24 @@ fe_new<-fe_new%>%
   select(id, name, age, gender, race, death_date, loc_state, loc_county, Latitude, Longitude,
          agency, cause_of_death, official_disposition, year)
 
+#### errors on coordinates
+##### SOME FAILED MATCHES
+# z<-which(block_map$FIPS_block=="OK")
+# block_map[z,]
+# ids<-fe_new[z,"id"]
+fe_new<-fe_new%>%
+  mutate(Latitude = ifelse((id==11840)&(Latitude<1), 
+                           Latitude + 47, 
+                           ifelse((id == 11921)&(Latitude<1),
+                                  Latitude + 41,
+                                  ifelse((id == 12963)&(Latitude<1),
+                                         Latitude + 38,
+                                         ifelse((id==14073)&(Latitude<1),
+                                                Latitude + 37,
+                                                Latitude)))),
+         Latitude = ifelse(id==20157, 32.7398191, Latitude),
+         Longitude = ifelse(id==20157, -97.4412267, Longitude))
+
 ####### run script to link lat/long -> FIPS block
 ####### first check to see if crosswalk file is in directory, only run on new FE data
 files<-list.files("./data")
@@ -41,7 +58,7 @@ if(!("block_map.csv"%in%files)){
            "FIPS_state" = NA,
            "STname" = NA,
            "API_status" = NA)
-  for(i in 1:3747){
+  for(i in 1:nrow(coords)){
     url<-paste("https://geo.fcc.gov/api/census/block/find?latitude=",
                coords[i, 1], 
                "&longitude=", 
@@ -66,88 +83,180 @@ if(!("block_map.csv"%in%files)){
 block_map<-read_csv("./data/block_map.csv",
                     col_types = "ddccccc")
 
+fe_new<-bind_cols(fe_new, block_map)
+#### matches just fine, difference in lat/long variables are just rounding
 
-fe_new<-
+#### get clean surnames, do I want to deal with hyphenateds?
+fe_new<-fe_new%>%
+  mutate(name_mod = str_replace(fe_new$name, '[\"].*[\"]', ""))
+fe_new<-fe_new%>%
+  mutate(name_mod = ifelse(grepl("Name withheld", fe_new$name_mod),
+                           NA, fe_new$name_mod),
+         name_mod = ifelse(grepl("Jane Doe", fe_new$name_mod),
+                           NA, fe_new$name_mod),
+         name_mod = ifelse(grepl("John Doe", fe_new$name_mod),
+                           NA, fe_new$name_mod),
+         name_mod = ifelse(grepl("jr.", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
+         name_mod = ifelse(grepl("jr", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
+         name_mod = ifelse(grepl("sr.", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
+         name_mod = ifelse(grepl("II", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
+         name_mod = ifelse(grepl("III", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
+         name_mod = ifelse(grepl("IV", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
+         name_mod = trimws(name_mod, which="both"),
+         surname = word(name_mod, -1))
+
+#### to check imputation algorithm: impute w/counties on missing, impute on full data to check sensitivity on thresholds
+
 
 #### get block-level data from census api
-census_dat_block<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
-                          states=unique(coords$STname)[1],
-                          age=TRUE, sex=TRUE, census.geo="block")
-
-
+# census_dat_block<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+#                           states=unique(coords$STname)[1],
+#                           age=TRUE, sex=TRUE, census.geo="block")
 # 
-# census_dat_county<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
-#                                   states=unique(coords$STname)[1],
-#                                   age=TRUE, sex=TRUE, census.geo="county")
+# 
+# # 
+
 
 
 #### remove nicknames (between quotes)
-test<-str_replace(fe_new$name, '["\047].*["\047]', "")
-
-
-names.tmp<-fe_new%>%
-  extract(name, c("first.name", "surname"), "([^ ]+) (.*)")
-
+#review<-fe_new[grep('[\"].*[\"]', fe_new$name), "name"]
 ### remove jr, II, III, Sr. numerics are all for john does
-names.tmp$surname<-ifelse(grepl("jr.", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
-names.tmp$surname<-ifelse(grepl("jr", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
-names.tmp$surname<-ifelse(grepl("sr.", tolower(names.tmp$surname)), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
-names.tmp$surname<-ifelse(grepl("II", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
-names.tmp$surname<-ifelse(grepl("III", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-4), names.tmp$surname) 
-names.tmp$surname<-ifelse(grepl("IV", names.tmp$surname), substr(names.tmp$surname, 1, nchar(names.tmp$surname)-3), names.tmp$surname) 
+
+         
+fe_new<-fe_new%>%
+  rename(state = STname,
+         county = FIPS_county)%>%
+  mutate(sex = ifelse(gender == "Male", 0,
+         ifelse(gender == "Female", 1, NA)),
+         age = as.integer(age))
+
+fe_complete<-fe_new%>%
+  filter(!(is.na(surname)),
+         !(is.na(age)),
+         !(is.na(sex)))%>%
+  select(surname, age, sex, county, state, id, race, FIPS_block)%>%
+  mutate(st_fips = substr(FIPS_block, 1, 2),
+         county = substr(FIPS_block, 3, 5),
+         tract = substr(FIPS_block, 6, 11),
+         block = substr(FIPS_block, 12, 15))
 
 
-names.tmp<-names.tmp%>%
-  mutate(surname=word(surname, -1))
-
-#### put missing in for missing names
-
-### remove trailing whitespace
-names.tmp$surname<-trimws(names.tmp$surname, which = c("both"))
+# census_dat_county<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+#                                    states=unique(fe_new$STname),
+#                                    age=TRUE, sex=TRUE, census.geo="county")
 
 
-name_out<-predict_race(voter.file=fe_new, census.data = census_dat_block, 
-                       census.key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045")
+########################################################
+### WITH COUNTY 
+name_out<-predict_race(voter.file=fe_complete, 
+                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+                       census.geo = "county",
+                       age= TRUE, 
+                       sex = TRUE)
 
-##### CHECK ON THE LIST OF CAUSES, SUICIDES, SOME OTHERS SHOULD BE DROPPED
-##### THE TRAFFIC DATA IS IMPROVED in 13-14 PER README, CHECK THAT TS FOR TRAFFIC DEATHS
+#### check imputations against observed
+make_pred_race<-function(x, threshold){
+  x$pred.race<-NA
+  for(i in 1:nrow(x)){
+    cnames<-which(names(x)%in%c("pred.whi", "pred.oth"))
+      max_temp<-max(x[i, cnames[1]:cnames[2]], na.rm=TRUE)
+    index<-which(x[i, cnames[1]:cnames[2]]==max_temp)
+    pred.race<-names(x)[cnames[1]:cnames[2]][index]
+    if(max_temp>threshold){
+    x[i, "pred.race"]<-pred.race}
+  }
+  return(x)
+}
+
+make_sensitivity<-function(x, geo, threshold){
+  x<-x%>%summarise(true_pos_black=sum(na.rm=TRUE,(race=="African-American/Black")&(pred.race=="pred.bla"))/
+              sum(na.rm=TRUE,race=="African-American/Black"),
+            true_pos_hisp=sum(na.rm=TRUE,(race=="Hispanic/Latino")&(pred.race=="pred.his"))/
+              sum(na.rm=TRUE,race=="Hispanic/Latino"),
+            true_pos_whi=sum(na.rm=TRUE,(race=="European-American/White")&(pred.race=="pred.whi"))/
+              sum(na.rm=TRUE,race=="European-American/White"),
+            false_pos_black=sum(na.rm=TRUE,(race!="African-American/Black")&(pred.race=="pred.bla"))/
+              sum(na.rm=TRUE,pred.race=="pred.bla"),
+            false_pos_white=sum(na.rm=TRUE,(race!="European-American/White")&(pred.race=="pred.whi"))/
+              sum(na.rm=TRUE,pred.race=="pred.whi"),
+            false_pos_his=sum(na.rm=TRUE,(race!="Hispanic/Latino")&(pred.race=="pred.his"))/
+              sum(na.rm=TRUE,pred.race=="pred.his"))%>%
+    mutate(geo.level=geo, acceptance_thresh=threshold)
+}
+
+##### predicted vs observed at 0.8 acceptance threshold
+
+# ggplot(name_out, aes(x=pred.race))+
+#   geom_bar()+
+#   ggtitle("predictions at 80 percent acceptance vs observed data")+
+#   facet_wrap(~race, scales="free")+
+#   ggsave("./visuals/name_county_pred_80.pdf", height = 10, width =10)
 
 
-### prep for surname matching
-#### extract surnames
+##### predicted vs observed at 0.9 acceptance threshold
+
+# ggplot(name_out, aes(x=pred.race))+
+#   geom_bar()+
+#   ggtitle("predictions at 90 percent acceptancevs observed data")+
+#   facet_wrap(~race, scales="free")+
+#   ggsave("./visuals/name_county_pred_90.pdf", height = 10, width =10)
 
 
-#### pull only final word
+########################################################
+### WITH TRACT 
+name_out_tract<-predict_race(voter.file=fe_complete,
+                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+                       census.geo = "tract",
+                       age= TRUE,
+                       sex = TRUE)
 
-#### REMOVE NICKNAMES
+sensitivity<-bind_rows(
+  make_sensitivity(make_pred_race(name_out, 0.7), "county", 0.7),
+  make_sensitivity(make_pred_race(name_out, 0.75), "county", 0.75),
+  make_sensitivity(make_pred_race(name_out, 0.8), "county",0.8),
+  make_sensitivity(make_pred_race(name_out, 0.85), "county",0.85),
+  make_sensitivity(make_pred_race(name_out, 0.9), "county",0.9),
+  make_sensitivity(make_pred_race(name_out, 0.95), "county",0.95),
+  make_sensitivity(make_pred_race(name_out_tract, 0.7), "tract", 0.7),
+  make_sensitivity(make_pred_race(name_out_tract, 0.75), "tract", 0.75),
+  make_sensitivity(make_pred_race(name_out_tract, 0.8), "tract",0.8),
+  make_sensitivity(make_pred_race(name_out_tract, 0.85), "tract",0.85),
+  make_sensitivity(make_pred_race(name_out_tract, 0.9), "tract",0.9),
+  make_sensitivity(make_pred_race(name_out_tract, 0.95), "tract",0.95)
+)
+
+### want to make long by geo, acceptance, race, sensitivity measure type
+library(xtable)
+print.xtable(xtable(sensitivity), file="./visuals/sensitivity.html", type="html")
+
+sens_blk<-sensitivity%>%
+  select(true_pos_black, false_pos_black, geo.level, acceptance_thresh)%>%
+  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+         race = "Black")
+
+sens_wht<-sensitivity%>%
+  select(true_pos_whi, false_pos_white, geo.level, acceptance_thresh)%>%
+  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+         race = "White")
+
+sens_hisp<-sensitivity%>%
+  select(true_pos_hisp, false_pos_his, geo.level, acceptance_thresh)%>%
+  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+         race = "Latinx")
+
+sensitivity<-bind_rows(sens_blk, sens_wht, sens_hisp)
+
+ggplot(sensitivity,
+       aes(x=acceptance_thresh, color = sens_type, linetype=geo.level))+
+  geom_line(aes(y=value))+
+  ggtitle("true and false positives in race imputation, full data")+
+  ylim(0,1)+
+  facet_wrap(~race)+
+  ggsave("./visuals/imputation_sensitivity.pdf")
 
 
-missing<-c("\"\"Kenny\"\"", "1", "2", "police")
 
-tmp$surname<-ifelse(tmp$surname%in%missing, NA, names.tmp$surname)
-tmp$sex<-ifelse(tmp$gender=="Male", 0, ifelse(tmp$gender=="Female", 1, NA))
-
-###################### PREDICT RACE ON NAMES, AGE, GENDER, BLOCK
-
-
-
-# ### vis for accuracy
-# ### performance is weak for af am, asian am, strong for latino, white, as we might expect
-# ### set a cut off for assignment at 75 percent, will leave unknown otherwise
-# name_tmp1<-name_out%>%filter(race=="Race unspecified")
-# name_tmp1$race<-ifelse(name_tmp1$pred.whi>0.75, "European-American/White", name_tmp1$race)
-# name_tmp1$race<-ifelse(name_tmp1$pred.bla>0.75, "African-American/Black", name_tmp1$race)
-# name_tmp1$race<-ifelse(name_tmp1$pred.his>0.75, "Hispanic/Latino", name_tmp1$race)
-# name_tmp1$race<-ifelse(name_tmp1$pred.asi>0.75, "Asian/Pacific Islander", name_tmp1$race)
-# 
-# name_tmp1<-name_tmp1%>%select(-county, -sex, -pred.whi, -pred.bla, -pred.his, -pred.asi, -pred.oth, -first.name, -surname)
-# ### use this data frame to sub in for missing race in original file
-# 
-# tmp<-bind_rows(fdat%>%filter(!(race=="Race unspecified"))%>%
-#                  select(-name), 
-#                name_tmp1)%>%
-#   filter(year>2012)
-
-write.csv(tmp, "fe-clean-cause.csv", row.names = FALSE)
-write.csv(fdat, "fe-noimp-cause.csv", row.names=FALSE)
-
+save.image("name.RData")
