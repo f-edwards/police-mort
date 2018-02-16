@@ -138,10 +138,10 @@ tmp[sample(1:nrow(tmp), 1),] %>% data.frame
 # ... some fairly clear characteristics in categories though
 # .... i.e, {Asphyxiated: mostly force; +
 # .... 		Beating: mostly force; +
-# .... 		Burning: mix(suicide; force); +
+# .... 		Burning: mix(self; force); +
 # .... 		Chemical: mostly force; +
-# .... 		Drowning: mostly suicide; +
-# .... 		Drug overdose: mostly suicide; +
+# .... 		Drowning: mostly flee; +
+# .... 		Drug overdose: mostly self inflicted; +
 # .... 		Fall: mostly fleeing; +
 # .... 		Medical emergency: mostly force (died after physical struggle) +
 # .... 		Other: mix(grab-bag) +
@@ -153,22 +153,79 @@ tmp[sample(1:nrow(tmp), 1),] %>% data.frame
 
 # ... so, looks like a handful of consistent categories
 # .... mostly force; mostly suicide; mostly fleeing; mixed 
-# ... p(.) hierarchy: {full; force; fleeing; mixed; suicide}
+# ... p(.) hierarchy: {full; force; fleeing; mixed; self inflicted}
 
 # 4: create data sets, using different sorting criteria
-data_scens = list(
-	full  = fe_new,
-	force = fe_new %>% 
-		filter(cause_of_death %in% c('Asphyxiated/Restrained','Beaten/Bludgeoned with instrument', 
-				'Chemical agent/Pepper spray', 'Medical emergency', 'Tasered', 'Gunshot')),
-	flee = fe_new %>% filter(cause_of_death %in% c('Vehicle','Fell from a height')),
-	mix = fe_new %>% filter(cause_of_death %in% c('Burned/Smoke inhalation', 'Other', 'Undetermined')),
-	suicide = fe_new %>% filter(cause_of_death %in% c('Drowned', 'Drug overdose', 'Stabbed'))
-	)
+#data_scens = list(
+#	full  = fe_new,
+#	force = fe_new %>% 
+#		filter(cause_of_death %in% c('Asphyxiated/Restrained','Beaten/Bludgeoned with instrument', 
+#				'Chemical agent/Pepper spray', 'Medical emergency', 'Tasered', 'Gunshot')),
+#	flee = fe_new %>% filter(cause_of_death %in% c('Vehicle','Fell from a height', 'Drowned')),
+#	mix = fe_new %>% filter(cause_of_death %in% c('Burned/Smoke inhalation', 'Other', 'Undetermined')),
+#	self = fe_new %>% filter(cause_of_death %in% c('Drug overdose', 'Stabbed'))
+#	)#
 
-# ... bind everything together (and map over when ready)
-dfs = tibble(id = names(data_scens), data_scens) 
+## ... bind everything together (and map over when ready)
+#dfs = tibble(id = names(data_scens), data_scens) 
 
 # ... get different combos etc. etc.
-force_flee = bind_rows(dfs$data_scens$force, dfs$data_scens$flee)
-force_flee_mix = bind_rows(dfs$data_scens$force, dfs$data_scens$flee, dfs$data_scens$mix)
+# force_flee = bind_rows(dfs$data_scens$force, dfs$data_scens$flee)
+# force_flee_mix = bind_rows(dfs$data_scens$force, dfs$data_scens$flee, dfs$data_scens$mix)
+
+# 5: check out official characterization
+# ... values
+fe_new$official_disposition %>% unique()
+
+# ... distribution
+fe_new %>% 
+	group_by(official_disposition) %>%
+	select(official_disposition) %>%
+	summarise(count = n(), freq = count/nrow(fe_new)) %>%
+	arrange(-count)
+
+# ... 49 unique codes;
+# ... top heavy (10th ranked key only has 57 cases)
+# .... among top 10, suicide/ruled suicide are relevant 
+# .... other suicide related ones: ruled suicide by police 
+
+# ... sort on one's that related to suicide 
+tmp = fe_new %>% 
+	  filter(official_disposition %in% c("Suicide", "Ruled suicide", 
+	  	"Ruled suicide by police", "Murder/suicide"))
+
+# ... what are these cases (and how do they compare to full data)
+table(tmp$cause_of_death) %>%
+	cbind(., 
+	  fe_new %>% 
+		filter(cause_of_death %in% c(unique(tmp$cause_of_death))) %>%
+		.$cause_of_death %>%
+		table()
+		)
+
+# ... incidental in most, except for gunshot category
+# ... let's take a closer look at gunshot + suicide cases
+ns = c("Suicide", "Ruled suicide", "Ruled suicide by police", "Murder/suicide")
+
+tmp2 = fe_new %>%
+		filter(cause_of_death == 'Gunshot', official_disposition %in% ns) %>% 
+		select(cause_description)
+
+# ... sample some
+tmp2[sample(1:nrow(tmp2), 1),] %>% data.frame
+
+# ... suicide filtered version 
+fe_new2 = fe_new %>% 
+			filter(!(official_disposition %in% ns))
+
+data_scens2 = list(
+	full  = fe_new2,
+	force = fe_new2 %>% 
+		filter(cause_of_death %in% c('Asphyxiated/Restrained','Beaten/Bludgeoned with instrument', 
+				'Chemical agent/Pepper spray', 'Medical emergency', 'Tasered', 'Gunshot')),
+	flee = fe_new2 %>% filter(cause_of_death %in% c('Vehicle','Fell from a height')),
+	mix = fe_new2 %>% filter(cause_of_death %in% c('Burned/Smoke inhalation', 'Other', 'Undetermined')),
+	self = fe_new2 %>% filter(cause_of_death %in% c('Drowned', 'Drug overdose', 'Stabbed'))
+	)
+
+dfs2 = tibble(id = names(data_scens), data_scens)
