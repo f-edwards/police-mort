@@ -91,38 +91,29 @@ fe_new<-fe_new%>%
   mutate(name_mod = str_replace(fe_new$name, '[\"].*[\"]', ""))
 fe_new<-fe_new%>%
   mutate(name_mod = ifelse(grepl("Name withheld", fe_new$name_mod),
-                           NA, fe_new$name_mod),
-         name_mod = ifelse(grepl("Jane Doe", fe_new$name_mod),
-                           NA, fe_new$name_mod),
-         name_mod = ifelse(grepl("John Doe", fe_new$name_mod),
-                           NA, fe_new$name_mod),
-         name_mod = ifelse(grepl("jr.", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
-         name_mod = ifelse(grepl("jr", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
-         name_mod = ifelse(grepl("sr.", tolower(fe_new$name_mod)), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
-         name_mod = ifelse(grepl("II", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
-         name_mod = ifelse(grepl("III", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-4), fe_new$name_mod),
-         name_mod = ifelse(grepl("IV", fe_new$name_mod), substr(fe_new$name_mod, 1, nchar(fe_new$name_mod)-3), fe_new$name_mod),
-         name_mod = trimws(name_mod, which="both"),
-         surname = word(name_mod, -1))
+                           NA, fe_new$name_mod))
+fe_new<-fe_new%>%
+         mutate(name_mod = ifelse(grepl("Jane Doe", fe_new$name_mod),
+                           NA, fe_new$name_mod))
+fe_new<-fe_new%>%
+         mutate(name_mod = ifelse(grepl("John Doe", fe_new$name_mod),
+                           NA, fe_new$name_mod))
 
-#### to check imputation algorithm: impute w/counties on missing, impute on full data to check sensitivity on thresholds
+fe_new<-fe_new%>%
+         mutate(name_mod = ifelse(grepl("jr.", tolower(name_mod)), substr(name_mod, 1, nchar(name_mod)-4), name_mod),
+         name_mod = ifelse(grepl("jr", tolower(name_mod)), substr(name_mod, 1, nchar(name_mod)-3), name_mod),
+         name_mod = ifelse(grepl("sr.", tolower(name_mod)), substr(name_mod, 1, nchar(name_mod)-4), name_mod),
+         name_mod = ifelse(grepl("II", name_mod), substr(name_mod, 1, nchar(name_mod)-3), name_mod),
+         name_mod = ifelse(grepl("III", name_mod), substr(name_mod, 1, nchar(name_mod)-4), name_mod),
+         name_mod = ifelse(grepl("IV", name_mod), substr(name_mod, 1, nchar(name_mod)-3), name_mod))
 
+fe_new<-fe_new%>%
+         mutate(name_mod = gsub("-" , " ", fe_new$name_mod), #for hyphenateds, take only the last name
+         name_mod = trimws(name_mod, which="both"))
 
-#### get block-level data from census api
-# census_dat_block<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
-#                           states=unique(coords$STname)[1],
-#                           age=TRUE, sex=TRUE, census.geo="block")
-# 
-# 
-# # 
+fe_new<-fe_new%>%
+         mutate(surname = word(name_mod, -1))
 
-
-
-#### remove nicknames (between quotes)
-#review<-fe_new[grep('[\"].*[\"]', fe_new$name), "name"]
-### remove jr, II, III, Sr. numerics are all for john does
-
-         
 fe_new<-fe_new%>%
   rename(state = STname,
          county = FIPS_county)%>%
@@ -131,9 +122,9 @@ fe_new<-fe_new%>%
          age = as.integer(age))
 
 fe_complete<-fe_new%>%
-  filter(!(is.na(surname)),
-         !(is.na(age)),
-         !(is.na(sex)))%>%
+  # filter(!(is.na(surname)),
+  #        !(is.na(age)),
+  #        !(is.na(sex)))%>%
   select(surname, age, sex, county, state, id, race, FIPS_block)%>%
   mutate(st_fips = substr(FIPS_block, 1, 2),
          county = substr(FIPS_block, 3, 5),
@@ -141,122 +132,299 @@ fe_complete<-fe_new%>%
          block = substr(FIPS_block, 12, 15))
 
 
+
 # census_dat_county<-get_census_data(key="518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
 #                                    states=unique(fe_new$STname),
 #                                    age=TRUE, sex=TRUE, census.geo="county")
-
+########################################################
+### NAME ONLY
+name_only<-predict_race(voter.file=fe_complete, 
+                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+                       surname.only = TRUE)
 
 ########################################################
-### WITH COUNTY 
-name_out<-predict_race(voter.file=fe_complete, 
+### WITH COUNTY, NO AGE, SEX 
+county_only<-predict_race(voter.file=fe_complete, 
+                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+                       census.geo = "county")
+                       
+########################################################
+### WITH COUNTY, FULL DATA
+county_full<-predict_race(voter.file=fe_complete%>%
+                            mutate(age=ifelse(is.na(age), mean(age, na.rm=TRUE), age),
+                                   sex=ifelse(is.na(sex),0, sex)),
                        census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
                        census.geo = "county",
                        age= TRUE, 
                        sex = TRUE)
 
-#### check imputations against observed
-make_pred_race<-function(x, threshold){
-  x$pred.race<-NA
-  for(i in 1:nrow(x)){
-    cnames<-which(names(x)%in%c("pred.whi", "pred.oth"))
-      max_temp<-max(x[i, cnames[1]:cnames[2]], na.rm=TRUE)
-    index<-which(x[i, cnames[1]:cnames[2]]==max_temp)
-    pred.race<-names(x)[cnames[1]:cnames[2]][index]
-    if(max_temp>threshold){
-    x[i, "pred.race"]<-pred.race}
-  }
-  return(x)
-}
-
-make_sensitivity<-function(x, geo, threshold){
-  x<-x%>%summarise(true_pos_black=sum(na.rm=TRUE,(race=="African-American/Black")&(pred.race=="pred.bla"))/
-              sum(na.rm=TRUE,race=="African-American/Black"),
-            true_pos_hisp=sum(na.rm=TRUE,(race=="Hispanic/Latino")&(pred.race=="pred.his"))/
-              sum(na.rm=TRUE,race=="Hispanic/Latino"),
-            true_pos_whi=sum(na.rm=TRUE,(race=="European-American/White")&(pred.race=="pred.whi"))/
-              sum(na.rm=TRUE,race=="European-American/White"),
-            false_pos_black=sum(na.rm=TRUE,(race!="African-American/Black")&(pred.race=="pred.bla"))/
-              sum(na.rm=TRUE,pred.race=="pred.bla"),
-            false_pos_white=sum(na.rm=TRUE,(race!="European-American/White")&(pred.race=="pred.whi"))/
-              sum(na.rm=TRUE,pred.race=="pred.whi"),
-            false_pos_his=sum(na.rm=TRUE,(race!="Hispanic/Latino")&(pred.race=="pred.his"))/
-              sum(na.rm=TRUE,pred.race=="pred.his"))%>%
-    mutate(geo.level=geo, acceptance_thresh=threshold)
-}
-
-##### predicted vs observed at 0.8 acceptance threshold
-
-# ggplot(name_out, aes(x=pred.race))+
-#   geom_bar()+
-#   ggtitle("predictions at 80 percent acceptance vs observed data")+
-#   facet_wrap(~race, scales="free")+
-#   ggsave("./visuals/name_county_pred_80.pdf", height = 10, width =10)
-
-
-##### predicted vs observed at 0.9 acceptance threshold
-
-# ggplot(name_out, aes(x=pred.race))+
-#   geom_bar()+
-#   ggtitle("predictions at 90 percent acceptancevs observed data")+
-#   facet_wrap(~race, scales="free")+
-#   ggsave("./visuals/name_county_pred_90.pdf", height = 10, width =10)
-
-
 ########################################################
 ### WITH TRACT 
-name_out_tract<-predict_race(voter.file=fe_complete,
-                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
-                       census.geo = "tract",
-                       age= TRUE,
-                       sex = TRUE)
+tract_full<-predict_race(voter.file=fe_complete%>%
+                           mutate(age=ifelse(is.na(age), mean(age, na.rm=TRUE), age),
+                                  sex=ifelse(is.na(sex),0, sex)),
+                             census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
+                             census.geo = "tract",
+                             age= TRUE,
+                             sex = TRUE)
 
-sensitivity<-bind_rows(
-  make_sensitivity(make_pred_race(name_out, 0.7), "county", 0.7),
-  make_sensitivity(make_pred_race(name_out, 0.75), "county", 0.75),
-  make_sensitivity(make_pred_race(name_out, 0.8), "county",0.8),
-  make_sensitivity(make_pred_race(name_out, 0.85), "county",0.85),
-  make_sensitivity(make_pred_race(name_out, 0.9), "county",0.9),
-  make_sensitivity(make_pred_race(name_out, 0.95), "county",0.95),
-  make_sensitivity(make_pred_race(name_out_tract, 0.7), "tract", 0.7),
-  make_sensitivity(make_pred_race(name_out_tract, 0.75), "tract", 0.75),
-  make_sensitivity(make_pred_race(name_out_tract, 0.8), "tract",0.8),
-  make_sensitivity(make_pred_race(name_out_tract, 0.85), "tract",0.85),
-  make_sensitivity(make_pred_race(name_out_tract, 0.9), "tract",0.9),
-  make_sensitivity(make_pred_race(name_out_tract, 0.95), "tract",0.95)
-)
+simple_roc <- function(labels, scores){
+  labels <- labels[order(scores, decreasing=TRUE)]
+  data.frame(TPR=cumsum(labels)/sum(labels), FPR=cumsum(!labels)/sum(!labels), labels,
+             probs=scores[order(scores, decreasing = TRUE)])
+}
 
-### want to make long by geo, acceptance, race, sensitivity measure type
-library(xtable)
-print.xtable(xtable(sensitivity), file="./visuals/sensitivity.html", type="html")
+###########################################################
+## Make roc curves
+############### name_only
+roc_white<-name_only%>%
+  mutate(white = race=="European-American/White")%>%
+  select(white, pred.whi)
+roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
+  mutate(type="name_only",
+         race="white")
 
-sens_blk<-sensitivity%>%
-  select(true_pos_black, false_pos_black, geo.level, acceptance_thresh)%>%
-  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
-  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
-         race = "Black")
+roc_black<-name_only%>%
+  mutate(black = race=="African-American/Black")%>%
+  select(black, pred.bla)
+roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
+  mutate(type="name_only",
+         race="black")
 
-sens_wht<-sensitivity%>%
-  select(true_pos_whi, false_pos_white, geo.level, acceptance_thresh)%>%
-  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
-  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
-         race = "White")
+roc_hispanic<-name_only%>%
+  mutate(hispanic = race=="Hispanic/Latino")%>%
+  select(hispanic, pred.his)
+roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
+  mutate(type="name_only",
+         race="hispanic")
 
-sens_hisp<-sensitivity%>%
-  select(true_pos_hisp, false_pos_his, geo.level, acceptance_thresh)%>%
-  gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
-  mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
-         race = "Latinx")
+roc_out<-rbind(roc_white, roc_black, roc_hispanic)
+############### county_only
+roc_white<-county_only%>%
+  mutate(white = race=="European-American/White")%>%
+  select(white, pred.whi)
+roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
+  mutate(type="county_only",
+         race="white")
 
-sensitivity<-bind_rows(sens_blk, sens_wht, sens_hisp)
+roc_black<-county_only%>%
+  mutate(black = race=="African-American/Black")%>%
+  select(black, pred.bla)
+roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
+  mutate(type="county_only",
+         race="black")
 
-ggplot(sensitivity,
-       aes(x=acceptance_thresh, color = sens_type, linetype=geo.level))+
-  geom_line(aes(y=value))+
-  ggtitle("true and false positives in race imputation, full data")+
-  ylim(0,1)+
+roc_hispanic<-county_only%>%
+  mutate(hispanic = race=="Hispanic/Latino")%>%
+  select(hispanic, pred.his)
+roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
+  mutate(type="county_only",
+         race="hispanic")
+roc_out<-rbind(roc_out,
+  roc_white, roc_black, roc_hispanic)
+############### county_full
+roc_white<-county_full%>%
+  mutate(white = race=="European-American/White")%>%
+  select(white, pred.whi)
+roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
+  mutate(type="county_full",
+         race="white")
+
+roc_black<-county_full%>%
+  mutate(black = race=="African-American/Black")%>%
+  select(black, pred.bla)
+roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
+  mutate(type="county_full",
+         race="black")
+
+roc_hispanic<-county_full%>%
+  mutate(hispanic = race=="Hispanic/Latino")%>%
+  select(hispanic, pred.his)
+roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
+  mutate(type="county_full",
+         race="hispanic")
+roc_out<-rbind(roc_out,
+               roc_white, roc_black, roc_hispanic)
+
+############### tract_full
+roc_white<-tract_full%>%
+  mutate(white = race=="European-American/White")%>%
+  select(white, pred.whi)
+roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
+  mutate(type="tract_full",
+         race="white")
+
+roc_black<-tract_full%>%
+  mutate(black = race=="African-American/Black")%>%
+  select(black, pred.bla)
+roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
+  mutate(type="tract_full",
+         race="black")
+
+roc_hispanic<-tract_full%>%
+  mutate(hispanic = race=="Hispanic/Latino")%>%
+  select(hispanic, pred.his)
+roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
+  mutate(type="tract_full",
+         race="hispanic")
+roc_out<-rbind(roc_out,
+               roc_white, roc_black, roc_hispanic)
+
+ggplot(roc_out, 
+       aes(x=FPR, y=TPR, col=type))+
+  geom_line()+
+  geom_abline(intercept=0,slope=1)+
   facet_wrap(~race)+
-  ggsave("./visuals/imputation_sensitivity.pdf")
+  ylab("True positive rate")+
+  xlab("False positive rate")+
+  ggsave("./visuals/surname_roc.pdf")
 
-
-
+##### predicted vs observed at 0.8 acceptance threshold
+##### predicted vs observed at 0.9 acceptance threshold
+#### ROC CURVES
+#### make acceptance threshold sequence
+#### loop over county, tract
+#### loop over thresholds
 save.image("name.RData")
+
+#### check tpr for fpr thresholds
+#roc_hispanic[min(which(roc_hispanic$FPR>=.1)),]
+
+
+
+#################################
+## PARKING LOT
+# 
+# 
+# #########################################################
+# ### MORE MISSING DATA DIAGNOSTICS
+# #### check on patterns of missingness on race
+# fe_missing<-fe_new%>%
+#   mutate(race = ifelse(race=="Race unspecified", NA, race))%>%
+#   mutate(age = as.numeric(age),
+#          year = as.numeric(year))
+# 
+# library(mice)
+# md.pairs(fe_missing)
+# table(is.na(fe_missing$race), fe_missing$loc_state)
+# table(is.na(fe_missing$race), fe_missing$cause_of_death)
+# 
+# #### missing race as regression outcome
+# missing_model<-glm(is.na(race)~
+#                      as.numeric(year) + as.numeric(age) + gender + loc_state  + cause_of_death,
+#                    family="binomial",
+#                    data = fe_missing)
+# 
+# 
+# #############PARKING
+# #### check imputations against observed
+# make_pred_race<-function(x, threshold){
+#   x$pred.race<-NA
+#   for(i in 1:nrow(x)){
+#     cnames<-which(names(x)%in%c("pred.whi", "pred.oth"))
+#     max_temp<-max(x[i, cnames[1]:cnames[2]], na.rm=TRUE)
+#     index<-which(x[i, cnames[1]:cnames[2]]==max_temp)
+#     pred.race<-names(x)[cnames[1]:cnames[2]][index]
+#     if(max_temp>threshold){
+#       x[i, "pred.race"]<-pred.race}
+#   }
+#   return(x)
+# }
+# 
+# 
+# make_sensitivity<-function(x, geo, threshold){
+#   x<-x%>%summarise(true_pos_black=sum(na.rm=TRUE,(race=="African-American/Black")&(pred.race=="pred.bla"))/
+#                      sum(na.rm=TRUE,race=="African-American/Black"),
+#                    true_pos_hisp=sum(na.rm=TRUE,(race=="Hispanic/Latino")&(pred.race=="pred.his"))/
+#                      sum(na.rm=TRUE,race=="Hispanic/Latino"),
+#                    true_pos_whi=sum(na.rm=TRUE,(race=="European-American/White")&(pred.race=="pred.whi"))/
+#                      sum(na.rm=TRUE,race=="European-American/White"),
+#                    false_pos_black=sum(na.rm=TRUE,(race!="African-American/Black")&(pred.race=="pred.bla"))/
+#                      sum(na.rm=TRUE,pred.race=="pred.bla"),
+#                    false_pos_white=sum(na.rm=TRUE,(race!="European-American/White")&(pred.race=="pred.whi"))/
+#                      sum(na.rm=TRUE,pred.race=="pred.whi"),
+#                    false_pos_his=sum(na.rm=TRUE,(race!="Hispanic/Latino")&(pred.race=="pred.his"))/
+#                      sum(na.rm=TRUE,pred.race=="pred.his"))%>%
+#     mutate(geo.level=geo, acceptance_thresh=threshold)
+# }
+# 
+# 
+# 
+# threshold_class<-function(x, threshold){
+#   sens<-x%>%
+#     summarise(true_pos_black=sum(na.rm=TRUE,
+#                                  (race=="African-American/Black")&(pred.bla>=threshold))/
+#                 sum(na.rm=TRUE,race=="African-American/Black"),
+#               false_pos_black=sum(na.rm=TRUE,
+#                                   (race!="African-American/Black")&(pred.bla>=threshold))/
+#                 sum(na.rm=TRUE,pred.bla>=threshold),
+#               true_pos_hisp=sum(na.rm=TRUE,
+#                                 (race=="Hispanic/Latino")&(pred.his>=threshold))/
+#                 sum(na.rm=TRUE,race=="Hispanic/Latino"),
+#               false_pos_his=sum(na.rm=TRUE,
+#                                 (race!="Hispanic/Latino")&(pred.his>=threshold))/
+#                 sum(na.rm=TRUE,pred.his>=threshold),
+#               true_pos_whi=sum(na.rm=TRUE,
+#                                (race=="European-American/White")&(pred.whi>=threshold))/
+#                 sum(na.rm=TRUE,race=="European-American/White"),
+#               false_pos_white=sum(na.rm=TRUE,
+#                                   (race!="European-American/White")&(pred.whi>=threshold))/
+#                 sum(na.rm=TRUE,pred.whi>=threshold))%>%
+#     mutate(acceptance_thresh=threshold)
+#   return(sens)
+# }
+# 
+# threshold_seq<-seq(from=0.2,to=0.99,by=0.01)
+# roc<-t(sapply(threshold_seq, function(x) threshold_class(name_only, x)))
+# 
+# #
+# #roc_white
+# 
+# # 
+# # sensitivity<-bind_rows(
+# #   make_sensitivity(make_pred_race(name_out, 0.7), "county", 0.7),
+# #   make_sensitivity(make_pred_race(name_out, 0.75), "county", 0.75),
+# #   make_sensitivity(make_pred_race(name_out, 0.8), "county",0.8),
+# #   make_sensitivity(make_pred_race(name_out, 0.85), "county",0.85),
+# #   make_sensitivity(make_pred_race(name_out, 0.9), "county",0.9),
+# #   make_sensitivity(make_pred_race(name_out, 0.95), "county",0.95),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.7), "tract", 0.7),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.75), "tract", 0.75),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.8), "tract",0.8),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.85), "tract",0.85),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.9), "tract",0.9),
+# #   make_sensitivity(make_pred_race(name_out_tract, 0.95), "tract",0.95)
+# # )
+# 
+# ### want to make long by geo, acceptance, race, sensitivity measure type
+# library(xtable)
+# print.xtable(xtable(sensitivity), file="./visuals/sensitivity.html", type="html")
+# 
+# sens_blk<-sensitivity%>%
+#   select(true_pos_black, false_pos_black, geo.level, acceptance_thresh)%>%
+#   gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+#   mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+#          race = "Black")
+# 
+# sens_wht<-sensitivity%>%
+#   select(true_pos_whi, false_pos_white, geo.level, acceptance_thresh)%>%
+#   gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+#   mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+#          race = "White")
+# 
+# sens_hisp<-sensitivity%>%
+#   select(true_pos_hisp, false_pos_his, geo.level, acceptance_thresh)%>%
+#   gather(key = race, -geo.level, -acceptance_thresh, value = value)%>%
+#   mutate(sens_type = ifelse(grepl("true", race), "true_positive", "false_positive"),
+#          race = "Latinx")
+# 
+# sensitivity<-bind_rows(sens_blk, sens_wht, sens_hisp)
+# 
+# ggplot(sensitivity,
+#        aes(x=acceptance_thresh, color = sens_type, linetype=geo.level))+
+#   geom_line(aes(y=value))+
+#   ggtitle("true and false positives in race imputation, full data")+
+#   ylim(0,1)+
+#   facet_wrap(~race)+
+#   ggsave("./visuals/imputation_sensitivity.pdf")
+
