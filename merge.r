@@ -178,6 +178,7 @@ simple_roc <- function(labels, scores){
 ## Make roc curves
 ############### name_only
 roc_white<-name_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
@@ -185,6 +186,7 @@ roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
          race="white")
 
 roc_black<-name_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
@@ -192,6 +194,7 @@ roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
          race="black")
 
 roc_hispanic<-name_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
@@ -201,6 +204,7 @@ roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
 roc_out<-rbind(roc_white, roc_black, roc_hispanic)
 ############### county_only
 roc_white<-county_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
@@ -208,6 +212,7 @@ roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
          race="white")
 
 roc_black<-county_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
@@ -215,6 +220,7 @@ roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
          race="black")
 
 roc_hispanic<-county_only%>%
+  filter(race!="Race unspecified")%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
@@ -224,6 +230,7 @@ roc_out<-rbind(roc_out,
   roc_white, roc_black, roc_hispanic)
 ############### county_full
 roc_white<-county_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
@@ -231,6 +238,7 @@ roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
          race="white")
 
 roc_black<-county_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
@@ -238,6 +246,7 @@ roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
          race="black")
 
 roc_hispanic<-county_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
@@ -248,6 +257,7 @@ roc_out<-rbind(roc_out,
 
 ############### tract_full
 roc_white<-tract_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
@@ -255,6 +265,7 @@ roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
          race="white")
 
 roc_black<-tract_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
@@ -262,6 +273,7 @@ roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
          race="black")
 
 roc_hispanic<-tract_full%>%
+  filter(race!="Race unspecified")%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
@@ -290,7 +302,52 @@ save.image("name.RData")
 #### check tpr for fpr thresholds
 #roc_hispanic[min(which(roc_hispanic$FPR>=.1)),]
 
+thresholds_10FP<-data.frame("whi"=roc_white[max(which(roc_white$FPR<=.1)),"probs"], 
+                       "bla"=roc_black[max(which(roc_black$FPR<=.1)),"probs"], 
+                       "his"=roc_hispanic[max(which(roc_hispanic$FPR<=.1)),"probs"])
 
+#### some cases will cross more than one threshold
+whi_his<-tract_full[which(race_imp$pred.whi>thresholds$whi.10FP & race_imp$pred.his > thresholds$his.10FP),]%>%
+  filter(race=="Race unspecified")
+whi_blk<-tract_full[which(race_imp$pred.whi>thresholds$whi.10FP & race_imp$pred.bla > thresholds$bla.10FP),]%>%
+  filter(race=="Race unspecified")
+his_blk<-tract_full[which(race_imp$pred.his>thresholds$his.10FP & race_imp$pred.bla > thresholds$bla.10FP),]%>%
+  filter(race=="Race unspecified")
+
+race_imp<-tract_full%>%
+  mutate(race = ifelse(race=="European-American/White",
+                       "White",
+                       race),
+         race = ifelse(race=="Race unspecified",
+                       NA,
+                       race),
+         race = ifelse(race=="African-American/Black",
+                       "Black",
+                       race),
+         race = ifelse(race=="Hispanic/Latino",
+                       "Latino",
+                       race),
+         race = ifelse(race%in%c("Native American/Alaskan",
+                                 "Asian/Pacific Islander",
+                                 "Middle Eastern"),
+                       "other",
+                       race))
+
+assign_race<-function(x, thresholds){ # return predicted race for missing cases
+  if(is.na(x$race)){
+    x$whi_over<-x$pred.whi>thresholds$whi
+    x$blk_over<-x$pred.bla>thresholds$bla
+    x$his_over<-x$pred.his>thresholds$his
+    if(x$whi_over + x$blk_over + x$his_over >1){ # deal with multiple classifications
+      if()
+    }
+  }
+}
+
+
+
+dat_out<-tract_full%>%
+  mutate()
 
 #################################
 ## PARKING LOT
