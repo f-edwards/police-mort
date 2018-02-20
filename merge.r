@@ -201,7 +201,23 @@ roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
   mutate(type="name_only",
          race="hispanic")
 
-roc_out<-rbind(roc_white, roc_black, roc_hispanic)
+roc_asian<-name_only%>%
+  filter(race!="Race unspecified")%>%
+  mutate(asian = race=="Asian/Pacific Islander")%>%
+  select(asian, pred.asi)
+roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
+  mutate(type="name_only",
+         race="asian")
+
+roc_other<-name_only%>%
+  filter(race!="Race unspecified")%>%
+  mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
+  select(other, pred.oth)
+roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
+  mutate(type="name_only",
+         race="other")
+
+roc_out<-rbind(roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 ############### county_only
 roc_white<-county_only%>%
   filter(race!="Race unspecified")%>%
@@ -226,8 +242,26 @@ roc_hispanic<-county_only%>%
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
   mutate(type="county_only",
          race="hispanic")
+
+
+roc_asian<-county_only%>%
+  filter(race!="Race unspecified")%>%
+  mutate(asian = race=="Asian/Pacific Islander")%>%
+  select(asian, pred.asi)
+roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
+  mutate(type="county_only",
+         race="asian")
+
+roc_other<-county_only%>%
+  filter(race!="Race unspecified")%>%
+  mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
+  select(other, pred.oth)
+roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
+  mutate(type="county_only",
+         race="other")
+
 roc_out<-rbind(roc_out,
-  roc_white, roc_black, roc_hispanic)
+               roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 ############### county_full
 roc_white<-county_full%>%
   filter(race!="Race unspecified")%>%
@@ -252,9 +286,26 @@ roc_hispanic<-county_full%>%
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
   mutate(type="county_full",
          race="hispanic")
-roc_out<-rbind(roc_out,
-               roc_white, roc_black, roc_hispanic)
 
+roc_asian<-county_full%>%
+  filter(race!="Race unspecified")%>%
+  mutate(asian = race=="Asian/Pacific Islander")%>%
+  select(asian, pred.asi)
+roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
+  mutate(type="county_full",
+         race="asian")
+
+roc_other<-county_full%>%
+  filter(race!="Race unspecified")%>%
+  mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
+  select(other, pred.oth)
+roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
+  mutate(type="county_full",
+         race="other")
+
+
+roc_out<-rbind(roc_out,
+               roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 ############### tract_full
 roc_white<-tract_full%>%
   filter(race!="Race unspecified")%>%
@@ -279,8 +330,25 @@ roc_hispanic<-tract_full%>%
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
   mutate(type="tract_full",
          race="hispanic")
+
+roc_asian<-tract_full%>%
+  filter(race!="Race unspecified")%>%
+  mutate(asian = race=="Asian/Pacific Islander")%>%
+  select(asian, pred.asi)
+roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
+  mutate(type="tract_full",
+         race="asian")
+
+roc_other<-tract_full%>%
+  filter(race!="Race unspecified")%>%
+  mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
+  select(other, pred.oth)
+roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
+  mutate(type="tract_full",
+         race="other")
+
 roc_out<-rbind(roc_out,
-               roc_white, roc_black, roc_hispanic)
+               roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 
 ggplot(roc_out, 
        aes(x=FPR, y=TPR, col=type))+
@@ -302,52 +370,56 @@ save.image("name.RData")
 #### check tpr for fpr thresholds
 #roc_hispanic[min(which(roc_hispanic$FPR>=.1)),]
 
-thresholds_10FP<-data.frame("whi"=roc_white[max(which(roc_white$FPR<=.1)),"probs"], 
-                       "bla"=roc_black[max(which(roc_black$FPR<=.1)),"probs"], 
-                       "his"=roc_hispanic[max(which(roc_hispanic$FPR<=.1)),"probs"])
+thresholds_05FP<-data.frame("whi"=roc_white[max(which(roc_white$FPR<=.05)),"probs"], 
+                       "bla"=roc_black[max(which(roc_black$FPR<=.05)),"probs"], 
+                       "his"=roc_hispanic[max(which(roc_hispanic$FPR<=.05)),"probs"],
+                       "asi"=roc_asian[max(which(roc_asian$FPR<=.005)),"probs"],
+                       "oth"=roc_other[max(which(roc_other$FPR<=.005)),"probs"])
 
-#### some cases will cross more than one threshold
-whi_his<-tract_full[which(race_imp$pred.whi>thresholds$whi.10FP & race_imp$pred.his > thresholds$his.10FP),]%>%
-  filter(race=="Race unspecified")
-whi_blk<-tract_full[which(race_imp$pred.whi>thresholds$whi.10FP & race_imp$pred.bla > thresholds$bla.10FP),]%>%
-  filter(race=="Race unspecified")
-his_blk<-tract_full[which(race_imp$pred.his>thresholds$his.10FP & race_imp$pred.bla > thresholds$bla.10FP),]%>%
-  filter(race=="Race unspecified")
+tract_preds<-tract_full%>%
+  mutate(pred.whi = ifelse(is.na(pred.whi), 0, pred.whi),
+         pred.bla = ifelse(is.na(pred.bla), 0, pred.bla),
+         pred.his = ifelse(is.na(pred.his), 0, pred.his),
+         pred.asi = ifelse(is.na(pred.asi), 0, pred.asi),
+         pred.oth = ifelse(is.na(pred.oth), 0, pred.oth))
 
-race_imp<-tract_full%>%
-  mutate(race = ifelse(race=="European-American/White",
-                       "White",
-                       race),
-         race = ifelse(race=="Race unspecified",
-                       NA,
-                       race),
-         race = ifelse(race=="African-American/Black",
-                       "Black",
-                       race),
-         race = ifelse(race=="Hispanic/Latino",
-                       "Latino",
-                       race),
-         race = ifelse(race%in%c("Native American/Alaskan",
-                                 "Asian/Pacific Islander",
-                                 "Middle Eastern"),
-                       "other",
-                       race))
+tract_preds<-tract_preds%>%
+  mutate(pred.whi.05 = pred.whi>thresholds_05FP$whi,
+         pred.bla.05 = pred.bla>thresholds_05FP$bla,
+         pred.his.05 = pred.his>thresholds_05FP$his,
+         pred.asi.05 = pred.asi>thresholds_05FP$asi,
+         pred.oth.05 = pred.oth>thresholds_05FP$oth)
 
 assign_race<-function(x, thresholds){ # return predicted race for missing cases
-  if(is.na(x$race)){
-    x$whi_over<-x$pred.whi>thresholds$whi
-    x$blk_over<-x$pred.bla>thresholds$bla
-    x$his_over<-x$pred.his>thresholds$his
-    if(x$whi_over + x$blk_over + x$his_over >1){ # deal with multiple classifications
-      if()
+  x$pred.race<-NA
+  index<-which(names(x)%in%(c("pred.whi", "pred.oth")))
+  for(i in 1:nrow(x)){
+  if(x$pred.whi.05[i] + x$pred.bla.05[i] + x$pred.his.05[i] + x$pred.asi.05[i] + x$pred.oth.05[i] <=1){
+    if(x$pred.whi.05[i]) x$pred.race[i]<-"white"
+    if(x$pred.bla.05[i]) x$pred.race[i]<-"black"
+    if(x$pred.his.05[i]) x$pred.race[i]<-"latino"
+    if(x$pred.asi.05[i]) x$pred.race[i]<-"asian"
+    if(x$pred.oth.05[i]) x$pred.race[i]<-"other"
+  } 
+  else{ 
+      max<-names(x[index[1]:index[2]])[which(x[i, index[1]:index[2]] == max(x[i, index[1]:index[2]]))]
+      if(max == "pred.whi" & x$pred.whi.05[i]) x$pred.race[i]<-"white"
+      if(max == "pred.bla" & x$pred.bla.05[i]) x$pred.race[i]<-"black"
+      if(max == "pred.his" & x$pred.his.05[i]) x$pred.race[i]<-"latino"
+      if(max == "pred.asi" & x$pred.asi.05[i]) x$pred.race[i]<-"asian"
+      if(max == "pred.oth" & x$pred.asi.05[i]) x$pred.race[i]<-"other"
     }
   }
+  return(x)
 }
 
+tract_preds<-assign_race(tract_preds)%>%
+  select(id, pred.race)
+
+write.csv(tract_preds, "./data/predicted_race_05FalsePos.csv", row.names = FALSE)
 
 
-dat_out<-tract_full%>%
-  mutate()
+
 
 #################################
 ## PARKING LOT
