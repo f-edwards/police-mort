@@ -108,8 +108,10 @@ pop<-pop2%>%
 ### got all of them matched
 #z<-which(!(fdat$fips%in%pop$fips))
 
-tmp2<-fdat%>%
-  filter(gender == "Male")%>%
+fdat<-fdat%>%
+  filter(gender == "Male")
+
+pop<-pop%>%
   left_join(pop)%>%
   left_join(cdc)%>%
   left_join(regions)
