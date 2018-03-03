@@ -115,3 +115,5 @@ pop<-pop%>%
   left_join(pop)%>%
   left_join(cdc)%>%
   left_join(regions)
+
+rm(cdc); rm(cw); rm(fe_new); rm(imputeds); rm(pop2); rm(regions)
