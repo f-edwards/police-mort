@@ -9,8 +9,8 @@ library(tidyverse)
 library(RColorBrewer)
 library(scales)
 
-setwd("~/Projects/police_mort")
-dat_hold = read_csv('fatal-encounters-2-12-18.csv')
+#setwd("~/Projects/police_mort")
+dat_hold = read_csv('./data/fatal-encounters-2-12-18.csv')
 cols = c(brewer.pal(8, name = 'Set2'), brewer.pal(8, name = 'Paired'))
 
 # ... pull folks beyond 2012 (...as set up in merge.r file...)
@@ -228,4 +228,4 @@ data_scens2 = list(
 	self = fe_new2 %>% filter(cause_of_death %in% c('Drowned', 'Drug overdose', 'Stabbed'))
 	)
 
-dfs2 = tibble(id = names(data_scens), data_scens)
+dfs2 = tibble(id = names(data_scens2), data_scens2)

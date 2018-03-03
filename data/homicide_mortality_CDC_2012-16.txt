@@ -1,0 +1,1298 @@
+"Notes"	"State"	"State Code"	"Hispanic Origin"	"Hispanic Origin Code"	"Race"	"Race Code"	"Gender"	"Gender Code"	Deaths	Population	Crude Rate
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	9677	Suppressed
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	13856	Suppressed
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	28	6491	431.4
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	26	9212	282.2
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	35	24100	145.2
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	40	27233	146.9
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	449	231753	193.7
+	"Alabama"	"01"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	729	295824	246.4
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	199	58791	338.5
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	265	55673	476.0
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	307	142087	216.1
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	207	121561	170.3
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	27239	2623794	1038.2
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	28426	2160958	1315.4
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	94601	6669730	1418.4
+	"Alabama"	"01"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	97319	6232884	1561.4
+	"Alabama"	"01"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	19	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	30	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	45	Not Applicable	Not Applicable
+	"Alabama"	"01"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	56	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	12	7802	Unreliable
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	13	8770	Unreliable
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	3051	Suppressed
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	3631	Suppressed
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	5256	Suppressed
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	5349	Suppressed
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	136	58905	230.9
+	"Alaska"	"02"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	212	70102	302.4
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	2036	195869	1039.5
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	2486	196140	1267.5
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	430	108379	396.8
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	450	96700	465.4
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	224	45961	487.4
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	369	65090	566.9
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	5836	873553	668.1
+	"Alaska"	"02"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	7974	1003713	794.5
+	"Alaska"	"02"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	10	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	10	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Alaska"	"02"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	35	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	204	145504	140.2
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	327	158317	206.5
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	46	45681	100.7
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	57	44232	128.9
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	66	78049	84.6
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	99	73655	134.4
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	13962	3110960	448.8
+	"Arizona"	"04"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	17369	3095482	561.1
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	4359	517333	842.6
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	5718	474484	1205.1
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1630	482674	337.7
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1501	421302	356.3
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	3606	514821	700.4
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	4440	568715	780.7
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	96728	8068503	1198.8
+	"Arizona"	"04"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	106222	7757045	1369.4
+	"Arizona"	"04"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	19	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	51	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	13	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	12	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	34	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	93	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	562	Not Applicable	Not Applicable
+	"Arizona"	"04"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	1344	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	10631	Suppressed
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	12428	Suppressed
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	27	4196	643.5
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	37	5055	731.9
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	21	10211	205.7
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	21	12262	171.3
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	429	267291	160.5
+	"Arkansas"	"05"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	643	313856	204.9
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	128	46094	277.7
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	143	44017	324.9
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	334	102567	325.6
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	294	91119	322.7
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	9046	893192	1012.8
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	9699	772161	1256.1
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	63724	4488525	1419.7
+	"Arkansas"	"05"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	66531	4229601	1573.0
+	"Arkansas"	"05"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	11	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	17	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	74	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	84	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	346	Not Applicable	Not Applicable
+	"Arkansas"	"05"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	375	Not Applicable	Not Applicable
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	575	937279	61.3
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	801	985537	81.3
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	546	584660	93.4
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	646	557738	115.8
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	420	607877	69.1
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	434	565579	76.7
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	97085	23276215	417.1
+	"California"	"06"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	116989	23432035	499.3
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	3409	416446	818.6
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	4105	393099	1044.3
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	58874	12284527	479.3
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	60405	10680287	565.6
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	44898	4679577	959.4
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	48868	4501268	1085.6
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	399055	32205406	1239.1
+	"California"	"06"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	401492	31681729	1267.3
+	"California"	"06"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	10	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	26	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	69	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	57	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	127	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	446	Not Applicable	Not Applicable
+	"California"	"06"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	1229	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	154	96684	159.3
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	148	101300	146.1
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	13	24305	Unreliable
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	16	23678	Unreliable
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	36	49021	73.4
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	45	47221	95.3
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	8463	1663987	508.6
+	"Colorado"	"08"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	10640	1729850	615.1
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	501	78784	635.9
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	561	78603	713.7
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1301	378655	343.6
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1185	314937	376.3
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	2821	398897	707.2
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	3430	463430	740.1
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	71102	7606757	934.7
+	"Colorado"	"08"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	72616	7518726	965.8
+	"Colorado"	"08"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	55	Not Applicable	Not Applicable
+	"Colorado"	"08"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	106	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	21173	Suppressed
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	23136	Suppressed
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	12028	Suppressed
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	12	15557	Unreliable
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	70	109869	63.7
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	109	94012	115.9
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	2978	782952	380.4
+	"Connecticut"	"09"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	3792	776732	488.2
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	51	17361	293.8
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	64	16737	382.4
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	647	322947	200.3
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	776	294756	263.3
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	5466	738469	740.2
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	5275	648090	813.9
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	67731	5297125	1278.6
+	"Connecticut"	"09"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	61452	4907591	1252.2
+	"Connecticut"	"09"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	20	Not Applicable	Not Applicable
+	"Connecticut"	"09"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	28	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	5271	Suppressed
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	5616	Suppressed
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	2103	Suppressed
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	2046	Suppressed
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	18	17363	Unreliable
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	17	14955	Unreliable
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	274	103141	265.7
+	"Delaware"	"10"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	394	115238	341.9
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	43	7125	603.5
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	50	6569	761.2
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	187	73353	254.9
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	182	67259	270.6
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	3433	409753	837.8
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	3407	346804	982.4
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	16198	1292475	1253.3
+	"Delaware"	"10"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	16542	1185868	1394.9
+	"Delaware"	"10"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	13	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	25	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	71	Not Applicable	Not Applicable
+	"Delaware"	"10"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	86	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	4500	Suppressed
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	5242	Suppressed
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	2876	Suppressed
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	3002	Suppressed
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	38	20778	182.9
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	45	19544	230.2
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	266	96817	274.7
+	"District of Columbia"	"11"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	298	104545	285.0
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	14	4306	Unreliable
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	12	3639	Unreliable
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	128	73172	174.9
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	129	51001	252.9
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	9062	701395	1292.0
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	8781	549509	1598.0
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	2175	542139	401.2
+	"District of Columbia"	"11"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	2283	533339	428.1
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	57	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	173	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	19	Not Applicable	Not Applicable
+	"District of Columbia"	"11"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	34	Not Applicable	Not Applicable
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	32	81518	39.3
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	38	102154	37.2
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	86	65013	132.3
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	95	62814	151.2
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	1082	462729	233.8
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	1439	444778	323.5
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	52079	8597881	605.7
+	"Florida"	"12"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	54896	8173585	671.6
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	516	117256	440.1
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	698	116170	600.8
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	3985	1273468	312.9
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	4116	1052227	391.2
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	47638	6122829	778.0
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	50174	5430952	923.9
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	336332	24273158	1385.6
+	"Florida"	"12"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	366948	22936325	1599.9
+	"Florida"	"12"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	101	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	289	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	579	Not Applicable	Not Applicable
+	"Florida"	"12"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	1440	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	14	40662	Unreliable
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	19	55219	Unreliable
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	55	21930	250.8
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	78	25654	304.0
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	115	143343	80.2
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	132	139676	94.5
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1999	1150914	173.7
+	"Georgia"	"13"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2861	1379725	207.4
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	122	52543	232.2
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	130	49765	261.2
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	2110	798518	264.2
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	2310	726331	318.0
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	49619	6274487	790.8
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	50541	5219606	968.3
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	133328	11269154	1183.1
+	"Georgia"	"13"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	135283	10698327	1264.5
+	"Georgia"	"13"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	20	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	23	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	38	Not Applicable	Not Applicable
+	"Georgia"	"13"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	50	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	14	4896	Unreliable
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	17	6316	Unreliable
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	541	101001	535.6
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	682	94110	724.7
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	7084	Suppressed
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	11	9201	Unreliable
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	494	102050	484.1
+	"Hawaii"	"15"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	638	124058	514.3
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	31	7092	437.1
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	39	9188	424.5
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	17353	1781356	974.1
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	17895	1595607	1121.5
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	140	52484	266.7
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	304	92024	330.3
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	6043	699374	864.1
+	"Hawaii"	"15"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	7882	852677	924.4
+	"Hawaii"	"15"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	106	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	237	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	18	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	74	Not Applicable	Not Applicable
+	"Hawaii"	"15"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	210	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	15728	Suppressed
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	18	17322	Unreliable
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	3897	Suppressed
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	4111	Suppressed
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	4111	Suppressed
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	4834	Suppressed
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	710	259401	273.7
+	"Idaho"	"16"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1051	286864	366.4
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	293	38397	763.1
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	379	37386	1013.7
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	219	56592	387.0
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	187	45932	407.1
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	54	17796	303.4
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	90	26690	337.2
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	28821	2635940	1093.4
+	"Idaho"	"16"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	30514	2569873	1187.4
+	"Idaho"	"16"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Idaho"	"16"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	98909	Suppressed
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	12	113451	Unreliable
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	11	38858	Unreliable
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	20	39256	50.9
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	87	120504	72.2
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	120	113901	105.4
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	9445	3175283	297.5
+	"Illinois"	"17"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	12845	3396894	378.1
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	154	51504	299.0
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	173	46029	375.9
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	4509	1416656	318.3
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	4856	1286731	377.4
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	38049	3759658	1012.0
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	39180	3153687	1242.4
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	209209	16736192	1250.0
+	"Illinois"	"17"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	196988	15791363	1247.4
+	"Illinois"	"17"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	16	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	170	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	494	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	252	Not Applicable	Not Applicable
+	"Illinois"	"17"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	719	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	18137	Suppressed
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	23001	Suppressed
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	8513	Suppressed
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	11	9151	Unreliable
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	24	34177	70.2
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	42	32555	129.0
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1618	565992	285.9
+	"Indiana"	"18"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2367	639166	370.3
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	97	36094	268.7
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	102	34256	297.8
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	596	269000	221.6
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	669	257458	259.8
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	11150	1190760	936.4
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	12184	1054024	1156.0
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	137671	10733085	1282.7
+	"Indiana"	"18"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	135895	10138116	1340.4
+	"Indiana"	"18"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	22	Not Applicable	Not Applicable
+	"Indiana"	"18"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	33	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	8843	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	10683	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	3096	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	3284	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	7514	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	8829	Suppressed
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	449	221727	202.5
+	"Iowa"	"19"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	717	254694	281.5
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	108	18562	581.8
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	146	17509	833.9
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	334	135276	246.9
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	365	136516	267.4
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	1135	170150	667.1
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	1397	198730	703.0
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	71186	5479338	1299.2
+	"Iowa"	"19"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	68033	5223103	1302.5
+	"Iowa"	"19"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	45	Not Applicable	Not Applicable
+	"Iowa"	"19"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	42	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	18	18497	Unreliable
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	23	20946	109.8
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	17	5316	Unreliable
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	20	5643	354.4
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	20	17425	114.8
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	30	17827	168.3
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1404	432253	324.8
+	"Kansas"	"20"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1941	481843	402.8
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	533	54531	977.4
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	695	52073	1334.7
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	503	168663	298.2
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	462	154118	299.8
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	3063	317454	964.9
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	3311	340594	972.1
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	58455	4503802	1297.9
+	"Kansas"	"20"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	56415	4306258	1310.1
+	"Kansas"	"20"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	31	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	118	Not Applicable	Not Applicable
+	"Kansas"	"20"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	213	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	5052	Suppressed
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	7459	Suppressed
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	10	3762	Unreliable
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	13	4839	Unreliable
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	13632	Suppressed
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	13	16761	Unreliable
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	351	176776	198.6
+	"Kentucky"	"21"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	600	232720	257.8
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	57	19526	291.9
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	52	19827	262.3
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	347	127806	271.5
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	279	113726	245.3
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	6586	682946	964.4
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	7042	658433	1069.5
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	102307	7689871	1330.4
+	"Kentucky"	"21"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	105690	7210945	1465.7
+	"Kentucky"	"21"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	110	Not Applicable	Not Applicable
+	"Kentucky"	"21"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	134	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	9761	Suppressed
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	10	13083	Unreliable
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	18	5424	Unreliable
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	30	6825	439.6
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	47	32406	145.0
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	76	37890	200.6
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1145	302282	378.8
+	"Louisiana"	"22"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1396	380162	367.2
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	242	59541	406.4
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	283	56747	498.7
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	509	172872	294.4
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	624	163226	382.3
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	29641	2918535	1015.6
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	32796	2510893	1306.1
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	71752	5635108	1273.3
+	"Louisiana"	"22"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	74530	5351659	1392.7
+	"Louisiana"	"22"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	10	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	41	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	20	Not Applicable	Not Applicable
+	"Louisiana"	"22"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	119	Not Applicable	Not Applicable
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	1165	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	1275	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	797	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	750	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1690	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	2391	Suppressed
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	62	28878	214.7
+	"Maine"	"23"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	84	29023	289.4
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	130	19481	667.3
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	168	18115	927.4
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	90	35648	252.5
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	67	26659	251.3
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	75	26554	282.4
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	168	36986	454.2
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	33314	2647155	1258.5
+	"Maine"	"23"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	33421	2474558	1350.6
+	"Maine"	"23"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	153	Not Applicable	Not Applicable
+	"Maine"	"23"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	195	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	32361	Suppressed
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	40263	Suppressed
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	21	17962	116.9
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	23	19588	117.4
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	149	108494	137.3
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	180	102071	176.3
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1595	723941	220.3
+	"Maryland"	"24"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1939	818976	236.8
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	132	36876	358.0
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	161	32685	492.6
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	2446	812705	301.0
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	2646	709062	373.2
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	30442	3701199	822.5
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	31743	3059046	1037.7
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	79620	6631485	1200.6
+	"Maryland"	"24"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	76958	6230098	1235.3
+	"Maryland"	"24"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	92	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	101	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	121	Not Applicable	Not Applicable
+	"Maryland"	"24"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	132	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	39272	Suppressed
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	40804	Suppressed
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	20711	Suppressed
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	19424	Suppressed
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	207	198277	104.4
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	290	173670	167.0
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	3374	1011995	333.4
+	"Massachusetts"	"25"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	4305	977278	440.5
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	173	29724	582.0
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	171	29164	586.3
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	2171	895760	242.4
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	2447	800476	305.7
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	5805	941512	616.6
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	6032	853755	706.5
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	129151	10815487	1194.1
+	"Massachusetts"	"25"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	117837	9892250	1191.2
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	24	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	52	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	1626	Not Applicable	Not Applicable
+	"Massachusetts"	"25"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	1652	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	31	29227	106.1
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	53	29171	181.7
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	21	10231	205.3
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	12	10069	Unreliable
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	113	53546	211.0
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	153	47442	322.5
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	2922	641755	455.3
+	"Michigan"	"26"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	3862	669556	576.8
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1212	133482	908.0
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	1305	124943	1044.5
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1440	583617	246.7
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1521	543915	279.6
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	30391	2822507	1076.7
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	31410	2430798	1292.2
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	194750	15485955	1257.6
+	"Michigan"	"26"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	191389	14789299	1294.1
+	"Michigan"	"26"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	37	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	99	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	337	Not Applicable	Not Applicable
+	"Michigan"	"26"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	482	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	19	19834	Unreliable
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	22	23110	95.2
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	7099	Suppressed
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	7639	Suppressed
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	19	19359	Unreliable
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	28	20764	134.8
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	690	347250	198.7
+	"Minnesota"	"27"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1038	394024	263.4
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1161	115225	1007.6
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	1369	108921	1256.9
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1419	482058	294.4
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1436	447009	321.2
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	2430	530298	458.2
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	3152	550929	572.1
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	98125	9056000	1083.5
+	"Minnesota"	"27"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	94502	8726914	1082.9
+	"Minnesota"	"27"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	30	Not Applicable	Not Applicable
+	"Minnesota"	"27"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	49	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	4339	Suppressed
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	6665	Suppressed
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	13	2498	Unreliable
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	14	3381	Unreliable
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	15577	Suppressed
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	17	18245	Unreliable
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	180	97744	184.2
+	"Mississippi"	"28"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	304	146971	206.8
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	219	27708	790.4
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	254	24604	1032.4
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	238	67743	351.3
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	232	57745	401.8
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	22408	2189682	1023.3
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	24319	1833114	1326.6
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	50804	3495393	1453.5
+	"Mississippi"	"28"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	52388	3297692	1588.6
+	"Mississippi"	"28"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	20	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	15	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	15	Not Applicable	Not Applicable
+	"Mississippi"	"28"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	27	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	15	13485	Unreliable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	15	15321	Unreliable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	14	6931	Unreliable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	11	7433	Unreliable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	19	20787	Unreliable
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	49	21455	228.4
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	915	318663	287.1
+	"Missouri"	"29"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1289	351270	367.0
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	255	62234	409.7
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	291	61211	475.4
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	743	259983	285.8
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	746	230091	324.2
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	13842	1412326	980.1
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	14931	1219215	1224.6
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	127088	9941093	1278.4
+	"Missouri"	"29"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	127108	9392800	1353.2
+	"Missouri"	"29"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	11	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	31	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	63	Not Applicable	Not Applicable
+	"Missouri"	"29"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	124	Not Applicable	Not Applicable
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	23	7228	318.2
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	37	7073	523.1
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	1198	Suppressed
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	981	Suppressed
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1156	Suppressed
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	1441	Suppressed
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	170	45494	373.7
+	"Montana"	"30"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	219	47469	461.4
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1279	112903	1132.8
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	1473	108027	1363.5
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	71	21397	331.8
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	63	15199	414.5
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	41	9563	428.7
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	87	16304	533.6
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	20914	1798423	1162.9
+	"Montana"	"30"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	22302	1800482	1238.7
+	"Montana"	"30"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	136	Not Applicable	Not Applicable
+	"Montana"	"30"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	221	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	13680	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	15975	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	3575	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	4360	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	7710	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	8654	Suppressed
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	589	242591	242.8
+	"Nebraska"	"31"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	895	274364	326.2
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	265	29143	909.3
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	261	26388	989.1
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	197	84573	232.9
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	248	76982	322.2
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	1287	155826	825.9
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	1475	163806	900.5
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	37668	3045494	1236.8
+	"Nebraska"	"31"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	36231	2917705	1241.8
+	"Nebraska"	"31"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	10	Not Applicable	Not Applicable
+	"Nebraska"	"31"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	12	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	30	40135	74.7
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	49	43535	112.6
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	47	31631	148.6
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	49	30922	158.5
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	61	46281	131.8
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	59	43659	135.1
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	3484	1163767	299.4
+	"Nevada"	"32"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	4722	1209017	390.6
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	394	56391	698.7
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	549	50979	1076.9
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	2608	584871	445.9
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	2613	459945	568.1
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	3871	472343	819.5
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	4685	465493	1006.5
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	39041	3045168	1282.1
+	"Nevada"	"32"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	46911	3139928	1494.0
+	"Nevada"	"32"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Nevada"	"32"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	1799	Suppressed
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	2205	Suppressed
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	1292	Suppressed
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	1324	Suppressed
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	5325	Suppressed
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	17	6756	Unreliable
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	110	62386	176.3
+	"New Hampshire"	"33"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	166	63186	262.7
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	15	7116	Unreliable
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	24	7446	322.3
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	147	69234	212.3
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	128	62708	204.1
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	83	28977	286.4
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	161	38688	416.1
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	27877	2526021	1103.6
+	"New Hampshire"	"33"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	28053	2414241	1162.0
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	26	Not Applicable	Not Applicable
+	"New Hampshire"	"33"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	45	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	75855	Suppressed
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	86094	Suppressed
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	44	40966	107.4
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	49	40877	119.9
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	218	314123	69.4
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	245	298250	82.1
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	10652	2612316	407.8
+	"New Jersey"	"34"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	12381	2621591	472.3
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	137	33024	414.8
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	124	30300	409.2
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	4343	1697662	255.8
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	4940	1569726	314.7
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	22975	2431543	944.9
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	22202	2055828	1080.0
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	144598	10714975	1349.5
+	"New Jersey"	"34"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	132000	9937301	1328.3
+	"New Jersey"	"34"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	13	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	33	Not Applicable	Not Applicable
+	"New Jersey"	"34"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	61	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	77	66965	115.0
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	117	70576	165.8
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	16	13485	Unreliable
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	15	12618	Unreliable
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	10	25078	Unreliable
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	31	23005	134.8
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	12731	1663552	765.3
+	"New Mexico"	"35"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	15962	1606293	993.7
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	2931	346679	845.5
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	3731	309024	1207.3
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	289	75422	383.2
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	247	61020	404.8
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	599	71367	839.3
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	859	95493	899.5
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	23102	1764516	1309.3
+	"New Mexico"	"35"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	24683	1705926	1446.9
+	"New Mexico"	"35"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	15	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	41	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	13	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	84	Not Applicable	Not Applicable
+	"New Mexico"	"35"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	201	Not Applicable	Not Applicable
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	15	267447	Unreliable
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	22	275849	8.0
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	63	116123	54.3
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	57	109956	51.8
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	1771	1240521	142.8
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	1670	1045358	159.8
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	28121	5166080	544.3
+	"New York"	"36"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	30723	5034650	610.2
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	612	139261	439.5
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	623	125577	496.1
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	10950	3573070	306.5
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	13062	3180684	410.7
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	52327	6216195	841.8
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	47628	5125856	929.2
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	286273	23658629	1210.0
+	"New York"	"36"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	265724	22110027	1201.8
+	"New York"	"36"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	10	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	165	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	213	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	1160	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	1787	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	2698	Not Applicable	Not Applicable
+	"New York"	"36"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	3405	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	11	59440	Unreliable
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	15	74599	Unreliable
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	28	20621	135.8
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	35	23593	148.3
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	83	115708	71.7
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	105	114677	91.6
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1799	1071464	167.9
+	"North Carolina"	"37"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2637	1253201	210.4
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1999	233857	854.8
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	2194	209574	1046.9
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1285	544838	235.8
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1315	492381	267.1
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	42121	4425544	951.8
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	42364	3691947	1147.5
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	164628	13431400	1225.7
+	"North Carolina"	"37"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	162081	12521873	1294.4
+	"North Carolina"	"37"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	114	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	135	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	259	Not Applicable	Not Applicable
+	"North Carolina"	"37"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	306	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	10	3058	Unreliable
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	15	3153	Unreliable
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	563	Suppressed
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	736	Suppressed
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1190	Suppressed
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	1760	Suppressed
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	61	26645	228.9
+	"North Dakota"	"38"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	115	34737	331.1
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	674	65939	1022.2
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	809	61676	1311.7
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	30	20339	147.5
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	51	21524	236.9
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	39	21799	178.9
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	95	35857	264.9
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	14252	1247193	1142.7
+	"North Dakota"	"38"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	14195	1295153	1096.0
+	"North Dakota"	"38"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	16	Not Applicable	Not Applicable
+	"North Dakota"	"38"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	41	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	15	17534	Unreliable
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	20269	Suppressed
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	12	10488	Unreliable
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	17	11152	Unreliable
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	27	61856	43.6
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	61	58248	104.7
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1846	521219	354.2
+	"Ohio"	"39"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2418	565329	427.7
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	171	59603	286.9
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	225	55907	402.5
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1316	492099	267.4
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1338	451397	296.4
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	30282	2864719	1057.1
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	30799	2507743	1228.2
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	254927	19105208	1334.3
+	"Ohio"	"39"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	246310	17941764	1372.8
+	"Ohio"	"39"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	35	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	24	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	349	Not Applicable	Not Applicable
+	"Ohio"	"39"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	297	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	76	46630	163.0
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	90	53996	166.7
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	13	7009	Unreliable
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	11	8401	Unreliable
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	42	20980	200.2
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	22	21789	101.0
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1375	459660	299.1
+	"Oklahoma"	"40"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2020	534236	378.1
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	6144	647672	948.6
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	7381	606060	1217.9
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	658	179397	366.8
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	528	159510	331.0
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	5457	566401	963.5
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	6230	552195	1128.2
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	78642	5527528	1422.7
+	"Oklahoma"	"40"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	80210	5226836	1534.6
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	12	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	12	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	20	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	56	Not Applicable	Not Applicable
+	"Oklahoma"	"40"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	124	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	45	44428	101.3
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	47	52458	89.6
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	21	14426	145.6
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	23	15085	152.5
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	15	19120	Unreliable
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	17	21507	Unreliable
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1678	659125	254.6
+	"Oregon"	"41"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2201	727157	302.7
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	782	105456	741.5
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	938	100687	931.6
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	1540	417040	369.3
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	1539	349501	440.3
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	995	142127	700.1
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	1356	170673	794.5
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	78852	6556755	1202.6
+	"Oregon"	"41"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	80082	6218719	1287.8
+	"Oregon"	"41"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	104	Not Applicable	Not Applicable
+	"Oregon"	"41"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	224	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	14	47148	Unreliable
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	20	49049	40.8
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	61	23699	257.4
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	102	24153	422.3
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	166	200353	82.9
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	247	190404	129.7
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	4162	1070440	388.8
+	"Pennsylvania"	"42"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	6162	1128753	545.9
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	161	44397	362.6
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	198	41420	478.0
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	2302	855458	269.1
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	2640	776289	340.1
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	28931	2778998	1041.1
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	28828	2453855	1174.8
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	289740	21037557	1377.3
+	"Pennsylvania"	"42"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	273798	19668300	1392.1
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	10	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	43	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	47	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	421	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	448	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	2387	Not Applicable	Not Applicable
+	"Pennsylvania"	"42"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	2360	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	9511	Suppressed
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	9251	Suppressed
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	4354	Suppressed
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	4373	Suppressed
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	15	41498	Unreliable
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	22	36988	59.5
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	598	195742	305.5
+	"Rhode Island"	"44"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	727	191466	379.7
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	104	10129	1026.8
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	90	9168	981.7
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	206	78236	263.3
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	218	68322	319.1
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	613	121970	502.6
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	731	119452	612.0
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	23685	1735727	1364.6
+	"Rhode Island"	"44"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	21258	1570775	1353.3
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	39	Not Applicable	Not Applicable
+	"Rhode Island"	"44"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	53	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	11248	Suppressed
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	12	17233	Unreliable
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	23	6342	362.7
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	31	8161	379.9
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	61	37203	164.0
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	94	40031	234.8
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	633	317803	199.2
+	"South Carolina"	"45"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	926	406242	227.9
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	140	38359	365.0
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	212	36748	576.9
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	484	164353	294.5
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	449	142316	315.5
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	27401	2705088	1012.9
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	29122	2264441	1286.1
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	81393	6482865	1255.5
+	"South Carolina"	"45"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	84201	6076031	1385.8
+	"South Carolina"	"45"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	18	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	26	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	28	Not Applicable	Not Applicable
+	"South Carolina"	"45"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	39	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	5231	Suppressed
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	16	6057	Unreliable
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	746	Suppressed
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	866	Suppressed
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1312	Suppressed
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	1863	Suppressed
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	78	32464	240.3
+	"South Dakota"	"46"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	100	40100	249.4
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1285	119717	1073.4
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	1624	111858	1451.8
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	61	21850	279.2
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	49	20741	236.2
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	41	21206	193.3
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	108	35362	305.4
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	16614	1403541	1183.7
+	"South Dakota"	"46"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	16793	1385269	1212.3
+	"South Dakota"	"46"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"South Dakota"	"46"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	14452	Suppressed
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	21742	Suppressed
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	12	8572	Unreliable
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	27	10359	260.6
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	49	29128	168.2
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	49	30723	159.5
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	762	405448	187.9
+	"Tennessee"	"47"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1180	488298	241.7
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	125	38097	328.1
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	152	39090	388.8
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	673	239651	280.8
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	615	208855	294.5
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	20708	2209691	937.1
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	21852	1883947	1159.9
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	135513	10175950	1331.7
+	"Tennessee"	"47"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	137256	9469538	1449.4
+	"Tennessee"	"47"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	68	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	109	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	300	Not Applicable	Not Applicable
+	"Tennessee"	"47"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	428	Not Applicable	Not Applicable
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	43	319371	13.5
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	69	354181	19.5
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	67	114628	58.4
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	75	115398	65.0
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	238	317589	74.9
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	320	301794	106.0
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	82234	16509670	498.1
+	"Texas"	"48"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	97949	16535550	592.4
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	629	198293	317.2
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	619	192668	321.3
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	6875	2466503	278.7
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	7680	2285255	336.1
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	52485	6218928	844.0
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	54813	5612905	976.6
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	292083	24244682	1204.7
+	"Texas"	"48"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	301987	23359052	1292.8
+	"Texas"	"48"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	29	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	31	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	112	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	242	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	764	Not Applicable	Not Applicable
+	"Texas"	"48"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	1196	Not Applicable	Not Applicable
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	17	24823	Unreliable
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	27	28793	93.8
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	9691	Suppressed
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	10618	Suppressed
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	13739	Suppressed
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	16245	Suppressed
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1712	542962	315.3
+	"Utah"	"49"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2142	575919	371.9
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	381	56244	677.4
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	492	52783	932.1
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	750	195161	384.3
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	796	179427	443.6
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	200	48579	411.7
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	356	68616	518.8
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	36934	4236936	871.7
+	"Utah"	"49"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	37995	4162716	912.7
+	"Utah"	"49"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Utah"	"49"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	703	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	830	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	444	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	437	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1238	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	1490	Suppressed
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	60	17353	345.8
+	"Vermont"	"50"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	49	17367	282.1
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	13	5224	Unreliable
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	27	5197	519.5
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	57	21958	259.6
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	47	17363	270.7
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	57	12677	449.6
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	68	16287	417.5
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	14040	1232270	1139.4
+	"Vermont"	"50"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	13882	1172312	1184.2
+	"Vermont"	"50"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	10	Not Applicable	Not Applicable
+	"Vermont"	"50"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	26	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	39531	Suppressed
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	47148	Suppressed
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	35	24454	143.1
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	26	25536	101.8
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	138	102640	134.5
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	109	100220	108.8
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	2147	1020459	210.4
+	"Virginia"	"51"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	2429	1121057	216.7
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	211	49958	422.4
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	209	50816	411.3
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	3132	1138013	275.2
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	3253	984399	330.5
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	29969	3267717	917.1
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	30256	2887603	1047.8
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	121570	10915874	1113.7
+	"Virginia"	"51"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	119853	10461005	1145.7
+	"Virginia"	"51"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	15	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	21	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	335	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	426	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	484	Not Applicable	Not Applicable
+	"Virginia"	"51"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	599	Not Applicable	Not Applicable
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	84	65679	127.9
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	115	74771	153.8
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	54	36394	148.4
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	49	36970	132.5
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	48	44102	108.8
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	80	48151	166.1
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	2704	1110237	243.6
+	"Washington"	"53"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	3842	1232464	311.7
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1747	205713	849.2
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	2143	194995	1099.0
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	5398	1383507	390.2
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	5191	1173930	442.2
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	2978	506237	588.3
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	4179	608586	686.7
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	114045	10436339	1092.8
+	"Washington"	"53"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	116502	10205401	1141.6
+	"Washington"	"53"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	10	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	20	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	101	Not Applicable	Not Applicable
+	"Washington"	"53"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	192	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	841	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	1420	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	718	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	864	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	2649	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	3474	Suppressed
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	73	37609	194.1
+	"West Virginia"	"54"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	105	43528	241.2
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	29	7801	371.7
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	29	8636	335.8
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	67	34489	194.3
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	65	30223	215.1
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	1516	122468	1237.9
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	1746	146659	1190.5
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	52355	3538458	1479.6
+	"West Virginia"	"54"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	54118	3354906	1613.1
+	"West Virginia"	"54"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	24	Not Applicable	Not Applicable
+	"West Virginia"	"54"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	40	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	11	20566	Unreliable
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	14	22842	Unreliable
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	6425	Suppressed
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	6726	Suppressed
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	22	27683	79.5
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	17	27048	Unreliable
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	1270	480746	264.2
+	"Wisconsin"	"55"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	1796	536074	335.0
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	1001	100801	993.0
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	1024	97665	1048.5
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	883	286676	308.0
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	862	268296	321.3
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	5518	671635	821.6
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	6163	624735	986.5
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	116516	9707597	1200.3
+	"Wisconsin"	"55"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	113522	9383364	1209.8
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wisconsin"	"55"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	5045	Suppressed
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	18	5966	Unreliable
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	1015	Suppressed
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	1075	Suppressed
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	1847	Suppressed
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	2184	Suppressed
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Female"	"F"	394	79621	494.8
+	"Wyoming"	"56"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	"Male"	"M"	510	89811	567.9
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	237	22134	1070.8
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	329	21855	1505.4
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	44	13620	323.1
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	31	11121	278.8
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Female"	"F"	65	14220	457.1
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	"Male"	"M"	85	20964	405.5
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Female"	"F"	9932	954083	1041.0
+	"Wyoming"	"56"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	"Male"	"M"	11111	980982	1132.6
+	"Wyoming"	"56"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Female"	"F"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"White"	"2106-3"	"Female"	"F"	17	Not Applicable	Not Applicable
+	"Wyoming"	"56"	"Not Stated"	"NS"	"White"	"2106-3"	"Male"	"M"	Suppressed	Not Applicable	Not Applicable
+"---"
+"Dataset: Underlying Cause of Death, 1999-2016"
+"Query Parameters:"
+"Title:"
+"2013 Urbanization: All"
+"Autopsy: All"
+"Gender: All"
+"Hispanic Origin: All"
+"ICD-10 Codes: All"
+"Place of Death: All"
+"Race: All"
+"Single-Year Ages: 18 years, 19 years, 20 years, 21 years, 22 years, 23 years, 24 years, 25 years, 26 years, 27 years, 28 years,"
+"29 years, 30 years, 31 years, 32 years, 33 years, 34 years, 35 years, 36 years, 37 years, 38 years, 39 years, 40 years, 41"
+"years, 42 years, 43 years, 44 years, 45 years, 46 years, 47 years, 48 years, 49 years, 50 years, 51 years, 52 years, 53 years,"
+"54 years, 55 years, 56 years, 57 years, 58 years, 59 years, 60 years, 61 years, 62 years, 63 years, 64 years, 65 years, 66"
+"years, 67 years, 68 years, 69 years, 70 years, 71 years, 72 years, 73 years, 74 years, 75 years, 76 years, 77 years, 78 years,"
+"79 years, 80 years, 81 years, 82 years, 83 years, 84 years, 85 years, 86 years, 87 years, 88 years, 89 years, 90 years, 91"
+"years, 92 years, 93 years, 94 years, 95 years, 96 years, 97 years, 98 years, 99 years, 100+ years"
+"States: All"
+"Weekday: All"
+"Year/Month: 2012, 2013, 2014, 2015, 2016"
+"Group By: State, Hispanic Origin, Race, Gender"
+"Show Totals: Disabled"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: Mar 2, 2018 5:20:47 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. Underlying Cause of Death"
+"1999-2016 on CDC WONDER Online Database, released December, 2017. Data are from the Multiple Cause of Death Files, 1999-2016, as"
+"compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed"
+"at http://wonder.cdc.gov/ucd-icd10.html on Mar 2, 2018 5:20:47 PM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"---"
+Caveats:
+"1. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2014-Revision."
+"2. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Assurance of Confidentiality."
+"3. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Unreliable."
+"4. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"5. Deaths of persons with Hispanic origin ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among"
+"Hispanic Origin groups, so are not included in the Hispanic Origin specific counts and rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"6. Information included on the death certificate about the race and Hispanic ethnicity of the decedent is reported by the"
+"funeral director as provided by an informant, often the surviving next of kin, or, in the absence of an informant, on the basis"
+"of observation. Race and ethnicity information from the census is by self-report. To the extent that race and Hispanic origin"
+"are inconsistent between these two data sources, death rates will be biased. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Racial Differences."
+"7. The population figures for year 2016 are bridged-race estimates of the July 1 resident population, from the Vintage 2016"
+"postcensal series released by NCHS on June 26, 2017. The population figures for year 2015 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2015 postcensal series released by NCHS on June 28, 2016. The population figures for"
+"year 2014 are bridged-race estimates of the July 1 resident population, from the Vintage 2014 postcensal series released by NCHS"
+"on June 30, 2015. The population figures for year 2013 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2013 postcensal series released by NCHS on June 26, 2014. The population figures for year 2012 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2012 postcensal series released by NCHS on June 13, 2013. The"
+"population figures for year 2011 are bridged-race estimates of the July 1 resident population, from the Vintage 2011 postcensal"
+"series released by NCHS on July 18, 2012. Population figures for 2010 are April 1 Census counts. The population figures for"
+"years 2001 - 2009 are bridged-race estimates of the July 1 resident population, from the revised intercensal county-level 2000 -"
+"2009 series released by NCHS on October 26, 2012. Population figures for 2000 are April 1 Census counts. Population figures for"
+"1999 are from the 1990-1999 intercensal series of July 1 estimates. Population figures for the infant age groups are the number"
+"of live births. <br/><b>Note:</b> Rates and population figures for years 2001 - 2009 differ slightly from previously published"
+"reports, due to use of the population estimates which were available at the time of release."
