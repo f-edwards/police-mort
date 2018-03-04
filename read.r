@@ -9,10 +9,6 @@ rm(list=ls())
 set.seed(1)
 
 library(tidyverse)
-library(rstanarm)
-library(parallel)
-options(mc.cores = parallel::detectCores())
-
 
 fe_new<-read_csv("./data/fatal-encounters-2-12-18.csv")
 fe_new<-fe_new%>%
