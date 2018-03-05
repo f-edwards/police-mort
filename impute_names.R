@@ -143,12 +143,6 @@ name_only<-predict_race(voter.file=fe_complete,
                        surname.only = TRUE)
 
 ########################################################
-### WITH COUNTY, NO AGE, SEX 
-county_only<-predict_race(voter.file=fe_complete, 
-                       census.key = "518b6e66ffa1857a9e4ffd5d894f2934bb06c045",
-                       census.geo = "county")
-                       
-########################################################
 ### WITH COUNTY, FULL DATA
 county_full<-predict_race(voter.file=fe_complete%>%
                             mutate(age=ifelse(is.na(age), mean(age, na.rm=TRUE), age),
@@ -182,7 +176,7 @@ roc_white<-name_only%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
-  mutate(type="name_only",
+  mutate(type="Surname only",
          race="white")
 
 roc_black<-name_only%>%
@@ -190,7 +184,7 @@ roc_black<-name_only%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
-  mutate(type="name_only",
+  mutate(type="Surname only",
          race="black")
 
 roc_hispanic<-name_only%>%
@@ -198,7 +192,7 @@ roc_hispanic<-name_only%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
-  mutate(type="name_only",
+  mutate(type="Surname only",
          race="hispanic")
 
 roc_asian<-name_only%>%
@@ -206,7 +200,7 @@ roc_asian<-name_only%>%
   mutate(asian = race=="Asian/Pacific Islander")%>%
   select(asian, pred.asi)
 roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
-  mutate(type="name_only",
+  mutate(type="Surname only",
          race="asian")
 
 roc_other<-name_only%>%
@@ -214,61 +208,17 @@ roc_other<-name_only%>%
   mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
   select(other, pred.oth)
 roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
-  mutate(type="name_only",
+  mutate(type="Surname only",
          race="other")
 
 roc_out<-rbind(roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
-############### county_only
-roc_white<-county_only%>%
-  filter(race!="Race unspecified")%>%
-  mutate(white = race=="European-American/White")%>%
-  select(white, pred.whi)
-roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
-  mutate(type="county_only",
-         race="white")
-
-roc_black<-county_only%>%
-  filter(race!="Race unspecified")%>%
-  mutate(black = race=="African-American/Black")%>%
-  select(black, pred.bla)
-roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
-  mutate(type="county_only",
-         race="black")
-
-roc_hispanic<-county_only%>%
-  filter(race!="Race unspecified")%>%
-  mutate(hispanic = race=="Hispanic/Latino")%>%
-  select(hispanic, pred.his)
-roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
-  mutate(type="county_only",
-         race="hispanic")
-
-
-roc_asian<-county_only%>%
-  filter(race!="Race unspecified")%>%
-  mutate(asian = race=="Asian/Pacific Islander")%>%
-  select(asian, pred.asi)
-roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
-  mutate(type="county_only",
-         race="asian")
-
-roc_other<-county_only%>%
-  filter(race!="Race unspecified")%>%
-  mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
-  select(other, pred.oth)
-roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
-  mutate(type="county_only",
-         race="other")
-
-roc_out<-rbind(roc_out,
-               roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 ############### county_full
 roc_white<-county_full%>%
   filter(race!="Race unspecified")%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
-  mutate(type="county_full",
+  mutate(type="Surname + county",
          race="white")
 
 roc_black<-county_full%>%
@@ -276,7 +226,7 @@ roc_black<-county_full%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
-  mutate(type="county_full",
+  mutate(type="Surname + county",
          race="black")
 
 roc_hispanic<-county_full%>%
@@ -284,7 +234,7 @@ roc_hispanic<-county_full%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
-  mutate(type="county_full",
+  mutate(type="Surname + county",
          race="hispanic")
 
 roc_asian<-county_full%>%
@@ -292,7 +242,7 @@ roc_asian<-county_full%>%
   mutate(asian = race=="Asian/Pacific Islander")%>%
   select(asian, pred.asi)
 roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
-  mutate(type="county_full",
+  mutate(type="Surname + county",
          race="asian")
 
 roc_other<-county_full%>%
@@ -300,7 +250,7 @@ roc_other<-county_full%>%
   mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
   select(other, pred.oth)
 roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
-  mutate(type="county_full",
+  mutate(type="Surname + county",
          race="other")
 
 
@@ -312,7 +262,7 @@ roc_white<-tract_full%>%
   mutate(white = race=="European-American/White")%>%
   select(white, pred.whi)
 roc_white<-simple_roc(roc_white$white, roc_white$pred.whi)%>%
-  mutate(type="tract_full",
+  mutate(type="Surname + tract",
          race="white")
 
 roc_black<-tract_full%>%
@@ -320,7 +270,7 @@ roc_black<-tract_full%>%
   mutate(black = race=="African-American/Black")%>%
   select(black, pred.bla)
 roc_black<-simple_roc(roc_black$black, roc_black$pred.bla)%>%
-  mutate(type="tract_full",
+  mutate(type="Surname + tract",
          race="black")
 
 roc_hispanic<-tract_full%>%
@@ -328,7 +278,7 @@ roc_hispanic<-tract_full%>%
   mutate(hispanic = race=="Hispanic/Latino")%>%
   select(hispanic, pred.his)
 roc_hispanic<-simple_roc(roc_hispanic$hispanic, roc_hispanic$pred.his)%>%
-  mutate(type="tract_full",
+  mutate(type="Surname + tract",
          race="hispanic")
 
 roc_asian<-tract_full%>%
@@ -336,7 +286,7 @@ roc_asian<-tract_full%>%
   mutate(asian = race=="Asian/Pacific Islander")%>%
   select(asian, pred.asi)
 roc_asian<-simple_roc(roc_asian$asian, roc_asian$pred.asi)%>%
-  mutate(type="tract_full",
+  mutate(type="Surname + tract",
          race="asian")
 
 roc_other<-tract_full%>%
@@ -344,20 +294,37 @@ roc_other<-tract_full%>%
   mutate(other = race%in%c("Middle Eastern", "Native American/Alaskan"))%>%
   select(other, pred.oth)
 roc_other<-simple_roc(roc_other$other, roc_other$pred.oth)%>%
-  mutate(type="tract_full",
+  mutate(type="Surname + tract",
          race="other")
 
 roc_out<-rbind(roc_out,
                roc_white, roc_black, roc_hispanic, roc_asian, roc_other)
 
+race_labels<-list(
+  "asian"="Asian",
+  "black"="Black",
+  "hispanic"="Latino",
+  "other"="Other",
+  "white"="White"
+)
+
+race_labeller<-function(variable, value){
+  return(race_labels[value])
+}
+
 ggplot(roc_out, 
        aes(x=FPR, y=TPR, col=type))+
   geom_line()+
+  theme_bw()+
   geom_abline(intercept=0,slope=1)+
-  facet_wrap(~race)+
+  facet_wrap(~race, labeller = race_labeller)+
   ylab("True positive rate")+
   xlab("False positive rate")+
-  ggsave("./visuals/surname_roc.pdf")
+  geom_vline(xintercept = 0.05, lty=2)+
+  scale_x_continuous(breaks = c(0, 0.25, 0.5, 0.75, 1), labels=c(0, 0.25, 0.5, 0.75, 1))+
+  theme(legend.position = "bottom")+
+  theme(legend.title = element_blank())+
+  ggsave("./visuals/surname_roc.png", width=6.5, height=6.5)
 
 ##### predicted vs observed at 0.8 acceptance threshold
 ##### predicted vs observed at 0.9 acceptance threshold
