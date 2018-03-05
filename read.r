@@ -106,6 +106,7 @@ pop<-pop2%>%
 
 fdat<-fdat%>%
   filter(gender == "Male")
+### KIDS - START AT 18 or !5? Pop data may link up at 15
 
 pop<-pop%>%
   left_join(pop)%>%
