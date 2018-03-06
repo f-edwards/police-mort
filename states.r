@@ -18,7 +18,7 @@ theme_set(theme_minimal())
 setwd("~/Projects/police_mort")
 select  = dplyr::select
 
-fe_new<-read_csv("fatal-encounters-2-12-18.csv")
+fe_new<-read_csv("./data/fatal-encounters-2-12-18.csv")
 fe_new<-fe_new%>%
   filter(`Date (Year)`>=2012)
 names(fe_new)<-c("id", "name", "age", "gender", "race", "URL", "death_date", 
@@ -39,7 +39,7 @@ fe_new<-fe_new%>%
          race = ifelse(race == "Native American/Alaskan", "other", race),
          race = ifelse(race == "Race unspecified", NA, race))
 
-imputeds<-read_csv("predicted_race_05FalsePos.csv")
+imputeds<-read_csv("./data/predicted_race_05FalsePos.csv")
 
 fdat <- imputeds %>% left_join(fe_new) # for surname/block imputation
 
@@ -54,7 +54,7 @@ fdat<-fdat%>%
   mutate(fips = ifelse(fips == 2270, 2158, fips))
 
 # ... attach CDC urban-rual scheme
-cdc = read_fwf(file = 'NCHSURCodes2013.txt', 
+cdc = read_fwf(file = './data/NCHSURCodes2013.txt', 
 			   fwf_positions(c(1, 3, 7, 10, 47, 98, 107, 116, 118, 120), 
 					  		 c(2, 5, 8, 45, 96, 105, 114, 116, 118, 120))
 		) %>%
@@ -79,14 +79,14 @@ regions = read.csv('regions.csv',
 		  dplyr::select(state, Division)
 
 # ... demographics
-pop2<-read_csv("nhgis0029_ds216_20155_2015_county.csv")
+pop2<-read_csv("./data/nhgis0029_ds216_20155_2015_county.csv")
 pop2$fips<-paste(pop2$STATEA, pop2$COUNTYA, sep="")
 pop2<-pop2%>%
   rename(fips.st=STATEA)%>%
   mutate(fips = as.numeric(fips), fips.st=as.numeric(fips.st)) %>%
   filter(fips.st!=72)
 
-cw<-read_csv("fips-st-crosswalk.csv") %>%
+cw<-read_csv("./data/fips-st-crosswalk.csv") %>%
   dplyr::select(state, fips)%>%rename(fips.st = fips)
 
 pop2<-left_join(pop2, cw)%>%
@@ -121,18 +121,48 @@ rm(cdc); rm(cw); rm(fe_new); rm(imputeds); rm(pop2); rm(regions)
 #########################################################
 # add in the new conditions: 
 # ... reduce to men
+# removes 889 women, 7 trans
 fdat <- fdat %>% filter(gender == "Male")
 
+
+#######################################################
+## FILTER BY AGE >= 18
+## removes 318 children
+### convert all ages to numeric for filter
+# 
+fdat[grep("mon", fdat$age), "age"]<-"0"
+ranges<-grep("-", fdat$age)
+## substr and str_sub doing weird stuff with vector, going to do by row
+for(i in 1:length(ranges)){
+  fdat[ranges[i], "age"]<-substr(fdat[ranges[i], "age"], 1, 2)
+}
+s<-grep("s", fdat$age)
+for(i in 1:length(s)){
+  fdat[s[i], "age"]<-substr(fdat[s[i], "age"], 1, 2)
+}
+misc<-grep("`", fdat$age)
+for(i in 1:length(misc)){
+  fdat[misc[i], "age"]<-substr(fdat[misc[i], "age"], 1, 2)
+}
+fdat$age<-as.numeric(fdat$age)           
+fdat<-fdat%>%
+  filter(age>=18)
+
 # ... and filter out suicides
+#  removes 810 adult male suicides
 ns = c("Suicide", "Ruled suicide", "Ruled suicide by police", "Murder/suicide")
 fdat = fdat %>% filter(!(official_disposition %in% ns)) 
 
 # ... and filter out not-force deaths (ie., fleeing deaths)
+# removes 1476 non-force deaths
 fdat = fdat %>%  
         filter(cause_of_death %in% 
           c('Asphyxiated/Restrained','Beaten/Bludgeoned with instrument', 
             'Chemical agent/Pepper spray', 'Medical emergency', 'Tasered', 
             'Gunshot'))
+
+############### FINAL SET OF CASES
+### 6295 adult male homicides recorded between 1/1/2012 and 2/12/2018
 
 # ... reduce ur codes to 3 (largest urban; medium urban; rural)
 pop = pop %>%
