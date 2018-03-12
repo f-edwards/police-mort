@@ -3,7 +3,7 @@ library(rstanarm)
 library(parallel)
 library(data.table)
 
-
+load('state_ur_models.RData')
 ## visuals 
 #load('final_states_mods.RData')
 blk.stan<-blk.stan.0
