@@ -1,0 +1,135 @@
+"Notes"	"Census Division"	"Census Division Code"	"Hispanic Origin"	"Hispanic Origin Code"	"Race"	"Race Code"	Deaths	Population	Crude Rate
+	"Division 1: New England"	"CENS-D1"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	10	119969	Unreliable
+	"Division 1: New England"	"CENS-D1"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	104	601418	17.3
+	"Division 1: New England"	"CENS-D1"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	212	594454	35.7
+	"Division 1: New England"	"CENS-D1"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	59	2742477	2.2
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	41	1034721	4.0
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	616	4639384	13.3
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	61	3084774	2.0
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	3005	5891966	51.0
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	357	12562598	2.8
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	26	Not Applicable	Not Applicable
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Not Stated"	"NS"	"White"	"2106-3"	15	Not Applicable	Not Applicable
+	"Division 3: East North Central"	"CENS-D3"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	24	144369	16.6
+	"Division 3: East North Central"	"CENS-D3"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	532	2863643	18.6
+	"Division 3: East North Central"	"CENS-D3"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	46	1189666	3.9
+	"Division 3: East North Central"	"CENS-D3"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	5088	5522724	92.1
+	"Division 3: East North Central"	"CENS-D3"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	577	13450156	4.3
+	"Division 3: East North Central"	"CENS-D3"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	31	Not Applicable	Not Applicable
+	"Division 4: West North Central"	"CENS-D4"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	58	277594	20.9
+	"Division 4: West North Central"	"CENS-D4"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	10	33010	Unreliable
+	"Division 4: West North Central"	"CENS-D4"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	19	326826	Unreliable
+	"Division 4: West North Central"	"CENS-D4"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	900	867168	103.8
+	"Division 4: West North Central"	"CENS-D4"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	146	3560988	4.1
+	"Division 5: South Atlantic"	"CENS-D5"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	44	340387	12.9
+	"Division 5: South Atlantic"	"CENS-D5"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	484	5393180	9.0
+	"Division 5: South Atlantic"	"CENS-D5"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	31	1067940	2.9
+	"Division 5: South Atlantic"	"CENS-D5"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	3680	5574199	66.0
+	"Division 5: South Atlantic"	"CENS-D5"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	495	11164689	4.4
+	"Division 5: South Atlantic"	"CENS-D5"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	18	Not Applicable	Not Applicable
+	"Division 5: South Atlantic"	"CENS-D5"	"Not Stated"	"NS"	"White"	"2106-3"	11	Not Applicable	Not Applicable
+	"Division 6: East South Central"	"CENS-D6"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	64	281100	22.8
+	"Division 6: East South Central"	"CENS-D6"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	1377	1834961	75.0
+	"Division 6: East South Central"	"CENS-D6"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	232	3128037	7.4
+	"Division 7: West South Central"	"CENS-D7"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	14	188456	Unreliable
+	"Division 7: West South Central"	"CENS-D7"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	1245	8159896	15.3
+	"Division 7: West South Central"	"CENS-D7"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	16	127375	Unreliable
+	"Division 7: West South Central"	"CENS-D7"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	60	1596036	3.8
+	"Division 7: West South Central"	"CENS-D7"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	2191	3944094	55.6
+	"Division 7: West South Central"	"CENS-D7"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	669	10762221	6.2
+	"Division 7: West South Central"	"CENS-D7"	"Not Stated"	"NS"	"White"	"2106-3"	12	Not Applicable	Not Applicable
+	"Division 8: Mountain"	"CENS-D8"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	20	142275	14.1
+	"Division 8: Mountain"	"CENS-D8"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	13	106253	Unreliable
+	"Division 8: Mountain"	"CENS-D8"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	530	3383231	15.7
+	"Division 8: Mountain"	"CENS-D8"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	47	160610	29.3
+	"Division 8: Mountain"	"CENS-D8"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	35	870336	4.0
+	"Division 8: Mountain"	"CENS-D8"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	414	985512	42.0
+	"Division 8: Mountain"	"CENS-D8"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	489	8975135	5.4
+	"Division 9: Pacific"	"CENS-D9"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	10	602594	Unreliable
+	"Division 9: Pacific"	"CENS-D9"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	28	399137	7.0
+	"Division 9: Pacific"	"CENS-D9"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	1868	15453402	12.1
+	"Division 9: Pacific"	"CENS-D9"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	30	225026	13.3
+	"Division 9: Pacific"	"CENS-D9"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	261	9120689	2.9
+	"Division 9: Pacific"	"CENS-D9"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	1761	3520799	50.0
+	"Division 9: Pacific"	"CENS-D9"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	838	22593568	3.7
+	"Division 9: Pacific"	"CENS-D9"	"Not Stated"	"NS"	"White"	"2106-3"	10	Not Applicable	Not Applicable
+"---"
+"Dataset: Underlying Cause of Death, 1999-2016"
+"Query Parameters:"
+"Title:"
+"2013 Urbanization: Large Central Metro"
+"Autopsy: All"
+"Census Regions: All"
+"Gender: Male"
+"Hispanic Origin: Hispanic or Latino, Not Hispanic or Latino, Not Stated"
+"Injury Intent: Homicide"
+"Injury Mechanism & All Other Leading Causes: All"
+"Place of Death: All"
+"Race: American Indian or Alaska Native, Asian or Pacific Islander, Black or African American, White"
+"Single-Year Ages: 18 years, 19 years, 20 years, 21 years, 22 years, 23 years, 24 years, 25 years, 26 years, 27 years, 28 years,"
+"29 years, 30 years, 31 years, 32 years, 33 years, 34 years, 35 years, 36 years, 37 years, 38 years, 39 years, 40 years, 41"
+"years, 42 years, 43 years, 44 years, 45 years, 46 years, 47 years, 48 years, 49 years, 50 years, 51 years, 52 years, 53 years,"
+"54 years, 55 years, 56 years, 57 years, 58 years, 59 years, 60 years, 61 years, 62 years, 63 years, 64 years, 65 years, 66"
+"years, 67 years, 68 years, 69 years, 70 years, 71 years, 72 years, 73 years, 74 years, 75 years, 76 years, 77 years, 78 years,"
+"79 years, 80 years, 81 years, 82 years, 83 years, 84 years, 85 years, 86 years, 87 years, 88 years, 89 years, 90 years, 91"
+"years, 92 years, 93 years, 94 years, 95 years, 96 years, 97 years, 98 years, 99 years, 100+ years"
+"Weekday: All"
+"Year/Month: 2012, 2013, 2014, 2015, 2016"
+"Group By: Census Division, Hispanic Origin, Race"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: Mar 12, 2018 2:24:13 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. Underlying Cause of Death"
+"1999-2016 on CDC WONDER Online Database, released December, 2017. Data are from the Multiple Cause of Death Files, 1999-2016, as"
+"compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed"
+"at http://wonder.cdc.gov/ucd-icd10.html on Mar 12, 2018 2:24:13 PM"
+"---"
+Messages:
+"1. Selections made to any variable in [Census Regions, HHS Regions, States, 2013 Urbanization] cause equivalent selections in"
+"the other variables. More Information: http://wonder.cdc.gov/wonder/help/faq.html#related-variables."
+"2. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
+"---"
+Caveats:
+"1. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2014-Revision."
+"2. These items in the results table are not fully selected: Division 1: New England, Division 2: Middle Atlantic, Division 3:"
+"East North Central, Division 4: West North Central, Division 5: South Atlantic, Division 6: East South Central, Division 7: West"
+"South Central, Division 8: Mountain, Division 9: Pacific. The Query Description lists the actual values selected."
+"3. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Assurance of Confidentiality."
+"4. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Unreliable."
+"5. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"6. Deaths of persons with Hispanic origin ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among"
+"Hispanic Origin groups, so are not included in the Hispanic Origin specific counts and rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"7. Information included on the death certificate about the race and Hispanic ethnicity of the decedent is reported by the"
+"funeral director as provided by an informant, often the surviving next of kin, or, in the absence of an informant, on the basis"
+"of observation. Race and ethnicity information from the census is by self-report. To the extent that race and Hispanic origin"
+"are inconsistent between these two data sources, death rates will be biased. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Racial Differences."
+"8. The population figures for year 2016 are bridged-race estimates of the July 1 resident population, from the Vintage 2016"
+"postcensal series released by NCHS on June 26, 2017. The population figures for year 2015 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2015 postcensal series released by NCHS on June 28, 2016. The population figures for"
+"year 2014 are bridged-race estimates of the July 1 resident population, from the Vintage 2014 postcensal series released by NCHS"
+"on June 30, 2015. The population figures for year 2013 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2013 postcensal series released by NCHS on June 26, 2014. The population figures for year 2012 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2012 postcensal series released by NCHS on June 13, 2013. The"
+"population figures for year 2011 are bridged-race estimates of the July 1 resident population, from the Vintage 2011 postcensal"
+"series released by NCHS on July 18, 2012. Population figures for 2010 are April 1 Census counts. The population figures for"
+"years 2001 - 2009 are bridged-race estimates of the July 1 resident population, from the revised intercensal county-level 2000 -"
+"2009 series released by NCHS on October 26, 2012. Population figures for 2000 are April 1 Census counts. Population figures for"
+"1999 are from the 1990-1999 intercensal series of July 1 estimates. Population figures for the infant age groups are the number"
+"of live births. <br/><b>Note:</b> Rates and population figures for years 2001 - 2009 differ slightly from previously published"
+"reports, due to use of the population estimates which were available at the time of release."
