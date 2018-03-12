@@ -1,0 +1,127 @@
+"Notes"	"Census Division"	"Census Division Code"	"2013 Urbanization"	"2013 Urbanization Code"	Deaths	Population	Crude Rate
+	"Division 1: New England"	"CENS-D1"	"Large Central Metro"	"1"	398	4382005	9.1
+	"Division 1: New England"	"CENS-D1"	"Large Fringe Metro"	"2"	235	9958941	2.4
+	"Division 1: New England"	"CENS-D1"	"Medium Metro"	"3"	412	8613979	4.8
+	"Division 1: New England"	"CENS-D1"	"Small Metro"	"4"	35	1604483	2.2
+	"Division 1: New England"	"CENS-D1"	"Micropolitan (non-metro)"	"5"	49	2146699	2.3
+	"Division 1: New England"	"CENS-D1"	"NonCore (non-metro)"	"6"	42	1284714	3.3
+"Total"	"Division 1: New England"	"CENS-D1"			1171	27990821	4.2
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Large Central Metro"	"1"	4136	27661800	15.0
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Large Fringe Metro"	"2"	1323	28199317	4.7
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Medium Metro"	"3"	819	11780219	7.0
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Small Metro"	"4"	202	4528946	4.5
+	"Division 2: Middle Atlantic"	"CENS-D2"	"Micropolitan (non-metro)"	"5"	99	4154364	2.4
+	"Division 2: Middle Atlantic"	"CENS-D2"	"NonCore (non-metro)"	"6"	51	1655501	3.1
+"Total"	"Division 2: Middle Atlantic"	"CENS-D2"			6630	77980147	8.5
+	"Division 3: East North Central"	"CENS-D3"	"Large Central Metro"	"1"	6310	23370143	27.0
+	"Division 3: East North Central"	"CENS-D3"	"Large Fringe Metro"	"2"	1344	23058768	5.8
+	"Division 3: East North Central"	"CENS-D3"	"Medium Metro"	"3"	1408	14100677	10.0
+	"Division 3: East North Central"	"CENS-D3"	"Small Metro"	"4"	609	10045357	6.1
+	"Division 3: East North Central"	"CENS-D3"	"Micropolitan (non-metro)"	"5"	336	11062236	3.0
+	"Division 3: East North Central"	"CENS-D3"	"NonCore (non-metro)"	"6"	171	5715610	3.0
+"Total"	"Division 3: East North Central"	"CENS-D3"			10178	87352791	11.7
+	"Division 4: West North Central"	"CENS-D4"	"Large Central Metro"	"1"	1139	5106995	22.3
+	"Division 4: West North Central"	"CENS-D4"	"Large Fringe Metro"	"2"	729	8766486	8.3
+	"Division 4: West North Central"	"CENS-D4"	"Medium Metro"	"3"	471	6689433	7.0
+	"Division 4: West North Central"	"CENS-D4"	"Small Metro"	"4"	295	6334033	4.7
+	"Division 4: West North Central"	"CENS-D4"	"Micropolitan (non-metro)"	"5"	235	6046834	3.9
+	"Division 4: West North Central"	"CENS-D4"	"NonCore (non-metro)"	"6"	255	6411921	4.0
+"Total"	"Division 4: West North Central"	"CENS-D4"			3124	39355702	7.9
+	"Division 5: South Atlantic"	"CENS-D5"	"Large Central Metro"	"1"	4770	23719871	20.1
+	"Division 5: South Atlantic"	"CENS-D5"	"Large Fringe Metro"	"2"	3856	39606213	9.7
+	"Division 5: South Atlantic"	"CENS-D5"	"Medium Metro"	"3"	3215	28326003	11.3
+	"Division 5: South Atlantic"	"CENS-D5"	"Small Metro"	"4"	1111	11410162	9.7
+	"Division 5: South Atlantic"	"CENS-D5"	"Micropolitan (non-metro)"	"5"	1032	7565204	13.6
+	"Division 5: South Atlantic"	"CENS-D5"	"NonCore (non-metro)"	"6"	751	6652362	11.3
+"Total"	"Division 5: South Atlantic"	"CENS-D5"			14735	117279815	12.6
+	"Division 6: East South Central"	"CENS-D6"	"Large Central Metro"	"1"	1686	5440514	31.0
+	"Division 6: East South Central"	"CENS-D6"	"Large Fringe Metro"	"2"	328	4817957	6.8
+	"Division 6: East South Central"	"CENS-D6"	"Medium Metro"	"3"	1405	8541268	16.4
+	"Division 6: East South Central"	"CENS-D6"	"Small Metro"	"4"	465	4484693	10.4
+	"Division 6: East South Central"	"CENS-D6"	"Micropolitan (non-metro)"	"5"	796	5888641	13.5
+	"Division 6: East South Central"	"CENS-D6"	"NonCore (non-metro)"	"6"	737	5549807	13.3
+"Total"	"Division 6: East South Central"	"CENS-D6"			5417	34722880	15.6
+	"Division 7: West South Central"	"CENS-D7"	"Large Central Metro"	"1"	4212	25061886	16.8
+	"Division 7: West South Central"	"CENS-D7"	"Large Fringe Metro"	"2"	995	11658367	8.5
+	"Division 7: West South Central"	"CENS-D7"	"Medium Metro"	"3"	2040	15394334	13.3
+	"Division 7: West South Central"	"CENS-D7"	"Small Metro"	"4"	776	5810862	13.4
+	"Division 7: West South Central"	"CENS-D7"	"Micropolitan (non-metro)"	"5"	707	6423060	11.0
+	"Division 7: West South Central"	"CENS-D7"	"NonCore (non-metro)"	"6"	526	5572301	9.4
+"Total"	"Division 7: West South Central"	"CENS-D7"			9256	69920810	13.2
+	"Division 8: Mountain"	"CENS-D8"	"Large Central Metro"	"1"	1559	14686709	10.6
+	"Division 8: Mountain"	"CENS-D8"	"Large Fringe Metro"	"2"	295	4774858	6.2
+	"Division 8: Mountain"	"CENS-D8"	"Medium Metro"	"3"	743	10751071	6.9
+	"Division 8: Mountain"	"CENS-D8"	"Small Metro"	"4"	396	5611429	7.1
+	"Division 8: Mountain"	"CENS-D8"	"Micropolitan (non-metro)"	"5"	407	4971444	8.2
+	"Division 8: Mountain"	"CENS-D8"	"NonCore (non-metro)"	"6"	174	2621962	6.6
+"Total"	"Division 8: Mountain"	"CENS-D8"			3574	43417473	8.2
+	"Division 9: Pacific"	"CENS-D9"	"Large Central Metro"	"1"	4813	52287639	9.2
+	"Division 9: Pacific"	"CENS-D9"	"Large Fringe Metro"	"2"	1150	15251868	7.5
+	"Division 9: Pacific"	"CENS-D9"	"Medium Metro"	"3"	2213	19583420	11.3
+	"Division 9: Pacific"	"CENS-D9"	"Small Metro"	"4"	390	5732231	6.8
+	"Division 9: Pacific"	"CENS-D9"	"Micropolitan (non-metro)"	"5"	308	3959421	7.8
+	"Division 9: Pacific"	"CENS-D9"	"NonCore (non-metro)"	"6"	98	1446424	6.8
+"Total"	"Division 9: Pacific"	"CENS-D9"			8972	98261003	9.1
+"Total"					63057	596281442	10.6
+"---"
+"Dataset: Underlying Cause of Death, 1999-2016"
+"Query Parameters:"
+"Title:"
+"2013 Urbanization: All"
+"Autopsy: All"
+"Gender: Male"
+"Hispanic Origin: All"
+"Injury Intent: Homicide"
+"Injury Mechanism & All Other Leading Causes: All"
+"Place of Death: All"
+"Race: All"
+"Single-Year Ages: 18 years, 19 years, 20 years, 21 years, 22 years, 23 years, 24 years, 25 years, 26 years, 27 years, 28 years,"
+"29 years, 30 years, 31 years, 32 years, 33 years, 34 years, 35 years, 36 years, 37 years, 38 years, 39 years, 40 years, 41"
+"years, 42 years, 43 years, 44 years, 45 years, 46 years, 47 years, 48 years, 49 years, 50 years, 51 years, 52 years, 53 years,"
+"54 years, 55 years, 56 years, 57 years, 58 years, 59 years, 60 years, 61 years, 62 years, 63 years, 64 years, 65 years, 66"
+"years, 67 years, 68 years, 69 years, 70 years, 71 years, 72 years, 73 years, 74 years, 75 years, 76 years, 77 years, 78 years,"
+"79 years, 80 years, 81 years, 82 years, 83 years, 84 years, 85 years, 86 years, 87 years, 88 years, 89 years, 90 years, 91"
+"years, 92 years, 93 years, 94 years, 95 years, 96 years, 97 years, 98 years, 99 years, 100+ years"
+"States: All"
+"Weekday: All"
+"Year/Month: 2012, 2013, 2014, 2015, 2016"
+"Group By: Census Division, 2013 Urbanization"
+"Show Totals: True"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: Mar 12, 2018 7:45:15 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. Underlying Cause of Death"
+"1999-2016 on CDC WONDER Online Database, released December, 2017. Data are from the Multiple Cause of Death Files, 1999-2016, as"
+"compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed"
+"at http://wonder.cdc.gov/ucd-icd10.html on Mar 12, 2018 7:45:15 PM"
+"---"
+Messages:
+"1. Selections made to any variable in [Census Regions, 2013 Urbanization] cause equivalent selections in the other variables."
+"More Information: http://wonder.cdc.gov/wonder/help/faq.html#related-variables."
+"---"
+Caveats:
+"1. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2014-Revision."
+"2. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"3. The population figures for year 2016 are bridged-race estimates of the July 1 resident population, from the Vintage 2016"
+"postcensal series released by NCHS on June 26, 2017. The population figures for year 2015 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2015 postcensal series released by NCHS on June 28, 2016. The population figures for"
+"year 2014 are bridged-race estimates of the July 1 resident population, from the Vintage 2014 postcensal series released by NCHS"
+"on June 30, 2015. The population figures for year 2013 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2013 postcensal series released by NCHS on June 26, 2014. The population figures for year 2012 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2012 postcensal series released by NCHS on June 13, 2013. The"
+"population figures for year 2011 are bridged-race estimates of the July 1 resident population, from the Vintage 2011 postcensal"
+"series released by NCHS on July 18, 2012. Population figures for 2010 are April 1 Census counts. The population figures for"
+"years 2001 - 2009 are bridged-race estimates of the July 1 resident population, from the revised intercensal county-level 2000 -"
+"2009 series released by NCHS on October 26, 2012. Population figures for 2000 are April 1 Census counts. Population figures for"
+"1999 are from the 1990-1999 intercensal series of July 1 estimates. Population figures for the infant age groups are the number"
+"of live births. <br/><b>Note:</b> Rates and population figures for years 2001 - 2009 differ slightly from previously published"
+"reports, due to use of the population estimates which were available at the time of release."

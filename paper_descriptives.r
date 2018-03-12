@@ -52,7 +52,10 @@ homicide<-homicide%>%
   summarise(total.homicides = sum(total.homicides, na.rm=TRUE))
   
 
-### make total homicides
+### read total homicides
+
+total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
+  filter(!(is.na(`Census Divsiion`)))
 
 homicide<-bind_rows(homicide,
     homicide%>%
