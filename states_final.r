@@ -20,7 +20,7 @@ select  = dplyr::select
 
 # ... attach and configure mortality file
 # .... subset years (2012 - 2018)
-fe_new <- read_csv("fatal-encounters-2-12-18.csv") %>%
+fe_new <- read_csv("~/data/fatal-encounters-2-12-18.csv") %>%
       filter(`Date (Year)`>=2012)
 
 # .... make names more user-friendly
@@ -45,7 +45,7 @@ fe_new <- fe_new %>%
            race = ifelse(race == "Race unspecified", NA, race))
 
 # .... merge in imputed races
-imputeds <- read_csv("predicted_race_05FalsePos.csv")
+imputeds <- read_csv("~/data/predicted_race_05FalsePos.csv")
 
 # .... for race == missing, replace w/ classification above threshold
 # .... and fix fips codes
@@ -58,7 +58,7 @@ fdat <- imputeds %>%
 
 # ... attach and configure population data 
 # .... urban-rural county classifications 
-cdc = read_fwf(file = 'NCHSURCodes2013.txt', 
+cdc = read_fwf(file = '~/data/NCHSURCodes2013.txt', 
          fwf_positions(c(1, 3, 7, 10, 47, 98, 107, 116, 118, 120), 
                  c(2, 5, 8, 45, 96, 105, 114, 116, 118, 120))) %>%
     select(X1, X2, X3, X4, X8) %>%
@@ -81,7 +81,7 @@ regions = read.csv('regions.csv', stringsAsFactors = FALSE) %>%
       select(state, Division)
 
 # ..,. demographics
-pop2 <- read_csv("nhgis0029_ds216_20155_2015_county.csv")
+pop2 <- read_csv("~/data/nhgis0029_ds216_20155_2015_county.csv")
 pop2$fips<-paste(pop2$STATEA, pop2$COUNTYA, sep="")
 pop2<-pop2%>%
   rename(fips.st=STATEA)%>%
@@ -89,7 +89,7 @@ pop2<-pop2%>%
   filter(fips.st!=72)
 
 # .... fips-state crosswalk
-cw <- read_csv("fips-st-crosswalk.csv") %>%
+cw <- read_csv("~/data/fips-st-crosswalk.csv") %>%
     select(state, fips) %>% 
     rename(fips.st = fips)
 
@@ -194,7 +194,7 @@ tmp2 = left_join(pop, tmp, 'fips') %>%
 
 # ... for blacks     
 blk.stan.0 = stan_glmer(d.black ~ (1|ur.code) + (1|state),
-                      prior_intercept=normal((log(0.94)-log(100000)), 2.5), #for prior intercept, based on krieger estimates
+                      prior_intercept=normal((log(0.94/100000)), 2.5), #for prior intercept, based on krieger estimates
                       prior = normal(0, 2.5), #weakly informative, no difference from big urban
                       prior_covariance = decov(1, 1, 1, 1), #default
                       data = tmp2, offset=I(log(black.men+1)), 
