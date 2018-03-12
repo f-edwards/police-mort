@@ -263,7 +263,7 @@ apTabReformat<-apTab3%>%
 ###### write the table to html
 library(xtable)
 print.xtable(
-  xtable(apTab3,
+  xtable(apTabReformat,
          caption = NULL,
          digits = 2,
          auto = TRUE), 

@@ -35,13 +35,13 @@ homicide<-read_tsv("./data/homicide_CDCWONDER_LargeCentral.txt")%>%
 
 homicide<-homicide%>%
   mutate(race = ifelse(Race=="Black or African American",
-                       "Black", ifelse(Race!="Black or African American" & 
+                       "black", ifelse(Race!="Black or African American" & 
                                          `Hispanic Origin` == "Hispanic or Latino",
-                                       "Latino",
+                                       "latino",
                                        ifelse(Race == "White" &
                                                 `Hispanic Origin` != "Hispanic or Latino",
-                                              "White", 
-                                              "Other"))))
+                                              "white", 
+                                              "other"))))
 
 homicide<-homicide%>%
   select(`Census Division`, Deaths, ur.code, race)%>%
@@ -58,12 +58,12 @@ homicide<-bind_rows(homicide,
     homicide%>%
     group_by(division, ur.code)%>%
     summarise(total.homicides = sum(total.homicides))%>%
-    mutate(race = "Total"))%>%
+    mutate(race = "total"))%>%
   ungroup()
 
 ### fill in zeroes
 homicide<-homicide%>%
-  complete(race, nesting(division, ur.code), fill=list(total.homicides = 0))
+  complete(race, nesting(division, ur.code), fill=list(total.homicides = NA))
 
 ### match to division names
 homicide<-homicide%>%
@@ -72,7 +72,22 @@ homicide<-homicide%>%
 ### spread by race
 homicide<-homicide%>%
   mutate(total.homicides = total.homicides / 5)%>% ### convert to 5 yr avg
-  spread(race, total.homicides,
+  rename(homicide = race)%>%
+  spread(homicide, total.homicides,
          sep="_")
 
-### join with police mortality data
+### join with police mortality dat
+pol.homicide<-tmp2%>%
+  group_by(ur.code, division)%>%
+  summarise(pol.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
+            pol.latino = sum(d.latino) * (365/2234),
+            pol.white = sum(d.white) * (365/2234),
+            pol.total = sum(d.total) * (365/2234))
+
+homicide_ratios<-homicide%>%
+  left_join(pol.homicide)%>%
+  mutate(black_ratio = pol.black / homicide_black,
+         latino_ratio = pol.latino / homicide_latino,
+         white_ratio = pol.white / homicide_white,
+         total_ratio = pol.total / homicide_total) %>%
+  select(ur.code, division, black_ratio, latino_ratio, white_ratio, total_ratio)
