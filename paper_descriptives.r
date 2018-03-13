@@ -11,6 +11,8 @@ load("division_ur_models.RData")
 # query: group by division, race, ethnicity 
 # filter age>=18, sex=Male, injury intent, homicide, all causes
 # one file for each 2013 UR code
+# NOTE THAT SOME DATA ARE SUPPRESSED IN X RACE X ETHNICITY X DIVISION X UR NUMBERS
+# SEPARATE UNSUPPRESSED FILES FOR TOTAL x ALL RACE, X DIVISION, and X UR
 
 homicide<-read_tsv("./data/homicide_CDCWONDER_LargeCentral.txt")%>%
   filter(!(is.na(`Census Division`)))%>% # removes end of file notes
@@ -30,7 +32,25 @@ homicide<-read_tsv("./data/homicide_CDCWONDER_LargeCentral.txt")%>%
   rbind(read_tsv("./data/homicide_CDCWONDER_NonCore.txt")%>%
               filter(!(is.na(`Census Division`)))%>% # removes end of file notes
               mutate(ur.code = "6: noncore"))
-    
+
+### read total homicides
+
+total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
+  filter(!(is.na(`Census Division`)))%>%
+  mutate(race = "total")%>%
+  mutate(ur.code = ifelse(`2013 Urbanization Code`==1,
+                          "1: large central metro",
+                          ifelse(`2013 Urbanization Code`==2,
+                                 "2: large fringe metro",
+                                 ifelse(`2013 Urbanization Code`==3,
+                                        "3: medium metro",
+                                        ifelse(`2013 Urbanization Code`==4,
+                                               "4: small metro",
+                                               ifelse(`2013 Urbanization Code`==5,
+                                                      "5: micropolitan",
+                                                      ifelse(`2013 Urbanization Code`==6,
+                                                      "6: noncore", NA)))))))
+                                               
 ### recode into race/ethnicity codes used in main analysis, select needed variables
 
 homicide<-homicide%>%
@@ -42,6 +62,11 @@ homicide<-homicide%>%
                                                 `Hispanic Origin` != "Hispanic or Latino",
                                               "white", 
                                               "other"))))
+homicide<-homicide%>%
+  mutate(Deaths = as.integer(Deaths),
+         Population = as.integer(Population),
+         `Crude Rate` = as.integer(`Crude Rate`))%>%
+  bind_rows(total_homicide)
 
 homicide<-homicide%>%
   select(`Census Division`, Deaths, ur.code, race)%>%
@@ -49,19 +74,7 @@ homicide<-homicide%>%
          total.homicides = Deaths)%>%
   mutate(total.homicides = as.numeric(total.homicides))%>%
   group_by(division, ur.code, race)%>%
-  summarise(total.homicides = sum(total.homicides, na.rm=TRUE))
-  
-
-### read total homicides
-
-total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
-  filter(!(is.na(`Census Divsiion`)))
-
-homicide<-bind_rows(homicide,
-    homicide%>%
-    group_by(division, ur.code)%>%
-    summarise(total.homicides = sum(total.homicides))%>%
-    mutate(race = "total"))%>%
+  summarise(total.homicides = sum(total.homicides, na.rm=TRUE))%>%
   ungroup()
 
 ### fill in zeroes
@@ -77,20 +90,31 @@ homicide<-homicide%>%
   mutate(total.homicides = total.homicides / 5)%>% ### convert to 5 yr avg
   rename(homicide = race)%>%
   spread(homicide, total.homicides,
-         sep="_")
+         sep="_")%>%
+  filter(!(is.na(ur.code)))
 
-### join with police mortality dat
+### join with police mortality data, tmp2
 pol.homicide<-tmp2%>%
   group_by(ur.code, division)%>%
   summarise(pol.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
             pol.latino = sum(d.latino) * (365/2234),
             pol.white = sum(d.white) * (365/2234),
-            pol.total = sum(d.total) * (365/2234))
+            pol.total = sum(d.total) * (365/2234))%>%
+  ungroup()
 
 homicide_ratios<-homicide%>%
   left_join(pol.homicide)%>%
   mutate(black_ratio = pol.black / homicide_black,
          latino_ratio = pol.latino / homicide_latino,
          white_ratio = pol.white / homicide_white,
-         total_ratio = pol.total / homicide_total) %>%
-  select(ur.code, division, black_ratio, latino_ratio, white_ratio, total_ratio)
+         total_ratio = pol.total / homicide_total) 
+
+
+
+
+ur.homicide_ratios<-homicide_ratios%>%
+  group_by(ur.code)%>%
+  summarise(black_ratio = sum(pol.black, na.rm=TRUE) / sum(homicide_black, na.rm=TRUE),
+            latino_ratio = sum(pol.latino, na.rm=TRUE) / sum(homicide_latino, na.rm=TRUE),
+            white_ratio = sum(pol.white, na.rm=TRUE) / sum(homicide_white, na.rm=TRUE),
+            total_ratio = sum(pol.total, na.rm=TRUE) / sum(homicide_total, na.rm=TRUE))
