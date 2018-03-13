@@ -5,7 +5,79 @@ library(rstanarm)
 library(xtable)
 
 #setwd("~/Projects/police-mort")
-load("division_ur_models.RData")
+source("division_ur_visuals.r")
+
+### FE constant for FE counts -> deaths/yr
+FE_constant<-(365/2234)
+
+########################################################################################################################
+### observed data descriptives
+observed<-data.frame(Race = c("Black", "Latino", "White", "Total"),
+                     Deaths = c(sum(tmp2$d.black), sum(tmp2$d.latino), sum(tmp2$d.white), sum(tmp2$d.total)),
+                     Adult.men = c(sum(tmp2$black.men), sum(tmp2$latino.men), sum(tmp2$white.men), sum(tmp2$tot.men)))
+
+observed<-observed%>%
+  mutate(Annual.Rate = Deaths / Adult.men * 100000 * FE_constant)
+
+write.csv(observed, 
+          "./visuals/national_observed_rates.csv")
+
+observed_ur_div<-tmp2%>%
+  group_by(division, ur.code)%>%
+  select(-fips, -state)%>%
+  summarise_all(sum)%>%
+  mutate(rate.black = FE_constant * d.black / black.men * 100000,
+         rate.latino = FE_constant * d.latino / latino.men * 100000,
+         rate.white = FE_constant * d.white / white.men * 100000,
+         rate.tot = FE_constant * d.total / tot.men * 100000)
+
+write.csv(observed_ur_div,
+          "./visuals/observed_ur_div.csv")
+  
+########################################################################################################################
+### posterior estimates, in-text descriptives
+# obtain posterior predictions for deaths using observed data
+post.blk.obs<-posterior_predict(blk.stan.0, newdata = tmp2)
+post.lat.obs<-posterior_predict(lat.stan.0, newdata = tmp2)
+post.wht.obs<-posterior_predict(wht.stan.0, newdata = tmp2)
+post.tot.obs<-posterior_predict(tot.stan.0, newdata = tmp2)
+
+post.blk.nat<-as.vector(apply(post.blk.obs,1,sum)) 
+post.blk.nat<-post.blk.nat/sum(tmp2$black.men) * 100000 * FE_constant
+post.blk.quantiles<-quantile(post.blk.nat, c(0.025, 0.5, .975))
+
+post.lat.nat<-as.vector(apply(post.lat.obs,1,sum)) 
+post.lat.nat<-post.lat.nat/sum(tmp2$latino.men) * 100000 * FE_constant
+post.lat.quantiles<-quantile(post.lat.nat, c(0.025, 0.5, .975))
+
+post.wht.nat<-as.vector(apply(post.wht.obs,1,sum)) 
+post.wht.nat<-post.wht.nat/sum(tmp2$white.men) * 100000 * FE_constant
+post.wht.quantiles<-quantile(post.wht.nat, c(0.025, 0.5, .975))
+
+post.tot.nat<-as.vector(apply(post.tot.obs,1,sum)) 
+post.tot.nat<-post.tot.nat/sum(tmp2$tot.men) * 100000 * FE_constant
+post.tot.quantiles<-quantile(post.tot.nat, c(0.025, 0.5, .975))
+
+black.one.year<-quantile(as.vector(apply(post.blk.obs,1,sum)) * FE_constant,
+                         c(0.025, 0.5, .975))
+latino.one.year<-quantile(as.vector(apply(post.lat.obs,1,sum)) * FE_constant,
+                          c(0.025, 0.5, .975))
+white.one.year<-quantile(as.vector(apply(post.wht.obs,1,sum)) * FE_constant,
+                         c(0.025, 0.5, .975))
+total.one.year<-quantile(as.vector(apply(post.tot.obs,1,sum)) * FE_constant,
+                         c(0.025, 0.5, .975))
+
+
+write.csv(rbind(post.blk.quantiles, 
+                post.lat.quantiles, 
+                post.wht.quantiles, 
+                post.tot.quantiles,
+                black.one.year,
+                latino.one.year,
+                white.one.year,
+                total.one.year),
+          "./visuals/national_post_predict.csv",
+          row.names = TRUE)
 
 ########################################################################################################################
 ### total homicide: read/transform data x race, x ur, x division

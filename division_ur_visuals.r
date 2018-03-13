@@ -9,6 +9,15 @@ theme_set(theme_minimal())
 setwd("~/Projects/police-mort")
 select  = dplyr::select
 
+#### function to clean ur.codes for plotting:
+clean_ur<-function(x){
+  x<-as.character(x)
+  levels<-str_to_title(substr(sort(unique(x)), 4, nchar(sort(unique(x)))))
+  output<-ordered(str_to_title(substr(x, 4, nchar(x))),
+                   levels = levels)
+  return(output)
+}
+
 ## 3: Visuals
 # ... re-load models
 load('division_ur_models.RData')
@@ -110,7 +119,8 @@ ur.post<-bind_rows(blk.ur.post.mort,
 
 ur.post<-ur.post%>%
   ungroup()%>%
-  mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(2234/365)))
+  mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(2234/365)))%>%
+  mutate(ur.code = clean_ur(ur.code))
 
 # .... and the same thing for divisions
 blk.div.post.mort<-post.observed.blk%>%
@@ -187,8 +197,6 @@ lw.post$rate = "Latino/White"
 # ... get data ready for plotting
 plot.dat = bind_rows(bw.post, lw.post)
 
-plot.dat$ur.code<-factor(plot.dat$ur.code,
-                         levels=sort(as.character(unique(plot.dat$ur.code))))
 plot.dat$division<-factor(plot.dat$division,
                           levels=sort(as.character(unique(plot.dat$division))))
 
@@ -202,7 +210,8 @@ plot.dat2 =
   plot.dat %>%
   mutate(ci_includes_1 = ifelse(CI_includes_1 == 'no', 1.05, 1))%>%
   rename(`Interval\nIncludes 1`=CI_includes_1)%>%
-  rename(Comparison=comparison)
+  rename(Comparison=comparison)%>%
+  mutate(ur.code = clean_ur(as.character(ur.code)))
 
 # ... plot it out
 ggplot(plot.dat2,
@@ -245,7 +254,8 @@ colnames(post.estimates)[3:5] = c('lwr', 'estimate', 'upr')
 apTab3<-post.estimates%>%
   mutate(lwr=lwr*(365/2234),
          estimate=estimate*(365/2234),
-         upr=upr*(365/2234))
+         upr=upr*(365/2234))%>%
+  mutate(ur.code = clean_ur(ur.code))
 
 apTabReformat<-apTab3%>%
   mutate(estimate=paste(
@@ -255,13 +265,12 @@ apTabReformat<-apTab3%>%
     ", ",
     round(upr, 1),
     ")",
-    sep=""
-  ))%>%
+    sep=""))%>%
   select(- lwr, -upr)%>%
   spread(race, estimate)%>%
+  arrange(division, ur.code)%>%
   mutate(division=as.character(division),
-         ur.code=as.character(ur.code))%>%
-  arrange(division, ur.code)
+         ur.code=as.character(ur.code))
 ###### write the table to html
 library(xtable)
 print.xtable(
