@@ -33,11 +33,15 @@ homicide<-read_tsv("./data/homicide_CDCWONDER_LargeCentral.txt")%>%
               filter(!(is.na(`Census Division`)))%>% # removes end of file notes
               mutate(ur.code = "6: noncore"))
 
-### read total homicides
+### match to division names
+homicide<-homicide%>%
+  mutate(division = substr(`Census Division`, 13, nchar(`Census Division`)))
 
-total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
-  filter(!(is.na(`Census Division`)))%>%
-  mutate(race = "total")%>%
+
+homicide_ur<-read_tsv("./data/homicide_CDCWONDER_UR.txt")%>%
+  filter(!(is.na(Race)))%>%
+  filter(!(is.na(`2013 Urbanization Code`)))%>%
+  mutate(division = "TOTAL")%>%
   mutate(ur.code = ifelse(`2013 Urbanization Code`==1,
                           "1: large central metro",
                           ifelse(`2013 Urbanization Code`==2,
@@ -49,10 +53,53 @@ total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
                                                ifelse(`2013 Urbanization Code`==5,
                                                       "5: micropolitan",
                                                       ifelse(`2013 Urbanization Code`==6,
-                                                      "6: noncore", NA)))))))
-                                               
-### recode into race/ethnicity codes used in main analysis, select needed variables
+                                                             "6: noncore", NA)))))))
 
+homicide_div<-read_tsv("./data/homicide_CDCWONDER_Div.txt")%>%
+  filter(!(is.na(Race)))%>%
+  filter(!(is.na(`Census Division`)))%>%
+  mutate(ur.code = "TOTAL")%>%
+  mutate(division = substr(`Census Division`, 13, nchar(`Census Division`)))
+  
+### read total homicides
+
+total_homicide<-read_tsv("./data/homicide_CDCWONDER_Total.txt")%>%
+  filter(!(is.na(`Census Division`)))%>%
+  mutate(Race = "total")%>%
+  mutate(ur.code = ifelse(`2013 Urbanization Code`==1,
+                          "1: large central metro",
+                          ifelse(`2013 Urbanization Code`==2,
+                                 "2: large fringe metro",
+                                 ifelse(`2013 Urbanization Code`==3,
+                                        "3: medium metro",
+                                        ifelse(`2013 Urbanization Code`==4,
+                                               "4: small metro",
+                                               ifelse(`2013 Urbanization Code`==5,
+                                                      "5: micropolitan",
+                                                      ifelse(`2013 Urbanization Code`==6,
+                                                      "6: noncore", NA)))))))%>%
+  mutate(division = substr(`Census Division`, 13, nchar(`Census Division`)))
+
+homicide<-homicide%>%
+  mutate(Deaths = as.integer(Deaths),
+         Population = as.integer(Population),
+         `Crude Rate` = as.integer(`Crude Rate`))
+
+homicide_ur<-homicide_ur%>%
+  mutate(Deaths = as.integer(Deaths),
+         Population = as.integer(Population),
+         `Crude Rate` = as.integer(`Crude Rate`))
+
+homicide_div<-homicide_div%>%
+  mutate(Deaths = as.integer(Deaths),
+         Population = as.integer(Population),
+         `Crude Rate` = as.integer(`Crude Rate`))
+
+homicide<-homicide%>%
+  bind_rows(homicide_ur)%>%
+  bind_rows(homicide_div)
+
+### recode into race/ethnicity codes used in main analysis, select needed variables
 homicide<-homicide%>%
   mutate(race = ifelse(Race=="Black or African American",
                        "black", ifelse(Race!="Black or African American" & 
@@ -62,28 +109,29 @@ homicide<-homicide%>%
                                                 `Hispanic Origin` != "Hispanic or Latino",
                                               "white", 
                                               "other"))))
-homicide<-homicide%>%
-  mutate(Deaths = as.integer(Deaths),
-         Population = as.integer(Population),
-         `Crude Rate` = as.integer(`Crude Rate`))%>%
-  bind_rows(total_homicide)
+
+
 
 homicide<-homicide%>%
-  select(`Census Division`, Deaths, ur.code, race)%>%
-  rename(division = `Census Division`,
-         total.homicides = Deaths)%>%
+  select(division, Deaths, ur.code, race)%>%
+  rename(total.homicides = Deaths)%>%
   mutate(total.homicides = as.numeric(total.homicides))%>%
   group_by(division, ur.code, race)%>%
   summarise(total.homicides = sum(total.homicides, na.rm=TRUE))%>%
   ungroup()
 
+total_homicide<-total_homicide%>%
+  filter(!(is.na(ur.code)))%>%
+  select(division, ur.code, Race, Deaths)%>%
+  rename(race = Race,
+         total.homicides = Deaths)
+
+homicide<-homicide%>%
+  bind_rows(total_homicide)
+
 ### fill in zeroes
 homicide<-homicide%>%
   complete(race, nesting(division, ur.code), fill=list(total.homicides = NA))
-
-### match to division names
-homicide<-homicide%>%
-  mutate(division = substr(division, 13, nchar(division)))
 
 ### spread by race
 homicide<-homicide%>%
