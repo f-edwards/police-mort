@@ -154,7 +154,7 @@ homicide<-homicide%>%
 homicide<-homicide%>%
   complete(race, nesting(division, ur.code), fill=list(total.homicides = NA))
 
-### spread by race
+### spread by race, standardize to annual average
 homicide<-homicide%>%
   mutate(total.homicides = total.homicides / 5)%>% ### convert to 5 yr avg
   rename(homicide = race)%>%
@@ -219,7 +219,11 @@ race_totals<-homicide%>%
                         black.men = sum(black.men),
                         white.men = sum(white.men),
                         latino.men = sum(latino.men),
-                        tot.men = sum(tot.men)))
+                        tot.men = sum(tot.men)))%>%
+  mutate(ratio_black = d.black / homicide_black,
+         ratio_white = d.white / homicide_white,
+         ratio_latino = d.latino / homicide_latino,
+         ratio_total = d.total / homicide_total)
 
 ur_totals<-homicide%>%
   filter(division == "TOTAL")%>%
@@ -233,7 +237,11 @@ ur_totals<-homicide%>%
                         black.men = sum(black.men),
                         white.men = sum(white.men),
                         latino.men = sum(latino.men),
-                        tot.men = sum(tot.men)))
+                        tot.men = sum(tot.men)))%>%
+  mutate(ratio_black = d.black / homicide_black,
+         ratio_white = d.white / homicide_white,
+         ratio_latino = d.latino / homicide_latino,
+         ratio_total = d.total / homicide_total)
 
 div_totals<-homicide%>%
   filter(ur.code == "TOTAL")%>%
@@ -247,7 +255,11 @@ div_totals<-homicide%>%
                         black.men = sum(black.men),
                         white.men = sum(white.men),
                         latino.men = sum(latino.men),
-                        tot.men = sum(tot.men)))
+                        tot.men = sum(tot.men)))%>%
+  mutate(ratio_black = d.black / homicide_black,
+         ratio_white = d.white / homicide_white,
+         ratio_latino = d.latino / homicide_latino,
+         ratio_total = d.total / homicide_total)
 
 ########################################################################################################################
 ### police homicide / total homicide visuals, tables
@@ -266,4 +278,10 @@ ggsave("./visuals/hom_ratio.tiff",
        width = 6.5,
        height = 6.5)
   
-print.xtable(xtable(homicide_plot_dat), type="html", file = "./visuals/homicide_ratio_table.html")
+print.xtable(xtable(homicide_plot_dat), 
+             type="html", 
+             file = "./visuals/homicide_ratio_table.html")
+
+########################################################################################################################
+### expected values for tables
+

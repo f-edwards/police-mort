@@ -1,4 +1,6 @@
 ################################################################
+rm(list=ls())
+gc()
 library(tidyverse)
 library(rstanarm)
 library(parallel)
