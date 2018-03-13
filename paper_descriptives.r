@@ -1,4 +1,5 @@
 rm(list=ls())
+gc()
 library(tidyverse)
 library(rstanarm)
 library(xtable)
@@ -6,12 +7,15 @@ library(xtable)
 #setwd("~/Projects/police-mort")
 load("division_ur_models.RData")
 
-#### read CDC Wonder homicide data
+########################################################################################################################
+### total homicide: read/transform data x race, x ur, x division
+
+#### CDC Wonder homicide data
 # files produced using https://wonder.cdc.gov detailed mortality table generator on 3/12/18
 # query: group by division, race, ethnicity 
 # filter age>=18, sex=Male, injury intent, homicide, all causes
 # one file for each 2013 UR code
-# NOTE THAT SOME DATA ARE SUPPRESSED IN X RACE X ETHNICITY X DIVISION X UR NUMBERS
+# NOTE THAT SOME DATA ARE SUPPRESSED IN X RACE X ETHNICITY X DIVISION X UR NUMBERS (esp rural)
 # SEPARATE UNSUPPRESSED FILES FOR TOTAL x ALL RACE, X DIVISION, and X UR
 
 homicide<-read_tsv("./data/homicide_CDCWONDER_LargeCentral.txt")%>%
@@ -126,10 +130,27 @@ total_homicide<-total_homicide%>%
   rename(race = Race,
          total.homicides = Deaths)
 
+#### add UR and division totals
+total_ur<-total_homicide%>%
+  group_by(ur.code, race)%>%
+  summarise(total.homicides = sum(total.homicides))%>%
+  mutate(division = "TOTAL")
+
+total_div<-total_homicide%>%
+  group_by(division, race)%>%
+  summarise(total.homicides = sum(total.homicides))%>%
+  mutate(ur.code = "TOTAL")
+
+total_homicide<-total_homicide%>%
+  bind_rows(total_ur)%>%
+  bind_rows(total_div)
+  
+### bind total x division/ur, x ur, x division 
+
 homicide<-homicide%>%
   bind_rows(total_homicide)
 
-### fill in zeroes
+### fill in suppressed values as NAs
 homicide<-homicide%>%
   complete(race, nesting(division, ur.code), fill=list(total.homicides = NA))
 
@@ -142,27 +163,107 @@ homicide<-homicide%>%
   filter(!(is.na(ur.code)))
 
 ### join with police mortality data, tmp2
-pol.homicide<-tmp2%>%
+d.homicide<-tmp2%>%
   group_by(ur.code, division)%>%
-  summarise(pol.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
-            pol.latino = sum(d.latino) * (365/2234),
-            pol.white = sum(d.white) * (365/2234),
-            pol.total = sum(d.total) * (365/2234))%>%
+  summarise(d.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
+            d.latino = sum(d.latino) * (365/2234),
+            d.white = sum(d.white) * (365/2234),
+            d.total = sum(d.total) * (365/2234),
+            black.men = sum(black.men),
+            white.men = sum(white.men),
+            latino.men = sum(latino.men),
+            tot.men = sum(tot.men))%>%
   ungroup()
 
-homicide_ratios<-homicide%>%
-  left_join(pol.homicide)%>%
-  mutate(black_ratio = pol.black / homicide_black,
-         latino_ratio = pol.latino / homicide_latino,
-         white_ratio = pol.white / homicide_white,
-         total_ratio = pol.total / homicide_total) 
+homicide_join<-homicide%>%
+  left_join(d.homicide)%>%
+  filter(division != "TOTAL" & ur.code!="TOTAL")
 
+homicide_plot_dat<-homicide_join%>%
+  mutate(Black = d.black,
+         Latino = d.latino,
+         White = d.white,
+         Total = d.total)%>%
+  select(division, ur.code, Black, Latino, White, Total)%>%
+  gather(key = race, value = pol.deaths, -division, -ur.code)%>%
+  left_join(homicide_join%>%
+              mutate(Black =black.men,
+                     Latino = latino.men,
+                     White = white.men,
+                     Total = tot.men)%>%
+              select(division, ur.code, Black, Latino, White, Total)%>%
+              gather(key = race, value = adult.men, -division, -ur.code))%>%
+  left_join(homicide_join%>%
+              mutate(Black = homicide_black,
+                     Latino = homicide_latino,
+                     White = homicide_white,
+                     Total = homicide_total)%>%
+              select(division, ur.code, Black, Latino, White, Total)%>%
+              gather(key = race, value = homicide, -division, -ur.code))%>%
+  mutate(`Homicide rate` = homicide / adult.men * 100000,
+         `Police homicide rate` = pol.deaths / adult.men * 100000,
+         Ratio = pol.deaths / homicide)
 
+### create totals x UR, x Div, x Race
+race_totals<-homicide%>%
+  filter(division == "TOTAL")%>%
+  summarise(homicide_black = sum(homicide_black),
+            homicide_white = sum(homicide_white),
+            homicide_latino = sum(homicide_latino),
+            homicide_total = sum(homicide_total))%>%
+  bind_cols(tmp2%>%
+              summarise(d.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
+                        d.latino = sum(d.latino) * (365/2234),
+                        d.white = sum(d.white) * (365/2234),
+                        d.total = sum(d.total) * (365/2234),
+                        black.men = sum(black.men),
+                        white.men = sum(white.men),
+                        latino.men = sum(latino.men),
+                        tot.men = sum(tot.men)))
 
+ur_totals<-homicide%>%
+  filter(division == "TOTAL")%>%
+  select(-division)%>%
+  left_join(tmp2%>%
+              group_by(ur.code)%>%
+              summarise(d.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
+                        d.latino = sum(d.latino) * (365/2234),
+                        d.white = sum(d.white) * (365/2234),
+                        d.total = sum(d.total) * (365/2234),
+                        black.men = sum(black.men),
+                        white.men = sum(white.men),
+                        latino.men = sum(latino.men),
+                        tot.men = sum(tot.men)))
 
-ur.homicide_ratios<-homicide_ratios%>%
-  group_by(ur.code)%>%
-  summarise(black_ratio = sum(pol.black, na.rm=TRUE) / sum(homicide_black, na.rm=TRUE),
-            latino_ratio = sum(pol.latino, na.rm=TRUE) / sum(homicide_latino, na.rm=TRUE),
-            white_ratio = sum(pol.white, na.rm=TRUE) / sum(homicide_white, na.rm=TRUE),
-            total_ratio = sum(pol.total, na.rm=TRUE) / sum(homicide_total, na.rm=TRUE))
+div_totals<-homicide%>%
+  filter(ur.code == "TOTAL")%>%
+  select(-ur.code)%>%
+  left_join(tmp2%>%
+              group_by(division)%>%
+              summarise(d.black = sum(d.black) * (365/2234), # convert to single year average for comparability, ratio
+                        d.latino = sum(d.latino) * (365/2234),
+                        d.white = sum(d.white) * (365/2234),
+                        d.total = sum(d.total) * (365/2234),
+                        black.men = sum(black.men),
+                        white.men = sum(white.men),
+                        latino.men = sum(latino.men),
+                        tot.men = sum(tot.men)))
+
+########################################################################################################################
+### police homicide / total homicide visuals, tables
+
+hom_ratio_plot<-ggplot(homicide_plot_dat, 
+                      aes(x = Ratio, y = ur.code, col=race))+
+  geom_point() + 
+  facet_wrap(~division)+
+  xlab("Proportion of total homicides committed by police")+
+  ylab("")
+
+hom_ratio_plot
+  
+ggsave("./visuals/hom_ratio.tiff",
+       hom_ratio_plot,
+       width = 6.5,
+       height = 6.5)
+  
+print.xtable(xtable(homicide_plot_dat), type="html", file = "./visuals/homicide_ratio_table.html")
