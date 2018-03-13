@@ -337,12 +337,16 @@ div_totals<-homicide%>%
 ### police homicide / total homicide visuals, tables
 
 hom_ratio_plot<-ggplot(homicide_plot_dat, 
-                      aes(x = Ratio, y = ur.code, col=race))+
-  geom_point() + 
+                      aes(x = Ratio, y = clean_ur(ur.code), col=factor(race, 
+                                                                       levels = 
+                                                                         c("Black", "Latino", "White", "Total"))))+
+  geom_point(alpha = 0.7, position = position_jitter(width=0, height = 0.15)) + 
   facet_wrap(~division)+
-  xlab("Proportion of total homicides committed by police")+
-  ylab("")
-
+  xlab("Homicides committed by police as proportion of total homicides")+
+  ylab("")+
+  scale_y_discrete(limits = rev(levels(clean_ur(homicide_plot_dat$ur.code))))+
+  theme(legend.title = element_blank())
+  
 hom_ratio_plot
   
 ggsave("./visuals/hom_ratio.tiff",
@@ -355,5 +359,49 @@ print.xtable(xtable(homicide_plot_dat),
              file = "./visuals/homicide_ratio_table.html")
 
 ########################################################################################################################
-### expected values for tables
+### rates for other groups
+homicide_amind<-homicide_ur%>%
+  filter(Race == "American Indian or Alaska Native")%>%
+  summarise(homicide_amind = sum(Deaths, na.rm=TRUE)/5)
+
+fe_filtered<-fe_new%>%
+  filter(`Cause of death` %in% 
+           c('Asphyxiated/Restrained','Beaten/Bludgeoned with instrument', 
+             'Chemical agent/Pepper spray', 'Medical emergency', 'Tasered', 
+             'Gunshot'))
+
+d.amind<-fe_filtered%>%
+  filter(`Subject's race` == "Native American/Alaskan")%>%
+  summarise(d.amind = n() * FE_constant)
+
+ratio_amind<-(d.amind)/(homicide_amind); names(ratio_amind)<-"ratio_amind"
+### per american fact finder, 2015 pop estimates: 18+ Race alone or in combination
+amind.men<-1429537
+
+homicide_api<-homicide_ur%>%
+  filter(Race == "Asian or Pacific Islander")%>%
+  summarise(homicide_api = sum(Deaths, na.rm=TRUE)/5)
+
+d.api<-fe_filtered%>%
+  filter(`Subject's race` == "Asian/Pacific Islander")%>%
+  summarise(d.api = n() * FE_constant)
+
+ratio_api<-(d.api)/(homicide_api); names(ratio_api)<-"ratio_api"
+
+api.men<-6645926+276693
+
+nat_data<-cbind(race_totals, homicide_amind, d.amind, 
+                ratio_amind, amind.men, homicide_api, 
+                d.api, ratio_api, api.men)
+
+nat_data<-nat_data%>%
+  mutate(rate_black=d.black / black.men * 100000,
+         rate_latino=d.latino / latino.men * 100000,
+         rate_white=d.white / white.men * 100000,
+         rate_amind=d.amind / amind.men * 100000,
+         rate_api=d.api / api.men * 100000,
+         rate_total=d.total / tot.men * 100000)
+
+write.csv(nat_data,
+          "./visuals/nat_observed.csv")
 
