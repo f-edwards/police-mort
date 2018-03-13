@@ -1,0 +1,168 @@
+"Notes"	"2013 Urbanization"	"2013 Urbanization Code"	"Hispanic Origin"	"Hispanic Origin Code"	"Race"	"Race Code"	Deaths	Population	Crude Rate
+	"Large Central Metro"	"1"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	39	1441798	2.7
+	"Large Central Metro"	"1"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	20	710748	2.8
+	"Large Central Metro"	"1"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	179	2375852	7.5
+	"Large Central Metro"	"1"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	5501	41052848	13.4
+"Total"	"Large Central Metro"	"1"	"Hispanic or Latino"	"2135-2"			5739	45581246	12.6
+	"Large Central Metro"	"1"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	126	784700	16.1
+	"Large Central Metro"	"1"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	522	17675870	3.0
+	"Large Central Metro"	"1"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	18628	28735877	64.8
+	"Large Central Metro"	"1"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	3862	88939869	4.3
+"Total"	"Large Central Metro"	"1"	"Not Hispanic or Latino"	"2186-2"			23138	136136316	17.0
+	"Large Central Metro"	"1"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"Large Central Metro"	"1"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"Large Central Metro"	"1"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	83	Not Applicable	Not Applicable
+	"Large Central Metro"	"1"	"Not Stated"	"NS"	"White"	"2106-3"	63	Not Applicable	Not Applicable
+"Total"	"Large Central Metro"	"1"	"Not Stated"	"NS"			146	Not Applicable	Not Applicable
+"Total"	"Large Central Metro"	"1"					29023	181717562	16.0
+	"Large Fringe Metro"	"2"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	Suppressed	591144	Suppressed
+	"Large Fringe Metro"	"2"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	Suppressed	279558	Suppressed
+	"Large Fringe Metro"	"2"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	75	1006716	7.4
+	"Large Fringe Metro"	"2"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	1297	16270069	8.0
+"Total"	"Large Fringe Metro"	"2"	"Hispanic or Latino"	"2135-2"			1386	18147487	7.6
+	"Large Fringe Metro"	"2"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	63	579786	10.9
+	"Large Fringe Metro"	"2"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	176	8448666	2.1
+	"Large Fringe Metro"	"2"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	5627	16243717	34.6
+	"Large Fringe Metro"	"2"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	2964	102673119	2.9
+"Total"	"Large Fringe Metro"	"2"	"Not Hispanic or Latino"	"2186-2"			8830	127945288	6.9
+	"Large Fringe Metro"	"2"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"Large Fringe Metro"	"2"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"Large Fringe Metro"	"2"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	21	Not Applicable	Not Applicable
+	"Large Fringe Metro"	"2"	"Not Stated"	"NS"	"White"	"2106-3"	18	Not Applicable	Not Applicable
+"Total"	"Large Fringe Metro"	"2"	"Not Stated"	"NS"			39	Not Applicable	Not Applicable
+"Total"	"Large Fringe Metro"	"2"					10255	146092775	7.0
+	"Medium Metro"	"3"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	21	628665	3.3
+	"Medium Metro"	"3"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	16	328675	Unreliable
+	"Medium Metro"	"3"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	52	701975	7.4
+	"Medium Metro"	"3"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	2304	16941863	13.6
+"Total"	"Medium Metro"	"3"	"Hispanic or Latino"	"2135-2"			2393	18601178	12.9
+	"Medium Metro"	"3"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	150	930492	16.1
+	"Medium Metro"	"3"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	205	5093350	4.0
+	"Medium Metro"	"3"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	6084	12819800	47.5
+	"Medium Metro"	"3"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	3855	86335584	4.5
+"Total"	"Medium Metro"	"3"	"Not Hispanic or Latino"	"2186-2"			10294	105179226	9.8
+	"Medium Metro"	"3"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"Medium Metro"	"3"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"Medium Metro"	"3"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	Suppressed	Not Applicable	Not Applicable
+	"Medium Metro"	"3"	"Not Stated"	"NS"	"White"	"2106-3"	29	Not Applicable	Not Applicable
+"Total"	"Medium Metro"	"3"	"Not Stated"	"NS"			39	Not Applicable	Not Applicable
+"Total"	"Medium Metro"	"3"					12726	123780404	10.3
+	"Small Metro"	"4"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	Suppressed	216267	Suppressed
+	"Small Metro"	"4"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	Suppressed	83506	Suppressed
+	"Small Metro"	"4"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	18	199202	Unreliable
+	"Small Metro"	"4"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	441	4798759	9.2
+"Total"	"Small Metro"	"4"	"Hispanic or Latino"	"2135-2"			463	5297734	8.7
+	"Small Metro"	"4"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	125	583768	21.4
+	"Small Metro"	"4"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	37	1329762	2.8
+	"Small Metro"	"4"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	1805	5090449	35.5
+	"Small Metro"	"4"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	1833	43260483	4.2
+"Total"	"Small Metro"	"4"	"Not Hispanic or Latino"	"2186-2"			3800	50264462	7.6
+	"Small Metro"	"4"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"Small Metro"	"4"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"Small Metro"	"4"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	Suppressed	Not Applicable	Not Applicable
+	"Small Metro"	"4"	"Not Stated"	"NS"	"White"	"2106-3"	13	Not Applicable	Not Applicable
+"Total"	"Small Metro"	"4"	"Not Stated"	"NS"			16	Not Applicable	Not Applicable
+"Total"	"Small Metro"	"4"					4279	55562196	7.7
+	"Micropolitan (non-metro)"	"5"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	10	191926	Unreliable
+	"Micropolitan (non-metro)"	"5"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	Suppressed	66200	Suppressed
+	"Micropolitan (non-metro)"	"5"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	Suppressed	145197	Suppressed
+	"Micropolitan (non-metro)"	"5"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	402	3992803	10.1
+"Total"	"Micropolitan (non-metro)"	"5"	"Hispanic or Latino"	"2135-2"			422	4396126	9.6
+	"Micropolitan (non-metro)"	"5"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	244	917697	26.6
+	"Micropolitan (non-metro)"	"5"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	38	796079	4.8
+	"Micropolitan (non-metro)"	"5"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	1392	4169368	33.4
+	"Micropolitan (non-metro)"	"5"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	1856	41938633	4.4
+"Total"	"Micropolitan (non-metro)"	"5"	"Not Hispanic or Latino"	"2186-2"			3530	47821777	7.4
+	"Micropolitan (non-metro)"	"5"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"Micropolitan (non-metro)"	"5"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"Micropolitan (non-metro)"	"5"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	Suppressed	Not Applicable	Not Applicable
+	"Micropolitan (non-metro)"	"5"	"Not Stated"	"NS"	"White"	"2106-3"	Suppressed	Not Applicable	Not Applicable
+"Total"	"Micropolitan (non-metro)"	"5"	"Not Stated"	"NS"			17	Not Applicable	Not Applicable
+"Total"	"Micropolitan (non-metro)"	"5"					3969	52217903	7.6
+	"NonCore (non-metro)"	"6"	"Hispanic or Latino"	"2135-2"	"American Indian or Alaska Native"	"1002-5"	Suppressed	115710	Suppressed
+	"NonCore (non-metro)"	"6"	"Hispanic or Latino"	"2135-2"	"Asian or Pacific Islander"	"A-PI"	Suppressed	24976	Suppressed
+	"NonCore (non-metro)"	"6"	"Hispanic or Latino"	"2135-2"	"Black or African American"	"2054-5"	Suppressed	88877	Suppressed
+	"NonCore (non-metro)"	"6"	"Hispanic or Latino"	"2135-2"	"White"	"2106-3"	156	1991990	7.8
+"Total"	"NonCore (non-metro)"	"6"	"Hispanic or Latino"	"2135-2"			164	2221553	7.4
+	"NonCore (non-metro)"	"6"	"Not Hispanic or Latino"	"2186-2"	"American Indian or Alaska Native"	"1002-5"	181	865655	20.9
+	"NonCore (non-metro)"	"6"	"Not Hispanic or Latino"	"2186-2"	"Asian or Pacific Islander"	"A-PI"	11	209138	Unreliable
+	"NonCore (non-metro)"	"6"	"Not Hispanic or Latino"	"2186-2"	"Black or African American"	"2054-5"	903	3349585	27.0
+	"NonCore (non-metro)"	"6"	"Not Hispanic or Latino"	"2186-2"	"White"	"2106-3"	1535	30264671	5.1
+"Total"	"NonCore (non-metro)"	"6"	"Not Hispanic or Latino"	"2186-2"			2630	34689049	7.6
+	"NonCore (non-metro)"	"6"	"Not Stated"	"NS"	"American Indian or Alaska Native"	"1002-5"	Suppressed	Not Applicable	Not Applicable
+	"NonCore (non-metro)"	"6"	"Not Stated"	"NS"	"Asian or Pacific Islander"	"A-PI"	Suppressed	Not Applicable	Not Applicable
+	"NonCore (non-metro)"	"6"	"Not Stated"	"NS"	"Black or African American"	"2054-5"	Suppressed	Not Applicable	Not Applicable
+	"NonCore (non-metro)"	"6"	"Not Stated"	"NS"	"White"	"2106-3"	Suppressed	Not Applicable	Not Applicable
+"Total"	"NonCore (non-metro)"	"6"	"Not Stated"	"NS"			11	Not Applicable	Not Applicable
+"Total"	"NonCore (non-metro)"	"6"					2805	36910602	7.6
+"Total"							63057	596281442	10.6
+"---"
+"Dataset: Underlying Cause of Death, 1999-2016"
+"Query Parameters:"
+"Title:"
+"2013 Urbanization: All"
+"Autopsy: All"
+"Gender: Male"
+"Hispanic Origin: All"
+"Injury Intent: Homicide"
+"Injury Mechanism & All Other Leading Causes: All"
+"Place of Death: All"
+"Race: All"
+"Single-Year Ages: 18 years, 19 years, 20 years, 21 years, 22 years, 23 years, 24 years, 25 years, 26 years, 27 years, 28 years,"
+"29 years, 30 years, 31 years, 32 years, 33 years, 34 years, 35 years, 36 years, 37 years, 38 years, 39 years, 40 years, 41"
+"years, 42 years, 43 years, 44 years, 45 years, 46 years, 47 years, 48 years, 49 years, 50 years, 51 years, 52 years, 53 years,"
+"54 years, 55 years, 56 years, 57 years, 58 years, 59 years, 60 years, 61 years, 62 years, 63 years, 64 years, 65 years, 66"
+"years, 67 years, 68 years, 69 years, 70 years, 71 years, 72 years, 73 years, 74 years, 75 years, 76 years, 77 years, 78 years,"
+"79 years, 80 years, 81 years, 82 years, 83 years, 84 years, 85 years, 86 years, 87 years, 88 years, 89 years, 90 years, 91"
+"years, 92 years, 93 years, 94 years, 95 years, 96 years, 97 years, 98 years, 99 years, 100+ years"
+"States: All"
+"Weekday: All"
+"Year/Month: 2012, 2013, 2014, 2015, 2016"
+"Group By: 2013 Urbanization, Hispanic Origin, Race"
+"Show Totals: True"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: Mar 12, 2018 8:17:09 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. Underlying Cause of Death"
+"1999-2016 on CDC WONDER Online Database, released December, 2017. Data are from the Multiple Cause of Death Files, 1999-2016, as"
+"compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed"
+"at http://wonder.cdc.gov/ucd-icd10.html on Mar 12, 2018 8:17:09 PM"
+"---"
+Caveats:
+"1. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2014-Revision."
+"2. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Assurance of Confidentiality."
+"3. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Unreliable."
+"4. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"5. Deaths of persons with Hispanic origin ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among"
+"Hispanic Origin groups, so are not included in the Hispanic Origin specific counts and rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"6. Information included on the death certificate about the race and Hispanic ethnicity of the decedent is reported by the"
+"funeral director as provided by an informant, often the surviving next of kin, or, in the absence of an informant, on the basis"
+"of observation. Race and ethnicity information from the census is by self-report. To the extent that race and Hispanic origin"
+"are inconsistent between these two data sources, death rates will be biased. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Racial Differences."
+"7. The population figures for year 2016 are bridged-race estimates of the July 1 resident population, from the Vintage 2016"
+"postcensal series released by NCHS on June 26, 2017. The population figures for year 2015 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2015 postcensal series released by NCHS on June 28, 2016. The population figures for"
+"year 2014 are bridged-race estimates of the July 1 resident population, from the Vintage 2014 postcensal series released by NCHS"
+"on June 30, 2015. The population figures for year 2013 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2013 postcensal series released by NCHS on June 26, 2014. The population figures for year 2012 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2012 postcensal series released by NCHS on June 13, 2013. The"
+"population figures for year 2011 are bridged-race estimates of the July 1 resident population, from the Vintage 2011 postcensal"
+"series released by NCHS on July 18, 2012. Population figures for 2010 are April 1 Census counts. The population figures for"
+"years 2001 - 2009 are bridged-race estimates of the July 1 resident population, from the revised intercensal county-level 2000 -"
+"2009 series released by NCHS on October 26, 2012. Population figures for 2000 are April 1 Census counts. Population figures for"
+"1999 are from the 1990-1999 intercensal series of July 1 estimates. Population figures for the infant age groups are the number"
+"of live births. <br/><b>Note:</b> Rates and population figures for years 2001 - 2009 differ slightly from previously published"
+"reports, due to use of the population estimates which were available at the time of release."
