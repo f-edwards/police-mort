@@ -3,13 +3,46 @@ gc()
 library(tidyverse)
 library(rstanarm)
 library(xtable)
+set.seed(1)
 
-#setwd("~/Projects/police-mort")
+setwd("~/Projects/police-mort")
 source("division_ur_visuals.r")
 
 ### FE constant for FE counts -> deaths/yr
 FE_constant<-(365/2234)
 
+### for table 1
+
+z.01<-tmp2%>%
+  group_by(division, ur.code)%>%
+  summarise(tot.deaths=sum(d.total))%>%
+            #death.rt=sum(d.total)/sum(tot.men) * 100000* FE_constant)%>%
+  ungroup()%>%
+  spread(ur.code, tot.deaths)
+
+z.02<-tmp2%>%
+  group_by(division, ur.code)%>%
+  summarise(death.rt=sum(d.total)/sum(tot.men) * 100000* FE_constant)%>%
+  ungroup()%>%
+  spread(ur.code, death.rt)
+
+write.csv(z.01, "./visuals/table_01_count.csv", row.names=FALSE)
+write.csv(z.02, "./visuals/table_01_rate.csv", row.names=FALSE)
+
+z1<-tmp2%>%
+  group_by(division)%>%
+  summarise(tot.deaths=sum(d.total),
+            death.rt=sum(d.total)/sum(tot.men) * 100000* FE_constant)%>%
+  ungroup()
+
+z2<-tmp2%>%
+  group_by(ur.code)%>%
+  summarise(tot.deaths=sum(d.total),
+            death.rt=sum(d.total)/sum(tot.men) * 100000* FE_constant)%>%
+  ungroup()
+
+write.csv(z1, "./visuals/table_01_divtot.csv", row.names=FALSE)
+write.csv(z2, "./visuals/table_01_urtot.csv", row.names=FALSE)
 ########################################################################################################################
 ### observed data descriptives
 observed<-data.frame(Race = c("Black", "Latino", "White", "Total"),
@@ -363,6 +396,17 @@ print.xtable(xtable(homicide_plot_dat),
 homicide_amind<-homicide_ur%>%
   filter(Race == "American Indian or Alaska Native")%>%
   summarise(homicide_amind = sum(Deaths, na.rm=TRUE)/5)
+
+fe_new <- read_csv("./data/fatal-encounters-2-12-18.csv") %>%
+  filter(`Date (Year)`>=2012)
+
+# .... make names more user-friendly
+names(fe_new)<-c("id", "name", "age", "gender", "race", "URL", "death_date", 
+                 "loc_address", "loc_city", "loc_state", "loc_zip", "loc_county", 
+                 "loc_full_address", "Latitude", "Longitude", "agency", 
+                 "cause_of_death","cause_description", "official_disposition", 
+                 "news_url", "mental_illness", "video", "null1", "dateanddesc", 
+                 "null2", "id2", "year", "null3")
 
 fe_filtered<-fe_new%>%
   filter(`Cause of death` %in% 
