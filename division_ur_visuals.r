@@ -320,7 +320,7 @@ p.dat = bind_rows(p.dat1, p.dat2) %>%
 # 7: plot 
 # ... set up plotting space for tifff image
 dev.off()
-tifff("violin_appendix.tiff", units="in", width=6.5, height = 6.5, res = 300)#
+tiff("./visuals/violin_appendix.tiff", units="in", width=6.5, height = 6.5, res = 300)#
 
 ggplot(data = p.dat, aes(x = ur.code, y = rate)) +
 geom_violin(aes(x = ur.code, y = rate, fill = type), 
