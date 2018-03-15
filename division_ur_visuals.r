@@ -281,3 +281,72 @@ print.xtable(
   type = "html",
   file = "./visuals/appendix_table_3.html",
   include.rownames = FALSE)
+
+################################################################################################
+#### APPENDIX VIOLIN PLOT
+
+# 4: bind everything together & get ready for plotting
+post.estimates = bind_rows(post.blk.int, post.wht.int, post.lat.int);
+colnames(post.estimates)[3:5] = c('lwr', 'estimate', 'upr')
+
+p.dat1 = post.estimates %>%
+     rename(rate = estimate) %>% 
+     mutate(type = 'estimated', 
+        ur.code  = as.character(ur.code), 
+        division = as.character(division)) %>%
+     select(ur.code, division, rate, race, type) #
+
+## 5: get observed, average rates by race + county type + division
+p.dat2 = tmp2 %>%
+       group_by(ur.code, division) %>%
+       summarise(y.black.mean  =   sum(d.black)/sum(black)*100000,
+                 y.latino.mean = sum(d.latino)/sum(latino)*100000,
+             y.white.mean  =   sum(d.white)/sum(white)*100000) %>%
+       gather(rate, value, y.black.mean:y.white.mean) %>%
+       mutate(race = ifelse(rate == 'y.black.mean',  'Black',
+             ifelse(rate == 'y.white.mean',  'White',
+             ifelse(rate == 'y.latino.mean', 'Latino', 'nah'))),
+          type = 'observed') %>%
+      select(ur.code, division, value, race, type) %>%
+      rename(rate = value)
+
+# 6: bind together estimated and observed rates and scale 
+p.dat = bind_rows(p.dat1, p.dat2) %>%
+  mutate_at(vars(rate), funs(./FE_constant)) #%>% 
+   # mutate(ur.code = ifelse(ur.code == '1: large central metro', '1: Large Central', 
+   #              ifelse(ur.code == '2: large fringe metro',  '2: Large Fringe',
+   #              ifelse(ur.code == '3: medium metro',  '3: Medium',
+   #              ifelse(ur.code == '4: small metro',   '4: Small', 
+   #              ifelse(ur.code == '5: micropolitan',  '5: Micro', '6: Noncore')))))) #%>%
+    # mutate(race   = ifelse(race    == 'Black', 'Black', 
+    #             ifelse(race    == 'White', 'White',
+    #             ifelse(race    == 'Latino', 'Latinx', 'HEY'))))#
+
+# 7: plot 
+# ... set up plotting space for tifff image
+dev.off()
+tifff("violin_appendix.tiff", units="in", width=6.5, height = 6.5, res = 300)#
+
+ggplot(data = p.dat, aes(x = ur.code, y = rate)) +
+geom_boxplot(aes(x = ur.code, y = rate, fill = type), 
+      position = position_dodge(width = .9), 
+      alpha = .1,
+      scale = "width") +
+geom_point(aes(y = rate, group = type, color = division), 
+         position = position_jitterdodge(dodge.width   = .9, 
+                           jitter.width  = .0,
+                           jitter.height = .0),
+         size  =  2, 
+         alpha = .9) +
+facet_wrap(~race, scales = 'free_y') +
+  scale_fill_brewer(palette  = 'Dark2') +
+  scale_color_brewer(palette = 'Paired') +
+  ylab('Rate') +
+  xlab('Metro-Type') + 
+  theme_bw() +
+  #scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
+  #coord_flip() +
+  theme(axis.text.x = element_text(angle=60, hjust=1),
+      legend.position = 'bottom')#
+
+dev.off()
