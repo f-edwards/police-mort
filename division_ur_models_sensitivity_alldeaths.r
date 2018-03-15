@@ -165,3 +165,5 @@ print.xtable(
   type = "html",
   file = "./visuals/appendix_sensitivity_alldeaths.html",
   include.rownames = FALSE)
+
+save.image("division_ur_models_sensitivity_alldeaths.RData")
