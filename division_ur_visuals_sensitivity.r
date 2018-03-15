@@ -127,8 +127,8 @@ geom_point(aes(y = rate, group = type, color = division),
 facet_wrap(~race, scales = 'free_y') +
   scale_fill_brewer(palette  = 'Dark2') +
   scale_color_brewer(palette = 'Paired') +
-  ylab('Rate') +
-  xlab('Metro-Type') +
+  ylab('Police homicides per 100,000 per year') +
+  xlab('Metro type') +
   theme_bw() +
   #scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
   #coord_flip() +

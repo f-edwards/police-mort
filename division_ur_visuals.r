@@ -165,11 +165,12 @@ ggplot(ur.post, aes(sim.mort.rt, fill=Race))+
   geom_density(alpha=0.7, bw = .2, color = 'grey100')+
   geom_point(aes(x=obs.mort.rt, y=0, shape=Race), size=2)+
   facet_wrap(~ur.code)+
-  xlab("Police-involved deaths per 100,000 per year")+
+  xlab("Police homicides per 100,000 per year")+
   scale_fill_brewer(palette = 'Set2') +
   ylab("")+
   coord_cartesian(xlim=c(0,7))+
-  theme(legend.position="bottom")+
+  theme(legend.position="bottom",
+        legend.title = element_blank())+
   ggsave("./visuals/UR_Density_men.tiff",width=6.5, height=6.5, units="in")
 
 # .... and divisions
@@ -177,11 +178,12 @@ ggplot(div.post, aes(sim.mort.rt, fill=Race))+
   geom_density(alpha=0.7, bw = .15, color = 'grey100')+
   geom_point(aes(x=obs.mort.rt, y=0, shape=Race), size=2)+
   facet_wrap(~division)+
-  xlab("Police-involved deaths per 100,000 per year")+
+  xlab("Police homicides per 100,000 per year")+
   ylab("")+
   coord_cartesian(xlim=c(0,7))+
   scale_fill_brewer(palette = 'Set2') +
-  theme(legend.position="bottom") +
+  theme(legend.position="bottom",
+        legend.title = element_blank()) +
   ggsave("./visuals/Div_Density_men.tiff", width=6.5, height=6.5, units="in")
 
 
