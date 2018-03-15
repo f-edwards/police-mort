@@ -125,7 +125,79 @@ ggplot(p.dat3 %>% filter(ur.code == '6: noncore', real == 1),
   ggsave("./visuals/state_noncore.tiff", height = 6.5, width = 6.5)  
 
 
+######################################################## BY STATE PLOTS
+post.observed.blk<-tmp2%>%
+  group_by(ur.code, division, state)%>%
+  summarise(observed.deaths=sum(d.black),
+            observed.pop=sum(black.men))%>%
+  ungroup()
 
+post.observed.lat<-tmp2%>%
+  group_by(ur.code, division, state)%>%
+  summarise(observed.deaths=sum(d.latino),
+            observed.pop=sum(latino.men))%>%
+  ungroup()
+
+post.observed.wht<-tmp2%>%
+  group_by(ur.code, division, state)%>%
+  summarise(observed.deaths=sum(d.white),
+            observed.pop=sum(white.men))%>%
+  ungroup()
+
+blk.div.post.mort<-post.observed.blk%>%
+  left_join(post.blk.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(state, sim, division)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Black")
+
+lat.div.post.mort<-post.observed.lat%>%
+  left_join(post.lat.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(state, sim, division)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="Latino")
+
+wht.div.post.mort<-post.observed.wht%>%
+  left_join(post.wht.sims)%>%
+  ungroup()%>%
+  select(-ur.code)%>%
+  group_by(state, sim, division)%>%
+  summarise(sim.mort.rt=sum((sim.rate/100000) * observed.pop)/sum(observed.pop) * 100000,
+            obs.mort.rt=sum(observed.deaths)/sum(observed.pop)*100000)%>%
+  mutate(Race="White")
+
+div.post <- bind_rows(blk.div.post.mort,
+                      lat.div.post.mort,
+                      wht.div.post.mort)
+
+div.post <- div.post %>%
+  mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(2234/365)))
+
+state.post.median<-div.post%>%
+  group_by(state, division, Race)%>%
+  summarise(sim.mort.rt = median(sim.mort.rt),
+            obs.mort.rt = median(obs.mort.rt))
+
+# ... plot it!
+# .... ur codes
+
+# .... and divisions
+ggplot(state.post.median, 
+       aes(x = reorder(state, sim.mort.rt), 
+           y = sim.mort.rt, fill = Race, group = Race)) + #, #ymin = `2.5%`, ymax = `97.5%`)) + 
+  geom_point(color = 'grey10', pch = 21, size = 2.5, alpha = .75) + 
+  coord_flip() + 
+  scale_fill_brewer(palette = 'Set2') + 
+  facet_wrap(~division, scale = 'free_y') +
+  ylab('Police homicides per 100,000 per year') +
+  xlab("")+
+  theme(legend.title = element_blank())+
+  ggsave("./visuals/state_totals.tiff", height = 6.5, width = 6.5)
 
 ## ... plot of rate ratios
 #bw.post = bind_cols(ur.state, as.data.frame(t(apply(
