@@ -2,10 +2,11 @@ library(tidyverse)
 library(rstanarm)
 library(parallel)
 library(data.table)
+theme_set(theme_minimal())
 
+setwd("~/Projects/police-mort")
 load('state_ur_models.RData')
 ## visuals 
-#load('final_states_mods.RData')
 blk.stan<-blk.stan.0
 wht.stan<-wht.stan.0
 lat.stan<-lat.stan.0
@@ -96,8 +97,10 @@ ggplot(p.dat3 %>% filter(ur.code == '1: large central metro', real == 1),
   coord_flip() + 
   scale_fill_brewer(palette = 'Set2') + 
   facet_wrap(~division, scale = 'free_y') +
-  ylab('state') +
-  xlab('rate, per 100,000 population') 
+  ylab('Police homicides per 100,000 per year') +
+  xlab("")+
+  theme(legend.title = element_blank())+
+  ggsave("./visuals/state_large_central.tiff", height = 6.5, width = 6.5)
 
 ggplot(p.dat3 %>% filter(ur.code == '3: medium metro', real == 1), 
        aes(x = reorder(state, rate), y = rate, fill = race, group = race)) + #, #ymin = `2.5%`, ymax = `97.5%`)) + 
@@ -105,8 +108,10 @@ ggplot(p.dat3 %>% filter(ur.code == '3: medium metro', real == 1),
   coord_flip() + 
   scale_fill_brewer(palette = 'Set2') + 
   facet_wrap(~division, scale = 'free_y') +
-  ylab('state') +
-  xlab('rate, per 100,000 population') 
+  ylab('Police homicides per 100,000 per year')+
+  xlab("")+
+  theme(legend.title = element_blank())+
+  ggsave("./visuals/state_medium.tiff", height = 6.5, width = 6.5) 
 
 ggplot(p.dat3 %>% filter(ur.code == '6: noncore', real == 1), 
        aes(x = reorder(state, rate), y = rate, fill = race, group = race)) + #, #ymin = `2.5%`, ymax = `97.5%`)) + 
@@ -114,8 +119,10 @@ ggplot(p.dat3 %>% filter(ur.code == '6: noncore', real == 1),
   coord_flip() + 
   scale_fill_brewer(palette = 'Set2') + 
   facet_wrap(~division, scale = 'free_y') +
-  ylab('state') +
-  xlab('rate, per 100,000 population') 
+  xlab("")+
+  ylab('Police homicides per 100,000 per year')+
+  theme(legend.title = element_blank())+
+  ggsave("./visuals/state_noncore.tiff", height = 6.5, width = 6.5)  
 
 
 
