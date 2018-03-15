@@ -128,7 +128,7 @@ facet_wrap(~race, scales = 'free_y') +
   scale_fill_brewer(palette  = 'Dark2') +
   scale_color_brewer(palette = 'Paired') +
   ylab('Police homicides per 100,000 per year') +
-  xlab('Metro type') +
+  xlab('') +
   theme_bw() +
   #scale_x_discrete(limits = rev(levels(as.factor(p.dat$ur.code)))) +
   #coord_flip() +
