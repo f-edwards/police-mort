@@ -366,6 +366,8 @@ div_totals<-homicide%>%
          ratio_latino = d.latino / homicide_latino,
          ratio_total = d.total / homicide_total)
 
+#### 2571 legal intervention adult male homicides 2012 - 2016. 
+
 ########################################################################################################################
 ### police homicide / total homicide visuals, tables
 

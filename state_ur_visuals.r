@@ -180,7 +180,9 @@ div.post <- div.post %>%
 
 state.post.median<-div.post%>%
   group_by(state, division, Race)%>%
-  summarise(sim.mort.rt = median(sim.mort.rt),
+  summarise(upper.sim.mort.rt = quantile(sim.mort.rt, 0.975),
+            lower.sim.mort.rt = quantile(sim.mort.rt, 0.025),
+            sim.mort.rt = median(sim.mort.rt),
             obs.mort.rt = median(obs.mort.rt))
 
 # ... plot it!

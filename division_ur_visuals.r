@@ -5,9 +5,14 @@ library(tidyverse)
 library(rstanarm)
 library(parallel)
 library(data.table)
+library(RColorBrewer)
+library(mapproj)
+library(fiftystater)
+library(BAMMtools)
 theme_set(theme_minimal())
 setwd("~/Projects/police-mort")
 select  = dplyr::select
+set.seed(1)
 
 FE_constant<-(365/2234)
 
@@ -158,6 +163,13 @@ div.post <- bind_rows(blk.div.post.mort,
 
 div.post <- div.post %>%
   mutate_at(vars(sim.mort.rt, obs.mort.rt), funs(./(2234/365)))
+
+#### paper descriptives on division rates
+div.desc<-div.post%>%
+  group_by(division, Race)%>%
+  summarise(upr = quantile(sim.mort.rt, 0.975),
+            med = median(sim.mort.rt),
+            lwr = quantile(sim.mort.rt, 0.025))
 
 # ... plot it!
 # .... ur codes
@@ -347,3 +359,84 @@ facet_wrap(~race, scales = 'free_y') +
       legend.position = 'bottom', legend.title = element_blank())#
 
 dev.off()
+
+############ FOR DIVISION MAP
+index<-as.data.frame(cbind(state.name, state.abb))
+index<-index%>%
+  rename(state = state.abb, id = state.name)
+  
+temp<-tmp2%>%
+  left_join(index)%>%
+  mutate(id = tolower(id))%>%
+  rename(Division = division)
+
+p <- ggplot(temp, aes(map_id = id)) +
+  # map points to the fifty_states shape dat
+  geom_map(aes(fill = Division), 
+    map = fifty_states,
+           color = "black") +
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) +
+  coord_map() +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  labs(x = "", y = "") +
+  theme(legend.position = "right",
+        panel.background = element_blank()) +
+  coord_map("albers", lat0 = 39, lat1 = 45) + 
+  ggsave("./visuals/div_map.tiff", height = 6.5, width = 6.5)
+
+### to map county posterior predictions
+# data(county.fips)
+# 
+# ### get rid of weirdo colon names
+# crosswalk$polyname[grep(":", crosswalk$polyname)]<-sub(":(.*)","", crosswalk$polyname[grep(":", crosswalk$polyname)])
+# 
+# #### of observed FIPS, only Shannon / Oglala-Lakota (46113, recode) not appearing
+# crosswalk<-tmp2%>%
+#   mutate(ur.code = clean_ur(ur.code))%>%
+#   select(fips, state, ur.code, division)
+# crosswalk[nrow(crosswalk)+1, ]<-c(46113, "SD", "Noncore", "West North Central")
+# crosswalk<-crosswalk%>%
+#   mutate(fips = as.numeric(fips))%>%
+#   right_join(county.fips)
+# 
+# map.dat<-left_join(crosswalk, 
+#                    p.dat%>%filter(type == "Modeled"))
+# 
+# county_shape<-map_data("county")%>%
+#   mutate(polyname = paste(region, subregion, sep=","))
+# 
+# map.dat<-map.dat%>%
+#   filter(race=="Black")
+# rate.jenks<-assignColorBreaks(map.dat$rate, NCOLORS=6, method="jenks")
+# map.dat$rate.jenks<-ifelse(map.dat$rate<=rate.jenks[1],1,
+#                              ifelse(map.dat$rate<=rate.jenks[2],2,
+#                                     ifelse(map.dat$rate<=rate.jenks[3],3,
+#                                            ifelse(map.dat$rate<=rate.jenks[4],4,
+#                                                   ifelse(map.dat$rate<=rate.jenks[5],5,
+#                                                          ifelse(map.dat$rate<=rate.jenks[6],6,
+#                                                                 7))))))
+# 
+# rate.jenks<-round(rate.jenks,2)
+# 
+# 
+# map.dat$rate.jenks<-ordered(map.dat$rate.jenks, levels=unique(map.dat$rate.jenks)[order(unique(map.dat$rate.jenks))],
+#                            labels=c(paste("0-",rate.jenks[1], sep=""),
+#                                     paste(rate.jenks[1],"-",rate.jenks[2],sep=""),
+#                                     paste(rate.jenks[2],"-",rate.jenks[3],sep=""),
+#                                     paste(rate.jenks[3],"-",rate.jenks[4],sep=""),
+#                                     paste(rate.jenks[4],"-",rate.jenks[5], sep=""),
+#                                     paste(rate.jenks[5],"-",rate.jenks[6],sep=""),
+#                                     paste(rate.jenks[6], "-", sep="")
+#                            ))
+# 
+# map.dat<-county_shape%>%
+#   left_join(map.dat)
+# 
+# 
+# p <- ggplot(map.dat%>%
+#               filter(race=="Black"), 
+#             aes(x=long, y=lat, group = group)) +
+#   # map points to the fifty_states shape dat
+#   geom_polygon(aes(fill = rate.jenks), colour = alpha("black", 1/4), size=0.2)+
+#   scale_fill_brewer(type="seq", palette = "OrRd", name="") 

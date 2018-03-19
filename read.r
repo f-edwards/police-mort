@@ -30,6 +30,8 @@ fe_new <- fe_new %>%
          race = ifelse(race == "Native American/Alaskan", "other", race),
          race = ifelse(race == "Race unspecified", NA, race))
 
+
+fe_new$is.missing<-is.na(fe_new$race)
 # .... merge in imputed races
 imputeds <- read_csv("./data/predicted_race_05FalsePos.csv")
 
@@ -170,3 +172,4 @@ tmp2 = left_join(pop, tmp, 'fips') %>%
   tbl_df() %>%
   rename(division = Division)
 
+missings<-fdat%>%filter(is.missing==TRUE)
