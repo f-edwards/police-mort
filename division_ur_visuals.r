@@ -383,7 +383,7 @@ p <- ggplot(temp, aes(map_id = id)) +
   theme(legend.position = "right",
         panel.background = element_blank()) +
   coord_map("albers", lat0 = 39, lat1 = 45) + 
-  ggsave("./visuals/div_map.tiff", height = 6.5, width = 6.5)
+  ggsave("./visuals/div_map.tiff", width = 6.5)
 
 ### to map county posterior predictions
 # data(county.fips)
